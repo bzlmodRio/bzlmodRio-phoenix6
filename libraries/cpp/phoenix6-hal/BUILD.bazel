@@ -1,0 +1,52 @@
+load("@rules_cc//cc:defs.bzl", "cc_library")
+
+alias(
+    name = "phoenix6-hal",
+    actual = ":shared",
+    visibility = ["//visibility:public"],
+)
+
+cc_library(
+    name = "shared",
+    linkstatic = 1,
+    visibility = ["//visibility:public"],
+    deps =
+        # Binaries
+        select({
+            "@rules_bzlmodrio_toolchains//constraints/is_roborio:roborio": [
+                "//private/cpp/tools:shared",
+            ],
+            "//conditions:default": [
+                "//private/cpp/simCANCoder:shared",
+                "//private/cpp/simPigeonIMU:shared",
+                "//private/cpp/simProCANcoder:shared",
+                "//private/cpp/simProPigeon2:shared",
+                "//private/cpp/simProTalonFX:shared",
+                "//private/cpp/simTalonFX:shared",
+                "//private/cpp/simTalonSRX:shared",
+                "//private/cpp/simVictorSPX:shared",
+                "//private/cpp/tools-sim:shared",
+            ],
+        }),
+)
+
+cc_library(
+    name = "jni",
+    visibility = ["//visibility:public"],
+    deps = select({
+        "@rules_bzlmodrio_toolchains//constraints/is_roborio:roborio": [
+            "//private/cpp/tools:shared",
+        ],
+        "//conditions:default": [
+            "//private/cpp/simCANCoder:shared",
+            "//private/cpp/simPigeonIMU:shared",
+            "//private/cpp/simProCANcoder:shared",
+            "//private/cpp/simProPigeon2:shared",
+            "//private/cpp/simProTalonFX:shared",
+            "//private/cpp/simTalonFX:shared",
+            "//private/cpp/simTalonSRX:shared",
+            "//private/cpp/simVictorSPX:shared",
+            "//private/cpp/tools-sim:shared",
+        ],
+    }),
+)

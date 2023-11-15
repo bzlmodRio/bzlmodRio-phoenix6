@@ -11,10 +11,21 @@ def get_phoenix6_dependencies(
     use_local_allwpilib=False,
     use_local_opencv=False,
     use_local_ni=True,
-    allwpilib_version_override="2023.3.2",
-    opencv_version_override="4.6.0-4",
-    ni_version_override="2023.3.0",
+    allwpilib_version_override="2024.1.1-beta-1",
+    opencv_version_override="2024.4.8.0-1",
+    ni_version_override="2024.1.1",
 ):
+    sim_install_name_classes = [
+        "simCANCoder",
+        "simPigeonIMU",
+        "simProPigeon2",
+        "simProCANcoder",
+        "simProTalonFX",
+        "simTalonFX",
+        "simTalonSRX",
+        "simVictorSPX",
+    ]
+
     SCRIPT_DIR = os.path.dirname(os.path.realpath(__file__))
 
     allwpilib_dependency = ModuleDependency(
@@ -36,42 +47,95 @@ def get_phoenix6_dependencies(
         year=2023,
         fail_on_hash_miss=False,
         has_static_libraries=False,
+        install_name_lookup={
+            "simCANCoder": dict(deps=[], artifact_install_name="CTRE_SimCANCoder"),
+            "simPigeonIMU": dict(deps=[], artifact_install_name="CTRE_SimPigeonIMU"),
+            "simProPigeon2": dict(deps=[], artifact_install_name="CTRE_SimProPigeon2"),
+            "simProCANcoder": dict(
+                deps=[], artifact_install_name="CTRE_SimProCANcoder"
+            ),
+            "simProTalonFX": dict(deps=[], artifact_install_name="CTRE_SimProTalonFX"),
+            "simTalonFX": dict(deps=[], artifact_install_name="CTRE_SimTalonFX"),
+            "simTalonSRX": dict(deps=[], artifact_install_name="CTRE_SimTalonSRX"),
+            "simVictorSPX": dict(deps=[], artifact_install_name="CTRE_SimVictorSPX"),
+            "cci-sim": dict(
+                deps=["tools-sim"], artifact_install_name="CTRE_PhoenixCCISim"
+            ),
+            "tools-sim": dict(
+                deps=sim_install_name_classes,
+                artifact_install_name="CTRE_PhoenixTools_Sim",
+            ),
+            "wpiapi-cpp-sim": dict(
+                deps=[
+                    "tools-sim",
+                    allwpilib_dependency.container.get_cc_dependency("wpilibc-cpp"),
+                ],
+                artifact_install_name="CTRE_Phoenix6_WPISim",
+            ),
+        },
     )
     group.add_module_dependency(allwpilib_dependency)
 
-    
+    group.add_cc_meta_dependency(
+        "phoenix6-hal",
+        deps=[],
+        platform_deps={
+            "@rules_bzlmodrio_toolchains//constraints/is_roborio:roborio": [
+                "tools",
+            ],
+            "//conditions:default": [
+                "simCANCoder",
+                "simPigeonIMU",
+                "simProCANcoder",
+                "simProPigeon2",
+                "simProTalonFX",
+                "simTalonFX",
+                "simTalonSRX",
+                "simVictorSPX",
+                "tools-sim",
+            ],
+        },
+        jni_deps={
+            "@rules_bzlmodrio_toolchains//constraints/is_roborio:roborio": [
+                "tools",
+            ],
+            "//conditions:default": [
+                "simCANCoder",
+                "simPigeonIMU",
+                "simProCANcoder",
+                "simProPigeon2",
+                "simProTalonFX",
+                "simTalonFX",
+                "simTalonSRX",
+                "simVictorSPX",
+                "tools-sim",
+            ],
+        },
+    )
+
     group.add_cc_meta_dependency(
         "phoenix6-cpp",
         deps=[
-            "simCANCoder",
-            "simPigeonIMU",
-            "simProCANcoder",
-            "simProPigeon2",
-            "simProTalonFX",
-            "simTalonFX",
-            "simTalonSRX",
-            "simVictorSPX",
-            "tools",
-            "tools-sim",
-            "wpiapi-cpp",
-            "wpiapi-cpp-sim",
+            "phoenix6-hal",
             "wpilibc-cpp",
         ],
-        platform_deps={},
-        jni_deps={
-            # TODO
+        platform_deps={
+            "@rules_bzlmodrio_toolchains//constraints/is_roborio:roborio": [
+                "wpiapi-cpp",
+            ],
+            "//conditions:default": [
+                "wpiapi-cpp-sim",
+            ],
         },
+        jni_deps={},
     )
-    
-    
-    
+
     group.add_java_meta_dependency(
-        "phoenix6-java",
+        "wpiapi-java",
         group_id=f"com.ctre.phoenix6",
         deps=[
             "wpilibj-java",
         ],
     )
-    
-    
+
     return group
