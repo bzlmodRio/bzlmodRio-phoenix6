@@ -80,29 +80,29 @@ def __setup_bzlmodrio_phoenix6_cpp_dependencies(mctx):
     maybe(
         http_archive,
         "bazelrio_com_ctre_phoenix6_sim_simcancoder_headers",
-        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simCANCoder/24.0.0-beta-4/simCANCoder-24.0.0-beta-4-headers.zip",
-        sha256 = "3196b335976f6674e20cf37017ee3bf557c7b038626765673736fdbf08d4f9a0",
+        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simCANCoder/24.0.0-beta-5/simCANCoder-24.0.0-beta-5-headers.zip",
+        sha256 = "53643ffdb68ca1d42391cffcb4b7da1b14f1aaadc498e86b6cfefad02f8cc666",
         build_file_content = cc_library_headers,
     )
     maybe(
         http_archive,
         "bazelrio_com_ctre_phoenix6_sim_simcancoder_windowsx86-64",
-        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simCANCoder/24.0.0-beta-4/simCANCoder-24.0.0-beta-4-windowsx86-64.zip",
-        sha256 = "83b818704fbe8a95255ae509cb0c64f4e2370fe1721d45f8d2bc4820e09ee0b2",
+        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simCANCoder/24.0.0-beta-5/simCANCoder-24.0.0-beta-5-windowsx86-64.zip",
+        sha256 = "c3d2d79e0a43d6a645a0736bfc675c9121bfacf8230011323ca9ee74c35bdfb4",
         build_file_content = cc_library_shared,
     )
     maybe(
         http_archive,
         "bazelrio_com_ctre_phoenix6_sim_simcancoder_linuxx86-64",
-        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simCANCoder/24.0.0-beta-4/simCANCoder-24.0.0-beta-4-linuxx86-64.zip",
-        sha256 = "1ae8fe3d9faf0a91b6c0da1bb67a3d021ca2a5fbe9d10a86d4f49958a7e4e9ab",
+        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simCANCoder/24.0.0-beta-5/simCANCoder-24.0.0-beta-5-linuxx86-64.zip",
+        sha256 = "7e329234a234bc91c079ffd1a7740da0704e6e8b676855f4538c3f1b5688e4e1",
         build_file_content = cc_library_shared,
     )
     maybe(
         http_archive,
         "bazelrio_com_ctre_phoenix6_sim_simcancoder_osxuniversal",
-        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simCANCoder/24.0.0-beta-4/simCANCoder-24.0.0-beta-4-osxuniversal.zip",
-        sha256 = "f677ef2f49982ff06f7e7942dd5d8d9d2054b820a121a13c02d832044e5c8f93",
+        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simCANCoder/24.0.0-beta-5/simCANCoder-24.0.0-beta-5-osxuniversal.zip",
+        sha256 = "fa79b79ba2403df4cf76b27d56b0aef37353e9a40fe987953e309789afc1416b",
         build_file_content = cc_library_shared,
         patch_cmds = [
             "install_name_tool -id @rpath/libCTRE_SimCANCoder.dylib osx/universal/shared/libCTRE_SimCANCoder.dylib",
@@ -111,29 +111,29 @@ def __setup_bzlmodrio_phoenix6_cpp_dependencies(mctx):
     maybe(
         http_archive,
         "bazelrio_com_ctre_phoenix6_sim_simpigeonimu_headers",
-        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simPigeonIMU/24.0.0-beta-4/simPigeonIMU-24.0.0-beta-4-headers.zip",
-        sha256 = "3196b335976f6674e20cf37017ee3bf557c7b038626765673736fdbf08d4f9a0",
+        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simPigeonIMU/24.0.0-beta-5/simPigeonIMU-24.0.0-beta-5-headers.zip",
+        sha256 = "53643ffdb68ca1d42391cffcb4b7da1b14f1aaadc498e86b6cfefad02f8cc666",
         build_file_content = cc_library_headers,
     )
     maybe(
         http_archive,
         "bazelrio_com_ctre_phoenix6_sim_simpigeonimu_windowsx86-64",
-        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simPigeonIMU/24.0.0-beta-4/simPigeonIMU-24.0.0-beta-4-windowsx86-64.zip",
-        sha256 = "0902ede0c715520b78f5058bc33b229235ffb5cc847c047235d5167b66f2ad33",
+        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simPigeonIMU/24.0.0-beta-5/simPigeonIMU-24.0.0-beta-5-windowsx86-64.zip",
+        sha256 = "57ed5e21c98672f963a57f5c2d0a5bbde5456f346ef0305da82d618e694d3b22",
         build_file_content = cc_library_shared,
     )
     maybe(
         http_archive,
         "bazelrio_com_ctre_phoenix6_sim_simpigeonimu_linuxx86-64",
-        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simPigeonIMU/24.0.0-beta-4/simPigeonIMU-24.0.0-beta-4-linuxx86-64.zip",
-        sha256 = "59b750e98ecfd6bffa5c7558b89576b4c20714ad811b2fa339857ae109774c72",
+        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simPigeonIMU/24.0.0-beta-5/simPigeonIMU-24.0.0-beta-5-linuxx86-64.zip",
+        sha256 = "4890e04c1297db5b2abb632a7f5828836b41dad22de5af8b1d844ee9d5198bec",
         build_file_content = cc_library_shared,
     )
     maybe(
         http_archive,
         "bazelrio_com_ctre_phoenix6_sim_simpigeonimu_osxuniversal",
-        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simPigeonIMU/24.0.0-beta-4/simPigeonIMU-24.0.0-beta-4-osxuniversal.zip",
-        sha256 = "b35ce3fa938963fb937b2a5b16bf98c50684d377d01ccd6226f1df4b9c71a85d",
+        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simPigeonIMU/24.0.0-beta-5/simPigeonIMU-24.0.0-beta-5-osxuniversal.zip",
+        sha256 = "3e8e36c62adfd68a5a9ddaa2d0ad718ec9148faea8c5eb669c366a51f7fd6d2d",
         build_file_content = cc_library_shared,
         patch_cmds = [
             "install_name_tool -id @rpath/libCTRE_SimPigeonIMU.dylib osx/universal/shared/libCTRE_SimPigeonIMU.dylib",
@@ -142,29 +142,29 @@ def __setup_bzlmodrio_phoenix6_cpp_dependencies(mctx):
     maybe(
         http_archive,
         "bazelrio_com_ctre_phoenix6_sim_simprocancoder_headers",
-        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProCANcoder/24.0.0-beta-4/simProCANcoder-24.0.0-beta-4-headers.zip",
-        sha256 = "3196b335976f6674e20cf37017ee3bf557c7b038626765673736fdbf08d4f9a0",
+        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProCANcoder/24.0.0-beta-5/simProCANcoder-24.0.0-beta-5-headers.zip",
+        sha256 = "53643ffdb68ca1d42391cffcb4b7da1b14f1aaadc498e86b6cfefad02f8cc666",
         build_file_content = cc_library_headers,
     )
     maybe(
         http_archive,
         "bazelrio_com_ctre_phoenix6_sim_simprocancoder_windowsx86-64",
-        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProCANcoder/24.0.0-beta-4/simProCANcoder-24.0.0-beta-4-windowsx86-64.zip",
-        sha256 = "5708e3e555fd5160c5f99987e25215f93c88b096c0e4a23f0b7ff0022aa873db",
+        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProCANcoder/24.0.0-beta-5/simProCANcoder-24.0.0-beta-5-windowsx86-64.zip",
+        sha256 = "b9542a0da53560b6445634ce3f3ebff43e3e71213282ec1afb35bf42ac40b95d",
         build_file_content = cc_library_shared,
     )
     maybe(
         http_archive,
         "bazelrio_com_ctre_phoenix6_sim_simprocancoder_linuxx86-64",
-        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProCANcoder/24.0.0-beta-4/simProCANcoder-24.0.0-beta-4-linuxx86-64.zip",
-        sha256 = "5db2b4cdb417adb30f8902e2a2f9a18ec9484c731f53959fe162d5e2b3c41841",
+        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProCANcoder/24.0.0-beta-5/simProCANcoder-24.0.0-beta-5-linuxx86-64.zip",
+        sha256 = "14a8a391ee1c851c1a1996ea5f550de55cbaaad0392f6323a92e9c167f9b2f0e",
         build_file_content = cc_library_shared,
     )
     maybe(
         http_archive,
         "bazelrio_com_ctre_phoenix6_sim_simprocancoder_osxuniversal",
-        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProCANcoder/24.0.0-beta-4/simProCANcoder-24.0.0-beta-4-osxuniversal.zip",
-        sha256 = "83e3657a8a14d06aa48c1aa925418bcf2e0da59a243d0adaae0bfaebd5c7c033",
+        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProCANcoder/24.0.0-beta-5/simProCANcoder-24.0.0-beta-5-osxuniversal.zip",
+        sha256 = "0de9eb8ecf967d3a5a4fe728456fb7c573910553e3e55975b2c795794a8cba85",
         build_file_content = cc_library_shared,
         patch_cmds = [
             "install_name_tool -id @rpath/libCTRE_SimProCANcoder.dylib osx/universal/shared/libCTRE_SimProCANcoder.dylib",
@@ -173,29 +173,29 @@ def __setup_bzlmodrio_phoenix6_cpp_dependencies(mctx):
     maybe(
         http_archive,
         "bazelrio_com_ctre_phoenix6_sim_simpropigeon2_headers",
-        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProPigeon2/24.0.0-beta-4/simProPigeon2-24.0.0-beta-4-headers.zip",
-        sha256 = "3196b335976f6674e20cf37017ee3bf557c7b038626765673736fdbf08d4f9a0",
+        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProPigeon2/24.0.0-beta-5/simProPigeon2-24.0.0-beta-5-headers.zip",
+        sha256 = "53643ffdb68ca1d42391cffcb4b7da1b14f1aaadc498e86b6cfefad02f8cc666",
         build_file_content = cc_library_headers,
     )
     maybe(
         http_archive,
         "bazelrio_com_ctre_phoenix6_sim_simpropigeon2_windowsx86-64",
-        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProPigeon2/24.0.0-beta-4/simProPigeon2-24.0.0-beta-4-windowsx86-64.zip",
-        sha256 = "37a89239dff5fc5344b52249b721f6da52842cc21f182a4b1254a1044d286cfb",
+        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProPigeon2/24.0.0-beta-5/simProPigeon2-24.0.0-beta-5-windowsx86-64.zip",
+        sha256 = "81fed110d15f1e2a040d5696c19b6bcd496ff5f7b54d153897a4bc3bf9f4cbfd",
         build_file_content = cc_library_shared,
     )
     maybe(
         http_archive,
         "bazelrio_com_ctre_phoenix6_sim_simpropigeon2_linuxx86-64",
-        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProPigeon2/24.0.0-beta-4/simProPigeon2-24.0.0-beta-4-linuxx86-64.zip",
-        sha256 = "ae2eec88d2bb17a5741b5f96b3127f094cc7c6c809bfe723b6585a438b2f55e8",
+        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProPigeon2/24.0.0-beta-5/simProPigeon2-24.0.0-beta-5-linuxx86-64.zip",
+        sha256 = "02508ecd7c312810eebbe3c6b09fcee509be70e847624cdc5e468afc374fae2d",
         build_file_content = cc_library_shared,
     )
     maybe(
         http_archive,
         "bazelrio_com_ctre_phoenix6_sim_simpropigeon2_osxuniversal",
-        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProPigeon2/24.0.0-beta-4/simProPigeon2-24.0.0-beta-4-osxuniversal.zip",
-        sha256 = "0f88e730d5be2d71a1945eb32167392ca4458e029c4ed5020d1b0ce11e1cd416",
+        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProPigeon2/24.0.0-beta-5/simProPigeon2-24.0.0-beta-5-osxuniversal.zip",
+        sha256 = "30a4cdd4c864232656ca6153fbe9502185dbee0e37aa36cac924f0e85272788f",
         build_file_content = cc_library_shared,
         patch_cmds = [
             "install_name_tool -id @rpath/libCTRE_SimProPigeon2.dylib osx/universal/shared/libCTRE_SimProPigeon2.dylib",
@@ -204,29 +204,29 @@ def __setup_bzlmodrio_phoenix6_cpp_dependencies(mctx):
     maybe(
         http_archive,
         "bazelrio_com_ctre_phoenix6_sim_simprotalonfx_headers",
-        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProTalonFX/24.0.0-beta-4/simProTalonFX-24.0.0-beta-4-headers.zip",
-        sha256 = "3196b335976f6674e20cf37017ee3bf557c7b038626765673736fdbf08d4f9a0",
+        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProTalonFX/24.0.0-beta-5/simProTalonFX-24.0.0-beta-5-headers.zip",
+        sha256 = "53643ffdb68ca1d42391cffcb4b7da1b14f1aaadc498e86b6cfefad02f8cc666",
         build_file_content = cc_library_headers,
     )
     maybe(
         http_archive,
         "bazelrio_com_ctre_phoenix6_sim_simprotalonfx_windowsx86-64",
-        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProTalonFX/24.0.0-beta-4/simProTalonFX-24.0.0-beta-4-windowsx86-64.zip",
-        sha256 = "c55857baf653ec57d1a20ebec2df0df5e76f8517839554b28488dfbfbdb98692",
+        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProTalonFX/24.0.0-beta-5/simProTalonFX-24.0.0-beta-5-windowsx86-64.zip",
+        sha256 = "796fb3b30a01ec4d7aa25304a112556bdd5b961a232c71474809802d813bda4b",
         build_file_content = cc_library_shared,
     )
     maybe(
         http_archive,
         "bazelrio_com_ctre_phoenix6_sim_simprotalonfx_linuxx86-64",
-        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProTalonFX/24.0.0-beta-4/simProTalonFX-24.0.0-beta-4-linuxx86-64.zip",
-        sha256 = "e57628f5ad218b69f4235ef326849e0778e5b98f5e225d01d01e3eb17d68e249",
+        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProTalonFX/24.0.0-beta-5/simProTalonFX-24.0.0-beta-5-linuxx86-64.zip",
+        sha256 = "339abce5e9383bda4fe2f0eabd69f7ff861e694c67ff7e6b010ba2c79b85a528",
         build_file_content = cc_library_shared,
     )
     maybe(
         http_archive,
         "bazelrio_com_ctre_phoenix6_sim_simprotalonfx_osxuniversal",
-        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProTalonFX/24.0.0-beta-4/simProTalonFX-24.0.0-beta-4-osxuniversal.zip",
-        sha256 = "4efdb5e9190c73ce1eae542a11344fa0f64482f65ae842e2e37ecf4be7252bf5",
+        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProTalonFX/24.0.0-beta-5/simProTalonFX-24.0.0-beta-5-osxuniversal.zip",
+        sha256 = "accf56d24c74efc97724464d436787f4ef0e068ac72ed11967a36c642d3fab41",
         build_file_content = cc_library_shared,
         patch_cmds = [
             "install_name_tool -id @rpath/libCTRE_SimProTalonFX.dylib osx/universal/shared/libCTRE_SimProTalonFX.dylib",
@@ -235,29 +235,29 @@ def __setup_bzlmodrio_phoenix6_cpp_dependencies(mctx):
     maybe(
         http_archive,
         "bazelrio_com_ctre_phoenix6_sim_simtalonfx_headers",
-        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simTalonFX/24.0.0-beta-4/simTalonFX-24.0.0-beta-4-headers.zip",
-        sha256 = "3196b335976f6674e20cf37017ee3bf557c7b038626765673736fdbf08d4f9a0",
+        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simTalonFX/24.0.0-beta-5/simTalonFX-24.0.0-beta-5-headers.zip",
+        sha256 = "53643ffdb68ca1d42391cffcb4b7da1b14f1aaadc498e86b6cfefad02f8cc666",
         build_file_content = cc_library_headers,
     )
     maybe(
         http_archive,
         "bazelrio_com_ctre_phoenix6_sim_simtalonfx_windowsx86-64",
-        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simTalonFX/24.0.0-beta-4/simTalonFX-24.0.0-beta-4-windowsx86-64.zip",
-        sha256 = "4f624ca2982a69430f70bc18e52245355bda001d76d013ec68328b29708c5d66",
+        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simTalonFX/24.0.0-beta-5/simTalonFX-24.0.0-beta-5-windowsx86-64.zip",
+        sha256 = "783f995fce9b9fbacd202aa28bce3d806c25c769665a96be3d5dbe91f668a2e0",
         build_file_content = cc_library_shared,
     )
     maybe(
         http_archive,
         "bazelrio_com_ctre_phoenix6_sim_simtalonfx_linuxx86-64",
-        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simTalonFX/24.0.0-beta-4/simTalonFX-24.0.0-beta-4-linuxx86-64.zip",
-        sha256 = "76748748109254c1cffa690a0cfa3035f366f98dfa9a957701424a985763afb3",
+        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simTalonFX/24.0.0-beta-5/simTalonFX-24.0.0-beta-5-linuxx86-64.zip",
+        sha256 = "9bf7de91144913d02e3c8200902d19069b1f981ace030c7bf010cf81c86e0831",
         build_file_content = cc_library_shared,
     )
     maybe(
         http_archive,
         "bazelrio_com_ctre_phoenix6_sim_simtalonfx_osxuniversal",
-        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simTalonFX/24.0.0-beta-4/simTalonFX-24.0.0-beta-4-osxuniversal.zip",
-        sha256 = "849e285a5b4309a9001e23e368e065eca30570315d0f1ccdd105fda110f8086f",
+        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simTalonFX/24.0.0-beta-5/simTalonFX-24.0.0-beta-5-osxuniversal.zip",
+        sha256 = "ccef1cc259f42729d07ad90fe81a67519c64c9886896b4f3d4f678b6be5269e4",
         build_file_content = cc_library_shared,
         patch_cmds = [
             "install_name_tool -id @rpath/libCTRE_SimTalonFX.dylib osx/universal/shared/libCTRE_SimTalonFX.dylib",
@@ -266,29 +266,29 @@ def __setup_bzlmodrio_phoenix6_cpp_dependencies(mctx):
     maybe(
         http_archive,
         "bazelrio_com_ctre_phoenix6_sim_simtalonsrx_headers",
-        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simTalonSRX/24.0.0-beta-4/simTalonSRX-24.0.0-beta-4-headers.zip",
-        sha256 = "3196b335976f6674e20cf37017ee3bf557c7b038626765673736fdbf08d4f9a0",
+        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simTalonSRX/24.0.0-beta-5/simTalonSRX-24.0.0-beta-5-headers.zip",
+        sha256 = "53643ffdb68ca1d42391cffcb4b7da1b14f1aaadc498e86b6cfefad02f8cc666",
         build_file_content = cc_library_headers,
     )
     maybe(
         http_archive,
         "bazelrio_com_ctre_phoenix6_sim_simtalonsrx_windowsx86-64",
-        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simTalonSRX/24.0.0-beta-4/simTalonSRX-24.0.0-beta-4-windowsx86-64.zip",
-        sha256 = "b2e565bd919adb15ba61555094a2aa08b78d0fd779378ce0fcfc58f5e5c49019",
+        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simTalonSRX/24.0.0-beta-5/simTalonSRX-24.0.0-beta-5-windowsx86-64.zip",
+        sha256 = "227416c9d790dcbbf0ec36ed0aa3dd443202a15b47e14d70f031445a78b726b5",
         build_file_content = cc_library_shared,
     )
     maybe(
         http_archive,
         "bazelrio_com_ctre_phoenix6_sim_simtalonsrx_linuxx86-64",
-        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simTalonSRX/24.0.0-beta-4/simTalonSRX-24.0.0-beta-4-linuxx86-64.zip",
-        sha256 = "006f69e67b78fce4fd9fe95aef121c64dc40168a1c6d1e0caf53a51ae4fe0b5a",
+        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simTalonSRX/24.0.0-beta-5/simTalonSRX-24.0.0-beta-5-linuxx86-64.zip",
+        sha256 = "0d5e3a8d471de31acbdd11d10afe2fffeb803d204ab5cc043fde4dd2668a4264",
         build_file_content = cc_library_shared,
     )
     maybe(
         http_archive,
         "bazelrio_com_ctre_phoenix6_sim_simtalonsrx_osxuniversal",
-        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simTalonSRX/24.0.0-beta-4/simTalonSRX-24.0.0-beta-4-osxuniversal.zip",
-        sha256 = "6df2e343d1a1835350dfe4bd47fb670229da402c09bc9c7d5f0c0014f60af336",
+        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simTalonSRX/24.0.0-beta-5/simTalonSRX-24.0.0-beta-5-osxuniversal.zip",
+        sha256 = "cca2fde5c17ade522a1b5298675cb61f5794d1622f690acf6043a33c6410828a",
         build_file_content = cc_library_shared,
         patch_cmds = [
             "install_name_tool -id @rpath/libCTRE_SimTalonSRX.dylib osx/universal/shared/libCTRE_SimTalonSRX.dylib",
@@ -297,29 +297,29 @@ def __setup_bzlmodrio_phoenix6_cpp_dependencies(mctx):
     maybe(
         http_archive,
         "bazelrio_com_ctre_phoenix6_sim_simvictorspx_headers",
-        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simVictorSPX/24.0.0-beta-4/simVictorSPX-24.0.0-beta-4-headers.zip",
-        sha256 = "3196b335976f6674e20cf37017ee3bf557c7b038626765673736fdbf08d4f9a0",
+        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simVictorSPX/24.0.0-beta-5/simVictorSPX-24.0.0-beta-5-headers.zip",
+        sha256 = "53643ffdb68ca1d42391cffcb4b7da1b14f1aaadc498e86b6cfefad02f8cc666",
         build_file_content = cc_library_headers,
     )
     maybe(
         http_archive,
         "bazelrio_com_ctre_phoenix6_sim_simvictorspx_windowsx86-64",
-        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simVictorSPX/24.0.0-beta-4/simVictorSPX-24.0.0-beta-4-windowsx86-64.zip",
-        sha256 = "50fa11bfb6d06cf63e38580cefc1265ab9186052fc34969a138ae2a6788ad462",
+        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simVictorSPX/24.0.0-beta-5/simVictorSPX-24.0.0-beta-5-windowsx86-64.zip",
+        sha256 = "d14cefa5286748a17cddcef04d4ee026bc080dbfb505729f60a012bf0a80f648",
         build_file_content = cc_library_shared,
     )
     maybe(
         http_archive,
         "bazelrio_com_ctre_phoenix6_sim_simvictorspx_linuxx86-64",
-        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simVictorSPX/24.0.0-beta-4/simVictorSPX-24.0.0-beta-4-linuxx86-64.zip",
-        sha256 = "6e904a80476eec3f2c04876193ab22436552bbbe0f20adf932b5cfa7116c6846",
+        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simVictorSPX/24.0.0-beta-5/simVictorSPX-24.0.0-beta-5-linuxx86-64.zip",
+        sha256 = "abb941f573618307c79a7fb519a240ddfe2a5be383897ad58d913db49e6dbd14",
         build_file_content = cc_library_shared,
     )
     maybe(
         http_archive,
         "bazelrio_com_ctre_phoenix6_sim_simvictorspx_osxuniversal",
-        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simVictorSPX/24.0.0-beta-4/simVictorSPX-24.0.0-beta-4-osxuniversal.zip",
-        sha256 = "f04ebf2cfbf8352e454bd35d01e3344bbd972c5eb9f498cc76e98ee035bcf527",
+        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simVictorSPX/24.0.0-beta-5/simVictorSPX-24.0.0-beta-5-osxuniversal.zip",
+        sha256 = "1c2a615be31d23f7506a4b1ce3a390a8e97610e161370ce05c7fba732bc0ab20",
         build_file_content = cc_library_shared,
         patch_cmds = [
             "install_name_tool -id @rpath/libCTRE_SimVictorSPX.dylib osx/universal/shared/libCTRE_SimVictorSPX.dylib",
@@ -328,57 +328,57 @@ def __setup_bzlmodrio_phoenix6_cpp_dependencies(mctx):
     maybe(
         http_archive,
         "bazelrio_com_ctre_phoenix6_tools_headers",
-        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/tools/24.0.0-beta-4/tools-24.0.0-beta-4-headers.zip",
-        sha256 = "bed99dd568082954ac692d30be851bc88430fef4e286ad27f2be1772a861ca24",
+        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/tools/24.0.0-beta-5/tools-24.0.0-beta-5-headers.zip",
+        sha256 = "c5a9da5b4e3d3d886971a88b97d2bcb8dc41ba61dd9a7af65ab80b8c3eb3c296",
         build_file_content = cc_library_headers,
     )
     maybe(
         http_archive,
         "bazelrio_com_ctre_phoenix6_tools_windowsx86-64",
-        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/tools/24.0.0-beta-4/tools-24.0.0-beta-4-windowsx86-64.zip",
-        sha256 = "eb01d13af0eb6e4050a9fc95800438e2d0a89772d979425947c31354fb8315fb",
+        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/tools/24.0.0-beta-5/tools-24.0.0-beta-5-windowsx86-64.zip",
+        sha256 = "163d2c69121bdb5e89965978e286067159a4e6eb92d3f5da50321a9d2be2b809",
         build_file_content = cc_library_shared,
     )
     maybe(
         http_archive,
         "bazelrio_com_ctre_phoenix6_tools_linuxx86-64",
-        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/tools/24.0.0-beta-4/tools-24.0.0-beta-4-linuxx86-64.zip",
-        sha256 = "e0866ae460fa398008a045a744e0a8464b244a46900f8d37101b5122a6d3c838",
+        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/tools/24.0.0-beta-5/tools-24.0.0-beta-5-linuxx86-64.zip",
+        sha256 = "6614ff8f46d4a8f6eae5ddd05cb382cec98626fa43bc9bd589e9d70ce34686f6",
         build_file_content = cc_library_shared,
     )
     maybe(
         http_archive,
         "bazelrio_com_ctre_phoenix6_tools_linuxathena",
-        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/tools/24.0.0-beta-4/tools-24.0.0-beta-4-linuxathena.zip",
-        sha256 = "4f9b387b69b6432044f12ef8da8baeffcd2c78b572307888eb2f7b4c42ca3a9f",
+        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/tools/24.0.0-beta-5/tools-24.0.0-beta-5-linuxathena.zip",
+        sha256 = "a119d3a1346e3427293237b9780f5063263e5b2803d682a919f6d37ae03837a1",
         build_file_content = cc_library_shared,
     )
     maybe(
         http_archive,
         "bazelrio_com_ctre_phoenix6_sim_tools-sim_headers",
-        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/tools-sim/24.0.0-beta-4/tools-sim-24.0.0-beta-4-headers.zip",
-        sha256 = "bed99dd568082954ac692d30be851bc88430fef4e286ad27f2be1772a861ca24",
+        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/tools-sim/24.0.0-beta-5/tools-sim-24.0.0-beta-5-headers.zip",
+        sha256 = "c5a9da5b4e3d3d886971a88b97d2bcb8dc41ba61dd9a7af65ab80b8c3eb3c296",
         build_file_content = cc_library_headers,
     )
     maybe(
         http_archive,
         "bazelrio_com_ctre_phoenix6_sim_tools-sim_windowsx86-64",
-        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/tools-sim/24.0.0-beta-4/tools-sim-24.0.0-beta-4-windowsx86-64.zip",
-        sha256 = "2968eb517da37663155cb011134b5007686b7f8334e1ef397a8b920d710dc824",
+        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/tools-sim/24.0.0-beta-5/tools-sim-24.0.0-beta-5-windowsx86-64.zip",
+        sha256 = "65044e8abb76ebba300cb6fc4a10f6ca1eea3778bbb724776d2d00e9243b76a2",
         build_file_content = cc_library_shared,
     )
     maybe(
         http_archive,
         "bazelrio_com_ctre_phoenix6_sim_tools-sim_linuxx86-64",
-        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/tools-sim/24.0.0-beta-4/tools-sim-24.0.0-beta-4-linuxx86-64.zip",
-        sha256 = "9cecba9885dd28dc6653d4887353cb4dc8c2e7cb3ad104e87a0904ac38919d66",
+        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/tools-sim/24.0.0-beta-5/tools-sim-24.0.0-beta-5-linuxx86-64.zip",
+        sha256 = "7f89b4033c3de4d708016185d201b6eae9990a06d3c8747adcde75bc79fef8c2",
         build_file_content = cc_library_shared,
     )
     maybe(
         http_archive,
         "bazelrio_com_ctre_phoenix6_sim_tools-sim_osxuniversal",
-        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/tools-sim/24.0.0-beta-4/tools-sim-24.0.0-beta-4-osxuniversal.zip",
-        sha256 = "67d868b0bf9e44b5d3926be83818c294d4ce24e6440dae677014682737e3bdbb",
+        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/tools-sim/24.0.0-beta-5/tools-sim-24.0.0-beta-5-osxuniversal.zip",
+        sha256 = "83d07cdf5ee9329c522449588fde0a27f29f1490accafefb1da3f14e39252af0",
         build_file_content = cc_library_shared,
         patch_cmds = [
             "install_name_tool -id @rpath/libCTRE_PhoenixTools_Sim.dylib osx/universal/shared/libCTRE_PhoenixTools_Sim.dylib",
@@ -395,57 +395,57 @@ def __setup_bzlmodrio_phoenix6_cpp_dependencies(mctx):
     maybe(
         http_archive,
         "bazelrio_com_ctre_phoenix6_wpiapi-cpp_headers",
-        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/wpiapi-cpp/24.0.0-beta-4/wpiapi-cpp-24.0.0-beta-4-headers.zip",
-        sha256 = "3cd3a901f2cbea5823995dcd9316fa0b134ecd72c29b9c11af76d48a041ab5e0",
+        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/wpiapi-cpp/24.0.0-beta-5/wpiapi-cpp-24.0.0-beta-5-headers.zip",
+        sha256 = "87cfc7d994a8c9ac64a7610e5774b1572f5a562d1af6ff6f91167f963d91a787",
         build_file_content = cc_library_headers,
     )
     maybe(
         http_archive,
         "bazelrio_com_ctre_phoenix6_wpiapi-cpp_windowsx86-64",
-        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/wpiapi-cpp/24.0.0-beta-4/wpiapi-cpp-24.0.0-beta-4-windowsx86-64.zip",
-        sha256 = "2fa0d778beec6dbedb6cfe2599fd03aaf30f24156556bda696ee75703a6587f9",
+        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/wpiapi-cpp/24.0.0-beta-5/wpiapi-cpp-24.0.0-beta-5-windowsx86-64.zip",
+        sha256 = "eb352433e97c46f657cd6847fc06aff00cdd2e9d2e57b502d4fd5ee72d38aba6",
         build_file_content = cc_library_shared,
     )
     maybe(
         http_archive,
         "bazelrio_com_ctre_phoenix6_wpiapi-cpp_linuxx86-64",
-        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/wpiapi-cpp/24.0.0-beta-4/wpiapi-cpp-24.0.0-beta-4-linuxx86-64.zip",
-        sha256 = "244918f49d6e66f63bc65973d0fa9ed9f8d61e21d3cd68d5c018dcea0b300d4b",
+        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/wpiapi-cpp/24.0.0-beta-5/wpiapi-cpp-24.0.0-beta-5-linuxx86-64.zip",
+        sha256 = "f1fe50808933a1479092222defba21368223f7bd0193a27df47e7b01ee7a1b1b",
         build_file_content = cc_library_shared,
     )
     maybe(
         http_archive,
         "bazelrio_com_ctre_phoenix6_wpiapi-cpp_linuxathena",
-        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/wpiapi-cpp/24.0.0-beta-4/wpiapi-cpp-24.0.0-beta-4-linuxathena.zip",
-        sha256 = "eca51860db621dba13441d63568c5de2d30ed9cf9281815de39b15aea164ba83",
+        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/wpiapi-cpp/24.0.0-beta-5/wpiapi-cpp-24.0.0-beta-5-linuxathena.zip",
+        sha256 = "e603693e017e384b22ad5f6b4a33f0633efe4670c5ce870ddfc948b37210a88a",
         build_file_content = cc_library_shared,
     )
     maybe(
         http_archive,
         "bazelrio_com_ctre_phoenix6_sim_wpiapi-cpp-sim_headers",
-        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/wpiapi-cpp-sim/24.0.0-beta-4/wpiapi-cpp-sim-24.0.0-beta-4-headers.zip",
-        sha256 = "3cd3a901f2cbea5823995dcd9316fa0b134ecd72c29b9c11af76d48a041ab5e0",
+        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/wpiapi-cpp-sim/24.0.0-beta-5/wpiapi-cpp-sim-24.0.0-beta-5-headers.zip",
+        sha256 = "87cfc7d994a8c9ac64a7610e5774b1572f5a562d1af6ff6f91167f963d91a787",
         build_file_content = cc_library_headers,
     )
     maybe(
         http_archive,
         "bazelrio_com_ctre_phoenix6_sim_wpiapi-cpp-sim_windowsx86-64",
-        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/wpiapi-cpp-sim/24.0.0-beta-4/wpiapi-cpp-sim-24.0.0-beta-4-windowsx86-64.zip",
-        sha256 = "c6021f34118cc4ccee9290753fa0e93aa8967c96db2df1692fe7a0ad406499ca",
+        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/wpiapi-cpp-sim/24.0.0-beta-5/wpiapi-cpp-sim-24.0.0-beta-5-windowsx86-64.zip",
+        sha256 = "8cd30a212b6ed9974d90d683f6a0344a76d4e5f3a1b5c542beef3c25a0cac6d5",
         build_file_content = cc_library_shared,
     )
     maybe(
         http_archive,
         "bazelrio_com_ctre_phoenix6_sim_wpiapi-cpp-sim_linuxx86-64",
-        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/wpiapi-cpp-sim/24.0.0-beta-4/wpiapi-cpp-sim-24.0.0-beta-4-linuxx86-64.zip",
-        sha256 = "c9674e864691fabd7cf39d7f03c5db17e2fb2f3ac4d8b18b5d53e49d96453313",
+        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/wpiapi-cpp-sim/24.0.0-beta-5/wpiapi-cpp-sim-24.0.0-beta-5-linuxx86-64.zip",
+        sha256 = "d320014f09fc40e85194968142583b20d27a60220ee0a4807bf9791297573a82",
         build_file_content = cc_library_shared,
     )
     maybe(
         http_archive,
         "bazelrio_com_ctre_phoenix6_sim_wpiapi-cpp-sim_osxuniversal",
-        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/wpiapi-cpp-sim/24.0.0-beta-4/wpiapi-cpp-sim-24.0.0-beta-4-osxuniversal.zip",
-        sha256 = "691982fa393fa358f2b826139621712f83072141f9896208e68c6a3eb6eb7104",
+        url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/wpiapi-cpp-sim/24.0.0-beta-5/wpiapi-cpp-sim-24.0.0-beta-5-osxuniversal.zip",
+        sha256 = "df2514e2fce92dee64cd9087be3fc8263d2016b90a4cd856e7cce2c24e729686",
         build_file_content = cc_library_shared,
         patch_cmds = [
             "install_name_tool -id @rpath/libCTRE_Phoenix6_WPISim.dylib osx/universal/shared/libCTRE_Phoenix6_WPISim.dylib",
