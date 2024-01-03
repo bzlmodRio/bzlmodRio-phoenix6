@@ -6,5 +6,6 @@ java_import(
     visibility = ["//visibility:public"],
     deps = [
         "@bzlmodrio-allwpilib//libraries/java/wpilibj",
+        "@bzlmodrio-phoenix6//libraries/cpp/phoenix6-hal:jni",
     ],
 )

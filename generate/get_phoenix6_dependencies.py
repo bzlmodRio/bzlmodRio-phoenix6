@@ -133,9 +133,7 @@ def get_phoenix6_dependencies(
     group.add_java_meta_dependency(
         "wpiapi-java",
         group_id=f"com.ctre.phoenix6",
-        deps=[
-            "wpilibj-java",
-        ],
+        deps=["wpilibj-java", "phoenix6-hal"],
     )
 
     return group
