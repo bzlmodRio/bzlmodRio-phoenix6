@@ -1,7 +1,7 @@
 module(
     name = "bzlmodrio-phoenix6",
     version = "24.0.0-beta-5",
-    compatibility_level = 2023,
+    compatibility_level = 2024,
 )
 
 bazel_dep(name = "platforms", version = "0.0.7")
