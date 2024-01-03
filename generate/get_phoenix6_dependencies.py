@@ -135,6 +135,7 @@ def get_phoenix6_dependencies(
         group_id=f"com.ctre.phoenix6",
         deps=[
             "wpilibj-java",
+            "phoenix6-hal"
         ],
     )
 
