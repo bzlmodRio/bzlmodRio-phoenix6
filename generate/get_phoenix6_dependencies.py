@@ -11,9 +11,9 @@ def get_phoenix6_dependencies(
     use_local_allwpilib=False,
     use_local_opencv=False,
     use_local_ni=True,
-    allwpilib_version_override="2024.1.1-beta-1",
+    allwpilib_version_override="2024.1.1-beta-4",
     opencv_version_override="2024.4.8.0-1",
-    ni_version_override="2024.1.1",
+    ni_version_override="2024.2.0",
 ):
     sim_install_name_classes = [
         "simCANCoder",
@@ -44,7 +44,6 @@ def get_phoenix6_dependencies(
     group = vendordep_dependency(
         "bzlmodrio-phoenix6",
         os.path.join(SCRIPT_DIR, f"vendor_dep.json"),
-        year=2023,
         fail_on_hash_miss=False,
         has_static_libraries=False,
         install_name_lookup={
