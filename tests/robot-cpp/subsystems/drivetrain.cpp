@@ -11,31 +11,31 @@
 #include "robot-cpp/subsystems/ports.hpp"
 
 namespace {
-  constexpr units::inch_t kWheelRadiusInches = 3_in;
-  constexpr auto kWheelCircumference = kWheelRadiusInches * 2 * 3.14159 / 1_tr;
+constexpr units::inch_t kWheelRadiusInches = 3_in;
+constexpr auto kWheelCircumference = kWheelRadiusInches * 2 * 3.14159 / 1_tr;
 
-  units::meter_t TurnsToMeters(units::turn_t rotations) {
-    return rotations * kWheelCircumference;
-  }
-  units::meters_per_second_t TPSToMPS(units::turns_per_second_t rotations) {
-    return rotations * kWheelCircumference;
-  }
-  units::turn_t MetersToTurns(units::meter_t meters) {
-    return meters / kWheelCircumference;
-  }
-  units::turns_per_second_t MPSToTPS(units::meters_per_second_t meters) {
-    return  meters / kWheelCircumference;
-  }
+units::meter_t TurnsToMeters(units::turn_t rotations) {
+  return rotations * kWheelCircumference;
 }
+units::meters_per_second_t TPSToMPS(units::turns_per_second_t rotations) {
+  return rotations * kWheelCircumference;
+}
+units::turn_t MetersToTurns(units::meter_t meters) {
+  return meters / kWheelCircumference;
+}
+units::turns_per_second_t MPSToTPS(units::meters_per_second_t meters) {
+  return meters / kWheelCircumference;
+}
+} // namespace
 
 DriveTrain::DriveTrain()
     : m_leftMotorA{kDrivetrainMotorLeftAPort},
       m_leftMotorB{kDrivetrainMotorLeftBPort},
       m_rightMotorA{kDrivetrainMotorRightAPort},
       m_rightMotorB{kDrivetrainMotorRightBPort}, m_gyro{kPigeonPort},
-      m_robotDrive{m_leftMotorA, m_rightMotorA}, m_odometry{frc::Rotation2d(),
-                                                            0_m, 0_m},
-                                                            
+      m_robotDrive{m_leftMotorA, m_rightMotorA},
+      m_odometry{frc::Rotation2d(), 0_m, 0_m},
+
       m_leftPosition(m_leftMotorA.GetPosition()),
       m_leftVelocity(m_leftMotorA.GetVelocity()),
       m_rightPosition(m_rightMotorA.GetPosition()),
@@ -49,8 +49,10 @@ DriveTrain::DriveTrain()
               12.0, 6_in)) {
   frc::SmartDashboard::PutData("Field", &m_field);
 
-  m_leftMotorB.SetControl(ctre::phoenix6::controls::Follower{m_leftMotorA.GetDeviceID(), false});
-  m_rightMotorB.SetControl(ctre::phoenix6::controls::Follower{m_rightMotorA.GetDeviceID(), false});
+  m_leftMotorB.SetControl(
+      ctre::phoenix6::controls::Follower{m_leftMotorA.GetDeviceID(), false});
+  m_rightMotorB.SetControl(
+      ctre::phoenix6::controls::Follower{m_rightMotorA.GetDeviceID(), false});
 
   SetName("DriveTrain");
 }
@@ -77,9 +79,7 @@ double DriveTrain::GetHeadingDegrees() {
 
 frc::Rotation2d DriveTrain::GetRotation() { return m_gyro.GetRotation2d(); }
 
-void DriveTrain::Reset() {
-  m_gyro.Reset();
-}
+void DriveTrain::Reset() { m_gyro.Reset(); }
 
 double DriveTrain::GetAverageDistance() {
   return (GetLeftEncoderDistance() + GetRightEncoderDistance()).to<double>() /
@@ -107,11 +107,15 @@ void DriveTrain::SimulationPeriodic() {
                                   units::volt_t{-m_rightMotorA.Get()} *
                                       frc::RobotController::GetInputVoltage());
   m_drivetrainSimulator.Update(20_ms);
-  
-  m_leftMotorSim.SetRawRotorPosition(MetersToTurns(m_drivetrainSimulator.GetLeftPosition()));
-  m_leftMotorSim.SetRotorVelocity(MPSToTPS(m_drivetrainSimulator.GetLeftVelocity()));
-  m_rightMotorSim.SetRawRotorPosition(MetersToTurns(m_drivetrainSimulator.GetRightPosition()));
-  m_rightMotorSim.SetRotorVelocity(MPSToTPS(m_drivetrainSimulator.GetRightVelocity()));
+
+  m_leftMotorSim.SetRawRotorPosition(
+      MetersToTurns(m_drivetrainSimulator.GetLeftPosition()));
+  m_leftMotorSim.SetRotorVelocity(
+      MPSToTPS(m_drivetrainSimulator.GetLeftVelocity()));
+  m_rightMotorSim.SetRawRotorPosition(
+      MetersToTurns(m_drivetrainSimulator.GetRightPosition()));
+  m_rightMotorSim.SetRotorVelocity(
+      MPSToTPS(m_drivetrainSimulator.GetRightVelocity()));
   m_imuSim.SetRawYaw(m_drivetrainSimulator.GetHeading().Degrees());
 }
 

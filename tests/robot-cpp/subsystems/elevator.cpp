@@ -22,19 +22,17 @@ constexpr units::meter_t kMaxElevatorHeight = 50_in;
 
 frc::DCMotor kElevatorGearbox = frc::DCMotor::Vex775Pro(4);
 
-
-  units::meter_t TurnsToMeters(units::turn_t rotations) {
-    return rotations * kElevatorDrumRadius / 1_tr;
-  }
-  units::turn_t MetersToTurns(units::meter_t meters) {
-    return meters / (kElevatorDrumRadius / 1_tr);
-  }
+units::meter_t TurnsToMeters(units::turn_t rotations) {
+  return rotations * kElevatorDrumRadius / 1_tr;
+}
+units::turn_t MetersToTurns(units::meter_t meters) {
+  return meters / (kElevatorDrumRadius / 1_tr);
+}
 } // namespace
 
 Elevator::Elevator()
     : frc2::PIDSubsystem(frc::PIDController{kP, kI, kD}),
-      m_motor{kElevatorMotorPort},
-      m_position(m_motor.GetPosition()),
+      m_motor{kElevatorMotorPort}, m_position(m_motor.GetPosition()),
       m_motorSim(m_motor.GetSimState()),
       m_elevatorSim(kElevatorGearbox, kElevatorGearing, kCarriageMass,
                     kElevatorDrumRadius, kMinElevatorHeight, kMaxElevatorHeight,
@@ -65,8 +63,7 @@ void Elevator::SimulationPeriodic() {
   m_elevatorSim.SetInput(Eigen::Vector<double, 1>(
       m_motor.Get() * frc::RobotController::GetInputVoltage()));
   m_elevatorSim.Update(20_ms);
-  m_motorSim.SetRawRotorPosition(
-      MetersToTurns(m_elevatorSim.GetPosition()));
+  m_motorSim.SetRawRotorPosition(MetersToTurns(m_elevatorSim.GetPosition()));
 }
 
 void Elevator::Stop() { m_motor.Set(0); }
