@@ -1,6 +1,6 @@
 {
   "lockFileVersion": 3,
-  "moduleFileHash": "fd53b3ed652c618aa6b53c14f7c8d7db9aed68e840e172d822d4f1d322eb4438",
+  "moduleFileHash": "6cbda6bcb30da57f71efbf82c5392e702a94c436a6816132ab4f0a83d8962100",
   "flags": {
     "cmdRegistries": [
       "https://raw.githubusercontent.com/pjreiniger/bazel-central-registry/bzlmodrio/"
@@ -13,7 +13,7 @@
     "compatibilityMode": "ERROR"
   },
   "localOverrideHashes": {
-    "bzlmodrio-phoenix6": "311c2ef2e503ec07a02cdd3591c0ce75640c5c73abca468b62f839728c339eb6",
+    "bzlmodrio-phoenix6": "05848cf3e338a418948f7d702b418b9463dcda7740f2635219a220656bfe5dc4",
     "bazel_tools": "0cc38516259ab87144b82461dd874e139f093d8e356667c3a3c5a52441ac448f"
   },
   "moduleDepGraph": {
@@ -81,7 +81,7 @@
         "bzlmodrio-ni": "bzlmodrio-ni@2024.2.1",
         "rules_pmd": "rules_pmd@6.43.0",
         "rules_checkstyle": "rules_checkstyle@10.1",
-        "rules_wpiformat": "rules_wpiformat@2022.30",
+        "rules_wpiformat": "rules_wpiformat@2024.34",
         "rules_wpi_styleguide": "rules_wpi_styleguide@1.0.0",
         "rules_spotless": "rules_spotless@2.34.0",
         "bazel_tools": "bazel_tools@_",
@@ -90,7 +90,7 @@
     },
     "bzlmodrio-phoenix6@_": {
       "name": "bzlmodrio-phoenix6",
-      "version": "24.2.0",
+      "version": "24.3.0",
       "key": "bzlmodrio-phoenix6@_",
       "repoName": "bzlmodrio-phoenix6",
       "executionPlatformsToRegister": [],
@@ -1503,39 +1503,38 @@
         }
       }
     },
-    "rules_wpiformat@2022.30": {
+    "rules_wpiformat@2024.34": {
       "name": "rules_wpiformat",
-      "version": "2022.30",
-      "key": "rules_wpiformat@2022.30",
+      "version": "2024.34",
+      "key": "rules_wpiformat@2024.34",
       "repoName": "rules_wpiformat",
       "executionPlatformsToRegister": [],
       "toolchainsToRegister": [
-        "@python3_10_toolchains//:all"
+        "@python_versions//:all"
       ],
       "extensionUsages": [
         {
-          "extensionBzlFile": "@rules_python//python:extensions.bzl",
+          "extensionBzlFile": "@rules_python//python/extensions:python.bzl",
           "extensionName": "python",
-          "usingModule": "rules_wpiformat@2022.30",
+          "usingModule": "rules_wpiformat@2024.34",
           "location": {
-            "file": "https://raw.githubusercontent.com/pjreiniger/bazel-central-registry/bzlmodrio/modules/rules_wpiformat/2022.30/MODULE.bazel",
+            "file": "https://raw.githubusercontent.com/pjreiniger/bazel-central-registry/bzlmodrio/modules/rules_wpiformat/2024.34/MODULE.bazel",
             "line": 9,
             "column": 23
           },
           "imports": {
-            "python3_10_toolchains": "python3_10_toolchains"
+            "python_versions": "python_versions"
           },
           "devImports": [],
           "tags": [
             {
               "tagName": "toolchain",
               "attributeValues": {
-                "name": "python3_10",
                 "python_version": "3.10"
               },
               "devDependency": false,
               "location": {
-                "file": "https://raw.githubusercontent.com/pjreiniger/bazel-central-registry/bzlmodrio/modules/rules_wpiformat/2022.30/MODULE.bazel",
+                "file": "https://raw.githubusercontent.com/pjreiniger/bazel-central-registry/bzlmodrio/modules/rules_wpiformat/2024.34/MODULE.bazel",
                 "line": 10,
                 "column": 17
               }
@@ -1545,30 +1544,51 @@
           "hasNonDevUseExtension": true
         },
         {
-          "extensionBzlFile": "@rules_python//python:extensions.bzl",
+          "extensionBzlFile": "@rules_python//python/extensions:pip.bzl",
           "extensionName": "pip",
-          "usingModule": "rules_wpiformat@2022.30",
+          "usingModule": "rules_wpiformat@2024.34",
           "location": {
-            "file": "https://raw.githubusercontent.com/pjreiniger/bazel-central-registry/bzlmodrio/modules/rules_wpiformat/2022.30/MODULE.bazel",
-            "line": 20,
+            "file": "https://raw.githubusercontent.com/pjreiniger/bazel-central-registry/bzlmodrio/modules/rules_wpiformat/2024.34/MODULE.bazel",
+            "line": 19,
             "column": 20
           },
           "imports": {
+            "whl_mods_hub": "whl_mods_hub",
             "rules_wpiformat_pip": "rules_wpiformat_pip"
           },
           "devImports": [],
           "tags": [
             {
-              "tagName": "parse",
+              "tagName": "whl_mods",
               "attributeValues": {
-                "name": "rules_wpiformat_pip",
-                "requirements_lock": "//:requirements_lock.txt",
-                "requirements_windows": "//:requirements_windows.txt"
+                "hub_name": "whl_mods_hub",
+                "srcs_exclude_glob": [
+                  "site-packages/dataclasses.py"
+                ],
+                "whl_name": "dataclasses"
               },
               "devDependency": false,
               "location": {
-                "file": "https://raw.githubusercontent.com/pjreiniger/bazel-central-registry/bzlmodrio/modules/rules_wpiformat/2022.30/MODULE.bazel",
-                "line": 21,
+                "file": "https://raw.githubusercontent.com/pjreiniger/bazel-central-registry/bzlmodrio/modules/rules_wpiformat/2024.34/MODULE.bazel",
+                "line": 20,
+                "column": 13
+              }
+            },
+            {
+              "tagName": "parse",
+              "attributeValues": {
+                "hub_name": "rules_wpiformat_pip",
+                "python_version": "3.10",
+                "requirements_lock": "//:requirements_lock.txt",
+                "requirements_windows": "//:requirements_windows.txt",
+                "whl_modifications": {
+                  "@whl_mods_hub//:dataclasses.json": "dataclasses"
+                }
+              },
+              "devDependency": false,
+              "location": {
+                "file": "https://raw.githubusercontent.com/pjreiniger/bazel-central-registry/bzlmodrio/modules/rules_wpiformat/2024.34/MODULE.bazel",
+                "line": 28,
                 "column": 10
               }
             }
@@ -1578,7 +1598,7 @@
         }
       ],
       "deps": {
-        "rules_python": "rules_python@0.21.0",
+        "rules_python": "rules_python@0.30.0",
         "bazel_tools": "bazel_tools@_",
         "local_config_platform": "local_config_platform@_"
       },
@@ -1586,11 +1606,11 @@
         "bzlFile": "@bazel_tools//tools/build_defs/repo:http.bzl",
         "ruleClassName": "http_archive",
         "attributes": {
-          "name": "rules_wpiformat~2022.30",
+          "name": "rules_wpiformat~2024.34",
           "urls": [
-            "https://github.com/bzlmodRio/rules_wpiformat/releases/download/2022.30/rules_wpiformat-2022.30.tar.gz"
+            "https://github.com/bzlmodRio/rules_wpiformat/releases/download/2024.34/rules_wpiformat-2024.34.tar.gz"
           ],
-          "integrity": "sha256-Pl7cFRao4u2wyJ1+nluQ9m5/tuwdzNjJuywSWJp0YXY=",
+          "integrity": "sha256-rxZ8Fc/DQwkBsNahntlJswaIexsHnquyR4mlTYI3GmI=",
           "strip_prefix": "",
           "remote_patches": {},
           "remote_patch_strip": 0
@@ -1608,7 +1628,7 @@
       "deps": {
         "rules_pmd": "rules_pmd@6.43.0",
         "rules_checkstyle": "rules_checkstyle@10.1",
-        "rules_wpiformat": "rules_wpiformat@2022.30",
+        "rules_wpiformat": "rules_wpiformat@2024.34",
         "rules_spotless": "rules_spotless@2.34.0",
         "bazel_tools": "bazel_tools@_",
         "local_config_platform": "local_config_platform@_"
@@ -1829,7 +1849,7 @@
         "rules_java": "rules_java@6.4.0",
         "rules_license": "rules_license@0.0.7",
         "rules_proto": "rules_proto@5.3.0-21.7",
-        "rules_python": "rules_python@0.21.0",
+        "rules_python": "rules_python@0.30.0",
         "platforms": "platforms@0.0.7",
         "com_google_protobuf": "protobuf@21.7",
         "zlib": "zlib@1.2.13",
@@ -2028,24 +2048,27 @@
         }
       }
     },
-    "rules_python@0.21.0": {
+    "rules_python@0.30.0": {
       "name": "rules_python",
-      "version": "0.21.0",
-      "key": "rules_python@0.21.0",
+      "version": "0.30.0",
+      "key": "rules_python@0.30.0",
       "repoName": "rules_python",
       "executionPlatformsToRegister": [],
-      "toolchainsToRegister": [],
+      "toolchainsToRegister": [
+        "@pythons_hub//:all"
+      ],
       "extensionUsages": [
         {
-          "extensionBzlFile": "@rules_python//python:extensions.bzl",
+          "extensionBzlFile": "@rules_python//python/private/bzlmod:internal_deps.bzl",
           "extensionName": "internal_deps",
-          "usingModule": "rules_python@0.21.0",
+          "usingModule": "rules_python@0.30.0",
           "location": {
-            "file": "https://raw.githubusercontent.com/pjreiniger/bazel-central-registry/bzlmodrio/modules/rules_python/0.21.0/MODULE.bazel",
-            "line": 14,
+            "file": "https://raw.githubusercontent.com/pjreiniger/bazel-central-registry/bzlmodrio/modules/rules_python/0.30.0/MODULE.bazel",
+            "line": 15,
             "column": 30
           },
           "imports": {
+            "rules_python_internal": "rules_python_internal",
             "pypi__build": "pypi__build",
             "pypi__click": "pypi__click",
             "pypi__colorama": "pypi__colorama",
@@ -2056,25 +2079,11 @@
             "pypi__pep517": "pypi__pep517",
             "pypi__pip": "pypi__pip",
             "pypi__pip_tools": "pypi__pip_tools",
+            "pypi__pyproject_hooks": "pypi__pyproject_hooks",
             "pypi__setuptools": "pypi__setuptools",
             "pypi__tomli": "pypi__tomli",
             "pypi__wheel": "pypi__wheel",
-            "pypi__zipp": "pypi__zipp",
-            "pypi__coverage_cp310_aarch64-apple-darwin": "pypi__coverage_cp310_aarch64-apple-darwin",
-            "pypi__coverage_cp310_aarch64-unknown-linux-gnu": "pypi__coverage_cp310_aarch64-unknown-linux-gnu",
-            "pypi__coverage_cp310_x86_64-apple-darwin": "pypi__coverage_cp310_x86_64-apple-darwin",
-            "pypi__coverage_cp310_x86_64-unknown-linux-gnu": "pypi__coverage_cp310_x86_64-unknown-linux-gnu",
-            "pypi__coverage_cp311_aarch64-unknown-linux-gnu": "pypi__coverage_cp311_aarch64-unknown-linux-gnu",
-            "pypi__coverage_cp311_x86_64-apple-darwin": "pypi__coverage_cp311_x86_64-apple-darwin",
-            "pypi__coverage_cp311_x86_64-unknown-linux-gnu": "pypi__coverage_cp311_x86_64-unknown-linux-gnu",
-            "pypi__coverage_cp38_aarch64-apple-darwin": "pypi__coverage_cp38_aarch64-apple-darwin",
-            "pypi__coverage_cp38_aarch64-unknown-linux-gnu": "pypi__coverage_cp38_aarch64-unknown-linux-gnu",
-            "pypi__coverage_cp38_x86_64-apple-darwin": "pypi__coverage_cp38_x86_64-apple-darwin",
-            "pypi__coverage_cp38_x86_64-unknown-linux-gnu": "pypi__coverage_cp38_x86_64-unknown-linux-gnu",
-            "pypi__coverage_cp39_aarch64-apple-darwin": "pypi__coverage_cp39_aarch64-apple-darwin",
-            "pypi__coverage_cp39_aarch64-unknown-linux-gnu": "pypi__coverage_cp39_aarch64-unknown-linux-gnu",
-            "pypi__coverage_cp39_x86_64-apple-darwin": "pypi__coverage_cp39_x86_64-apple-darwin",
-            "pypi__coverage_cp39_x86_64-unknown-linux-gnu": "pypi__coverage_cp39_x86_64-unknown-linux-gnu"
+            "pypi__zipp": "pypi__zipp"
           },
           "devImports": [],
           "tags": [
@@ -2083,9 +2092,40 @@
               "attributeValues": {},
               "devDependency": false,
               "location": {
-                "file": "https://raw.githubusercontent.com/pjreiniger/bazel-central-registry/bzlmodrio/modules/rules_python/0.21.0/MODULE.bazel",
-                "line": 15,
+                "file": "https://raw.githubusercontent.com/pjreiniger/bazel-central-registry/bzlmodrio/modules/rules_python/0.30.0/MODULE.bazel",
+                "line": 16,
                 "column": 22
+              }
+            }
+          ],
+          "hasDevUseExtension": false,
+          "hasNonDevUseExtension": true
+        },
+        {
+          "extensionBzlFile": "@rules_python//python/extensions:python.bzl",
+          "extensionName": "python",
+          "usingModule": "rules_python@0.30.0",
+          "location": {
+            "file": "https://raw.githubusercontent.com/pjreiniger/bazel-central-registry/bzlmodrio/modules/rules_python/0.30.0/MODULE.bazel",
+            "line": 41,
+            "column": 23
+          },
+          "imports": {
+            "pythons_hub": "pythons_hub"
+          },
+          "devImports": [],
+          "tags": [
+            {
+              "tagName": "toolchain",
+              "attributeValues": {
+                "is_default": true,
+                "python_version": "3.11"
+              },
+              "devDependency": false,
+              "location": {
+                "file": "https://raw.githubusercontent.com/pjreiniger/bazel-central-registry/bzlmodrio/modules/rules_python/0.30.0/MODULE.bazel",
+                "line": 47,
+                "column": 17
               }
             }
           ],
@@ -2094,8 +2134,9 @@
         }
       ],
       "deps": {
-        "platforms": "platforms@0.0.7",
+        "bazel_features": "bazel_features@1.1.1",
         "bazel_skylib": "bazel_skylib@1.4.2",
+        "platforms": "platforms@0.0.7",
         "rules_proto": "rules_proto@5.3.0-21.7",
         "com_google_protobuf": "protobuf@21.7",
         "bazel_tools": "bazel_tools@_",
@@ -2105,16 +2146,16 @@
         "bzlFile": "@bazel_tools//tools/build_defs/repo:http.bzl",
         "ruleClassName": "http_archive",
         "attributes": {
-          "name": "rules_python~0.21.0",
+          "name": "rules_python~0.30.0",
           "urls": [
-            "https://github.com/bazelbuild/rules_python/releases/download/0.21.0/rules_python-0.21.0.tar.gz"
+            "https://github.com/bazelbuild/rules_python/releases/download/0.30.0/rules_python-0.30.0.tar.gz"
           ],
-          "integrity": "sha256-lHUIKLGARFM+mKEpADtqaAASBAONxHSfQLGVskw49J8=",
-          "strip_prefix": "rules_python-0.21.0",
+          "integrity": "sha256-O4tM3Jkbyd74gz0RjkyFDxt0mLPWXVaY7qksNSi4zyw=",
+          "strip_prefix": "rules_python-0.30.0",
           "remote_patches": {
-            "https://raw.githubusercontent.com/pjreiniger/bazel-central-registry/bzlmodrio/modules/rules_python/0.21.0/patches/module_dot_bazel_version.patch": "sha256-U/qMVqTtr7u1EEcnrjzYng2Qk4xlqLvxITkBsUjjmGE="
+            "https://raw.githubusercontent.com/pjreiniger/bazel-central-registry/bzlmodrio/modules/rules_python/0.30.0/patches/module_dot_bazel_version.patch": "sha256-HnzUdGZAFh2S4etjSDB/yVL4sacu/QSSuYTKkN0Ja3k="
           },
-          "remote_patch_strip": 0
+          "remote_patch_strip": 1
         }
       }
     },
@@ -2170,7 +2211,7 @@
       ],
       "deps": {
         "bazel_skylib": "bazel_skylib@1.4.2",
-        "rules_python": "rules_python@0.21.0",
+        "rules_python": "rules_python@0.30.0",
         "rules_cc": "rules_cc@0.0.9",
         "rules_proto": "rules_proto@5.3.0-21.7",
         "rules_java": "rules_java@6.4.0",
@@ -2233,6 +2274,54 @@
         }
       }
     },
+    "bazel_features@1.1.1": {
+      "name": "bazel_features",
+      "version": "1.1.1",
+      "key": "bazel_features@1.1.1",
+      "repoName": "bazel_features",
+      "executionPlatformsToRegister": [],
+      "toolchainsToRegister": [],
+      "extensionUsages": [
+        {
+          "extensionBzlFile": "@bazel_features//private:extensions.bzl",
+          "extensionName": "version_extension",
+          "usingModule": "bazel_features@1.1.1",
+          "location": {
+            "file": "https://raw.githubusercontent.com/pjreiniger/bazel-central-registry/bzlmodrio/modules/bazel_features/1.1.1/MODULE.bazel",
+            "line": 6,
+            "column": 24
+          },
+          "imports": {
+            "bazel_features_globals": "bazel_features_globals",
+            "bazel_features_version": "bazel_features_version"
+          },
+          "devImports": [],
+          "tags": [],
+          "hasDevUseExtension": false,
+          "hasNonDevUseExtension": true
+        }
+      ],
+      "deps": {
+        "bazel_tools": "bazel_tools@_",
+        "local_config_platform": "local_config_platform@_"
+      },
+      "repoSpec": {
+        "bzlFile": "@bazel_tools//tools/build_defs/repo:http.bzl",
+        "ruleClassName": "http_archive",
+        "attributes": {
+          "name": "bazel_features~1.1.1",
+          "urls": [
+            "https://github.com/bazel-contrib/bazel_features/releases/download/v1.1.1/bazel_features-v1.1.1.tar.gz"
+          ],
+          "integrity": "sha256-YsJuQn5cvHUQJERpJ2IuOYqdzfMsZDJSOIFXCdEcEag=",
+          "strip_prefix": "bazel_features-1.1.1",
+          "remote_patches": {
+            "https://raw.githubusercontent.com/pjreiniger/bazel-central-registry/bzlmodrio/modules/bazel_features/1.1.1/patches/module_dot_bazel_version.patch": "sha256-+56MAEsc7bYN/Pzhn252ZQUxiRzZg9bynXj1qpsmCYs="
+          },
+          "remote_patch_strip": 1
+        }
+      }
+    },
     "rules_pkg@0.7.0": {
       "name": "rules_pkg",
       "version": "0.7.0",
@@ -2242,7 +2331,7 @@
       "toolchainsToRegister": [],
       "extensionUsages": [],
       "deps": {
-        "rules_python": "rules_python@0.21.0",
+        "rules_python": "rules_python@0.30.0",
         "bazel_skylib": "bazel_skylib@1.4.2",
         "rules_license": "rules_license@0.0.7",
         "bazel_tools": "bazel_tools@_",
@@ -7591,7 +7680,7 @@
     },
     "@bzlmodrio-phoenix6~override//:maven_cpp_deps.bzl%setup_bzlmodrio_phoenix6_cpp_dependencies": {
       "general": {
-        "bzlTransitiveDigest": "rNFsacPEurjTnFAGtcW4IBvswWSs3PCRUdehCnMki80=",
+        "bzlTransitiveDigest": "NG6fD4odpZbiPQCAp9QwAHhFI2JEoWFx/V1/aDrrx1E=",
         "accumulatedFileDigests": {},
         "envVariables": {},
         "generatedRepoSpecs": {
@@ -7600,9 +7689,9 @@
             "ruleClassName": "http_archive",
             "attributes": {
               "name": "bzlmodrio-phoenix6~override~setup_bzlmodrio_phoenix6_cpp_dependencies~bazelrio_com_ctre_phoenix6_sim_simpigeonimu_linuxx86-64",
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simPigeonIMU/24.2.0/simPigeonIMU-24.2.0-linuxx86-64.zip",
-              "sha256": "9702d338a8a121bfef998e90b7e5d5e380e2778c563fb8a7ad8ec87a703c8ac1",
-              "build_file_content": "\nJNI_PATTERN=[\n    \"**/*jni.dll\",\n    \"**/*jni.so*\",\n    \"**/*jni.dylib\",\n    \"**/*_java*.dll\",\n    \"**/lib*_java*.dylib\",\n    \"**/lib*_java*.so\",\n]\n\nstatic_srcs = glob([\n        \"**/*.lib\",\n        \"**/*.a\"\n    ],\n    exclude=[\"**/*jni.lib\"]\n)\nshared_srcs = glob([\n        \"**/*.dll\",\n        \"**/*.so*\",\n        \"**/*.dylib\",\n    ],\n    exclude=JNI_PATTERN + [\"**/*.so.debug\"]\n)\nshared_jni_srcs = glob(JNI_PATTERN, exclude=[\"**/*.so.debug\"])\n\nfilegroup(\n    name = \"static_libs\",\n    srcs = static_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_libs\",\n    srcs = shared_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_jni_libs\",\n    srcs = shared_jni_srcs,\n    visibility = [\"//visibility:public\"],\n)\n"
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simPigeonIMU/24.3.0/simPigeonIMU-24.3.0-linuxx86-64.zip",
+              "sha256": "041cf92d9bc3feb3b4c751a4e49a96fa45406d8a776572fdc4b2508737f2632e",
+              "build_file": "@@bzlmodrio-phoenix6~override//private/cpp/simPigeonIMU:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_tools-sim_headers": {
@@ -7610,8 +7699,8 @@
             "ruleClassName": "http_archive",
             "attributes": {
               "name": "bzlmodrio-phoenix6~override~setup_bzlmodrio_phoenix6_cpp_dependencies~bazelrio_com_ctre_phoenix6_sim_tools-sim_headers",
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/tools-sim/24.2.0/tools-sim-24.2.0-headers.zip",
-              "sha256": "35fa9f35d01a3cfbe0be385ff3d6cda2c5e9e0329ae7fa656d251e96f31a483f",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/tools-sim/24.3.0/tools-sim-24.3.0-headers.zip",
+              "sha256": "d71c46404e14bc9c26f60582e11b425cc29032cfd5979ed30ff7cb51f1b42964",
               "build_file_content": "cc_library(\n    name = \"headers\",\n    hdrs = glob([\"**\"]),\n    includes = [\".\"],\n    visibility = [\"//visibility:public\"],\n)\n"
             }
           },
@@ -7620,9 +7709,9 @@
             "ruleClassName": "http_archive",
             "attributes": {
               "name": "bzlmodrio-phoenix6~override~setup_bzlmodrio_phoenix6_cpp_dependencies~bazelrio_com_ctre_phoenix6_sim_simpropigeon2_windowsx86-64",
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProPigeon2/24.2.0/simProPigeon2-24.2.0-windowsx86-64.zip",
-              "sha256": "206a458d1be5091d68ae69c75abd1cb114c822931d0fc95885045fa50f3083ce",
-              "build_file_content": "\nJNI_PATTERN=[\n    \"**/*jni.dll\",\n    \"**/*jni.so*\",\n    \"**/*jni.dylib\",\n    \"**/*_java*.dll\",\n    \"**/lib*_java*.dylib\",\n    \"**/lib*_java*.so\",\n]\n\nstatic_srcs = glob([\n        \"**/*.lib\",\n        \"**/*.a\"\n    ],\n    exclude=[\"**/*jni.lib\"]\n)\nshared_srcs = glob([\n        \"**/*.dll\",\n        \"**/*.so*\",\n        \"**/*.dylib\",\n    ],\n    exclude=JNI_PATTERN + [\"**/*.so.debug\"]\n)\nshared_jni_srcs = glob(JNI_PATTERN, exclude=[\"**/*.so.debug\"])\n\nfilegroup(\n    name = \"static_libs\",\n    srcs = static_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_libs\",\n    srcs = shared_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_jni_libs\",\n    srcs = shared_jni_srcs,\n    visibility = [\"//visibility:public\"],\n)\n"
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProPigeon2/24.3.0/simProPigeon2-24.3.0-windowsx86-64.zip",
+              "sha256": "17a906ff2738af98b8dd59bbd92442e4fb6d367b40a07015fbdd70c1ab40e63b",
+              "build_file": "@@bzlmodrio-phoenix6~override//private/cpp/simProPigeon2:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_simvictorspx_linuxx86-64": {
@@ -7630,9 +7719,9 @@
             "ruleClassName": "http_archive",
             "attributes": {
               "name": "bzlmodrio-phoenix6~override~setup_bzlmodrio_phoenix6_cpp_dependencies~bazelrio_com_ctre_phoenix6_sim_simvictorspx_linuxx86-64",
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simVictorSPX/24.2.0/simVictorSPX-24.2.0-linuxx86-64.zip",
-              "sha256": "8e97a9b6232c964714a1862b102bc9a960fcf6a6dd7e699d75b74e4874ae4a2c",
-              "build_file_content": "\nJNI_PATTERN=[\n    \"**/*jni.dll\",\n    \"**/*jni.so*\",\n    \"**/*jni.dylib\",\n    \"**/*_java*.dll\",\n    \"**/lib*_java*.dylib\",\n    \"**/lib*_java*.so\",\n]\n\nstatic_srcs = glob([\n        \"**/*.lib\",\n        \"**/*.a\"\n    ],\n    exclude=[\"**/*jni.lib\"]\n)\nshared_srcs = glob([\n        \"**/*.dll\",\n        \"**/*.so*\",\n        \"**/*.dylib\",\n    ],\n    exclude=JNI_PATTERN + [\"**/*.so.debug\"]\n)\nshared_jni_srcs = glob(JNI_PATTERN, exclude=[\"**/*.so.debug\"])\n\nfilegroup(\n    name = \"static_libs\",\n    srcs = static_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_libs\",\n    srcs = shared_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_jni_libs\",\n    srcs = shared_jni_srcs,\n    visibility = [\"//visibility:public\"],\n)\n"
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simVictorSPX/24.3.0/simVictorSPX-24.3.0-linuxx86-64.zip",
+              "sha256": "29de07614078bd400c76d56ae0cfc8c1b08c597b9704d74edc59f72a071f0b2c",
+              "build_file": "@@bzlmodrio-phoenix6~override//private/cpp/simVictorSPX:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_simpropigeon2_headers": {
@@ -7640,8 +7729,8 @@
             "ruleClassName": "http_archive",
             "attributes": {
               "name": "bzlmodrio-phoenix6~override~setup_bzlmodrio_phoenix6_cpp_dependencies~bazelrio_com_ctre_phoenix6_sim_simpropigeon2_headers",
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProPigeon2/24.2.0/simProPigeon2-24.2.0-headers.zip",
-              "sha256": "8a86914a05ef8e28bb313223d5b86b0a7d1a93e145d8b7a798db698fca7d6d0c",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProPigeon2/24.3.0/simProPigeon2-24.3.0-headers.zip",
+              "sha256": "25f0e0ea7db7cc195f201410b9eefdbce2f773fb95e486bf150c4521fae1d13c",
               "build_file_content": "cc_library(\n    name = \"headers\",\n    hdrs = glob([\"**\"]),\n    includes = [\".\"],\n    visibility = [\"//visibility:public\"],\n)\n"
             }
           },
@@ -7650,8 +7739,8 @@
             "ruleClassName": "http_archive",
             "attributes": {
               "name": "bzlmodrio-phoenix6~override~setup_bzlmodrio_phoenix6_cpp_dependencies~bazelrio_com_ctre_phoenix6_sim_simtalonfx_headers",
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simTalonFX/24.2.0/simTalonFX-24.2.0-headers.zip",
-              "sha256": "8a86914a05ef8e28bb313223d5b86b0a7d1a93e145d8b7a798db698fca7d6d0c",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simTalonFX/24.3.0/simTalonFX-24.3.0-headers.zip",
+              "sha256": "25f0e0ea7db7cc195f201410b9eefdbce2f773fb95e486bf150c4521fae1d13c",
               "build_file_content": "cc_library(\n    name = \"headers\",\n    hdrs = glob([\"**\"]),\n    includes = [\".\"],\n    visibility = [\"//visibility:public\"],\n)\n"
             }
           },
@@ -7660,9 +7749,9 @@
             "ruleClassName": "http_archive",
             "attributes": {
               "name": "bzlmodrio-phoenix6~override~setup_bzlmodrio_phoenix6_cpp_dependencies~bazelrio_com_ctre_phoenix6_sim_simpropigeon2_linuxx86-64",
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProPigeon2/24.2.0/simProPigeon2-24.2.0-linuxx86-64.zip",
-              "sha256": "18028920a3bfbca44e221329a319346c7cf70feb6a256aafd723e055b6e6e5c3",
-              "build_file_content": "\nJNI_PATTERN=[\n    \"**/*jni.dll\",\n    \"**/*jni.so*\",\n    \"**/*jni.dylib\",\n    \"**/*_java*.dll\",\n    \"**/lib*_java*.dylib\",\n    \"**/lib*_java*.so\",\n]\n\nstatic_srcs = glob([\n        \"**/*.lib\",\n        \"**/*.a\"\n    ],\n    exclude=[\"**/*jni.lib\"]\n)\nshared_srcs = glob([\n        \"**/*.dll\",\n        \"**/*.so*\",\n        \"**/*.dylib\",\n    ],\n    exclude=JNI_PATTERN + [\"**/*.so.debug\"]\n)\nshared_jni_srcs = glob(JNI_PATTERN, exclude=[\"**/*.so.debug\"])\n\nfilegroup(\n    name = \"static_libs\",\n    srcs = static_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_libs\",\n    srcs = shared_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_jni_libs\",\n    srcs = shared_jni_srcs,\n    visibility = [\"//visibility:public\"],\n)\n"
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProPigeon2/24.3.0/simProPigeon2-24.3.0-linuxx86-64.zip",
+              "sha256": "7b1c8ec01e13f7f7df7bd366f304fe10c11ea3e944f0e31bb61b371dddeb8f5c",
+              "build_file": "@@bzlmodrio-phoenix6~override//private/cpp/simProPigeon2:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_simcancoder_windowsx86-64": {
@@ -7670,9 +7759,9 @@
             "ruleClassName": "http_archive",
             "attributes": {
               "name": "bzlmodrio-phoenix6~override~setup_bzlmodrio_phoenix6_cpp_dependencies~bazelrio_com_ctre_phoenix6_sim_simcancoder_windowsx86-64",
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simCANCoder/24.2.0/simCANCoder-24.2.0-windowsx86-64.zip",
-              "sha256": "a025a36e7c39207ad2fee377ed65fdc1389dda110134a2e7eccdfbff0cd82d75",
-              "build_file_content": "\nJNI_PATTERN=[\n    \"**/*jni.dll\",\n    \"**/*jni.so*\",\n    \"**/*jni.dylib\",\n    \"**/*_java*.dll\",\n    \"**/lib*_java*.dylib\",\n    \"**/lib*_java*.so\",\n]\n\nstatic_srcs = glob([\n        \"**/*.lib\",\n        \"**/*.a\"\n    ],\n    exclude=[\"**/*jni.lib\"]\n)\nshared_srcs = glob([\n        \"**/*.dll\",\n        \"**/*.so*\",\n        \"**/*.dylib\",\n    ],\n    exclude=JNI_PATTERN + [\"**/*.so.debug\"]\n)\nshared_jni_srcs = glob(JNI_PATTERN, exclude=[\"**/*.so.debug\"])\n\nfilegroup(\n    name = \"static_libs\",\n    srcs = static_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_libs\",\n    srcs = shared_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_jni_libs\",\n    srcs = shared_jni_srcs,\n    visibility = [\"//visibility:public\"],\n)\n"
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simCANCoder/24.3.0/simCANCoder-24.3.0-windowsx86-64.zip",
+              "sha256": "0edac557931989f0f26aa5d22e1aa8af5a195977eb5ef15d7d2c0695fcd0af89",
+              "build_file": "@@bzlmodrio-phoenix6~override//private/cpp/simCANCoder:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_simpigeonimu_windowsx86-64": {
@@ -7680,9 +7769,9 @@
             "ruleClassName": "http_archive",
             "attributes": {
               "name": "bzlmodrio-phoenix6~override~setup_bzlmodrio_phoenix6_cpp_dependencies~bazelrio_com_ctre_phoenix6_sim_simpigeonimu_windowsx86-64",
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simPigeonIMU/24.2.0/simPigeonIMU-24.2.0-windowsx86-64.zip",
-              "sha256": "12150d8d970615cd65b291f31125bca15a794f82ccc3d2f6a26384edff75348e",
-              "build_file_content": "\nJNI_PATTERN=[\n    \"**/*jni.dll\",\n    \"**/*jni.so*\",\n    \"**/*jni.dylib\",\n    \"**/*_java*.dll\",\n    \"**/lib*_java*.dylib\",\n    \"**/lib*_java*.so\",\n]\n\nstatic_srcs = glob([\n        \"**/*.lib\",\n        \"**/*.a\"\n    ],\n    exclude=[\"**/*jni.lib\"]\n)\nshared_srcs = glob([\n        \"**/*.dll\",\n        \"**/*.so*\",\n        \"**/*.dylib\",\n    ],\n    exclude=JNI_PATTERN + [\"**/*.so.debug\"]\n)\nshared_jni_srcs = glob(JNI_PATTERN, exclude=[\"**/*.so.debug\"])\n\nfilegroup(\n    name = \"static_libs\",\n    srcs = static_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_libs\",\n    srcs = shared_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_jni_libs\",\n    srcs = shared_jni_srcs,\n    visibility = [\"//visibility:public\"],\n)\n"
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simPigeonIMU/24.3.0/simPigeonIMU-24.3.0-windowsx86-64.zip",
+              "sha256": "6aaed35e3d249f34b3eb8e9bde09c580186b891740a8c46959ec80af017820d7",
+              "build_file": "@@bzlmodrio-phoenix6~override//private/cpp/simPigeonIMU:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_simprocancoder_osxuniversal": {
@@ -7690,9 +7779,9 @@
             "ruleClassName": "http_archive",
             "attributes": {
               "name": "bzlmodrio-phoenix6~override~setup_bzlmodrio_phoenix6_cpp_dependencies~bazelrio_com_ctre_phoenix6_sim_simprocancoder_osxuniversal",
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProCANcoder/24.2.0/simProCANcoder-24.2.0-osxuniversal.zip",
-              "sha256": "25856ec7b637632b748a24de196815448863d47f6fde6f20c707b065c0467c02",
-              "build_file_content": "\nJNI_PATTERN=[\n    \"**/*jni.dll\",\n    \"**/*jni.so*\",\n    \"**/*jni.dylib\",\n    \"**/*_java*.dll\",\n    \"**/lib*_java*.dylib\",\n    \"**/lib*_java*.so\",\n]\n\nstatic_srcs = glob([\n        \"**/*.lib\",\n        \"**/*.a\"\n    ],\n    exclude=[\"**/*jni.lib\"]\n)\nshared_srcs = glob([\n        \"**/*.dll\",\n        \"**/*.so*\",\n        \"**/*.dylib\",\n    ],\n    exclude=JNI_PATTERN + [\"**/*.so.debug\"]\n)\nshared_jni_srcs = glob(JNI_PATTERN, exclude=[\"**/*.so.debug\"])\n\nfilegroup(\n    name = \"static_libs\",\n    srcs = static_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_libs\",\n    srcs = shared_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_jni_libs\",\n    srcs = shared_jni_srcs,\n    visibility = [\"//visibility:public\"],\n)\n",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProCANcoder/24.3.0/simProCANcoder-24.3.0-osxuniversal.zip",
+              "sha256": "024306d4532d7f1be902c888e02b473fa48e87b3fadb9542f6c4c0e393847a5a",
+              "build_file": "@@bzlmodrio-phoenix6~override//private/cpp/simProCANcoder:shared.BUILD.bazel",
               "patch_cmds": [
                 "install_name_tool -id @rpath/libCTRE_SimProCANcoder.dylib osx/universal/shared/libCTRE_SimProCANcoder.dylib"
               ]
@@ -7703,9 +7792,9 @@
             "ruleClassName": "http_archive",
             "attributes": {
               "name": "bzlmodrio-phoenix6~override~setup_bzlmodrio_phoenix6_cpp_dependencies~bazelrio_com_ctre_phoenix6_sim_simtalonfx_windowsx86-64",
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simTalonFX/24.2.0/simTalonFX-24.2.0-windowsx86-64.zip",
-              "sha256": "baf1030913757945a93a3e8c5bc6a4287409b6fc8d836cd06f957bd95b39697f",
-              "build_file_content": "\nJNI_PATTERN=[\n    \"**/*jni.dll\",\n    \"**/*jni.so*\",\n    \"**/*jni.dylib\",\n    \"**/*_java*.dll\",\n    \"**/lib*_java*.dylib\",\n    \"**/lib*_java*.so\",\n]\n\nstatic_srcs = glob([\n        \"**/*.lib\",\n        \"**/*.a\"\n    ],\n    exclude=[\"**/*jni.lib\"]\n)\nshared_srcs = glob([\n        \"**/*.dll\",\n        \"**/*.so*\",\n        \"**/*.dylib\",\n    ],\n    exclude=JNI_PATTERN + [\"**/*.so.debug\"]\n)\nshared_jni_srcs = glob(JNI_PATTERN, exclude=[\"**/*.so.debug\"])\n\nfilegroup(\n    name = \"static_libs\",\n    srcs = static_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_libs\",\n    srcs = shared_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_jni_libs\",\n    srcs = shared_jni_srcs,\n    visibility = [\"//visibility:public\"],\n)\n"
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simTalonFX/24.3.0/simTalonFX-24.3.0-windowsx86-64.zip",
+              "sha256": "4f7f5fe3199b233e9ed78837a8ae3036680601ef19007c2445cd5bf803bc3fff",
+              "build_file": "@@bzlmodrio-phoenix6~override//private/cpp/simTalonFX:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_simpropigeon2_osxuniversal": {
@@ -7713,9 +7802,9 @@
             "ruleClassName": "http_archive",
             "attributes": {
               "name": "bzlmodrio-phoenix6~override~setup_bzlmodrio_phoenix6_cpp_dependencies~bazelrio_com_ctre_phoenix6_sim_simpropigeon2_osxuniversal",
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProPigeon2/24.2.0/simProPigeon2-24.2.0-osxuniversal.zip",
-              "sha256": "eded97b69e659e0415dd976c6e04745c5569df483a5aee2f821ddfb81a43d9cc",
-              "build_file_content": "\nJNI_PATTERN=[\n    \"**/*jni.dll\",\n    \"**/*jni.so*\",\n    \"**/*jni.dylib\",\n    \"**/*_java*.dll\",\n    \"**/lib*_java*.dylib\",\n    \"**/lib*_java*.so\",\n]\n\nstatic_srcs = glob([\n        \"**/*.lib\",\n        \"**/*.a\"\n    ],\n    exclude=[\"**/*jni.lib\"]\n)\nshared_srcs = glob([\n        \"**/*.dll\",\n        \"**/*.so*\",\n        \"**/*.dylib\",\n    ],\n    exclude=JNI_PATTERN + [\"**/*.so.debug\"]\n)\nshared_jni_srcs = glob(JNI_PATTERN, exclude=[\"**/*.so.debug\"])\n\nfilegroup(\n    name = \"static_libs\",\n    srcs = static_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_libs\",\n    srcs = shared_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_jni_libs\",\n    srcs = shared_jni_srcs,\n    visibility = [\"//visibility:public\"],\n)\n",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProPigeon2/24.3.0/simProPigeon2-24.3.0-osxuniversal.zip",
+              "sha256": "8c91a5e95f240efefba9412b6ef5a68e71f3f2c452f63ca7281be2b6aae32771",
+              "build_file": "@@bzlmodrio-phoenix6~override//private/cpp/simProPigeon2:shared.BUILD.bazel",
               "patch_cmds": [
                 "install_name_tool -id @rpath/libCTRE_SimProPigeon2.dylib osx/universal/shared/libCTRE_SimProPigeon2.dylib"
               ]
@@ -7726,9 +7815,9 @@
             "ruleClassName": "http_archive",
             "attributes": {
               "name": "bzlmodrio-phoenix6~override~setup_bzlmodrio_phoenix6_cpp_dependencies~bazelrio_com_ctre_phoenix6_sim_simpigeonimu_osxuniversal",
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simPigeonIMU/24.2.0/simPigeonIMU-24.2.0-osxuniversal.zip",
-              "sha256": "14b13400db66999fbaa40463b2f48e890afce304b9961ca3755d9dda0dbf06d5",
-              "build_file_content": "\nJNI_PATTERN=[\n    \"**/*jni.dll\",\n    \"**/*jni.so*\",\n    \"**/*jni.dylib\",\n    \"**/*_java*.dll\",\n    \"**/lib*_java*.dylib\",\n    \"**/lib*_java*.so\",\n]\n\nstatic_srcs = glob([\n        \"**/*.lib\",\n        \"**/*.a\"\n    ],\n    exclude=[\"**/*jni.lib\"]\n)\nshared_srcs = glob([\n        \"**/*.dll\",\n        \"**/*.so*\",\n        \"**/*.dylib\",\n    ],\n    exclude=JNI_PATTERN + [\"**/*.so.debug\"]\n)\nshared_jni_srcs = glob(JNI_PATTERN, exclude=[\"**/*.so.debug\"])\n\nfilegroup(\n    name = \"static_libs\",\n    srcs = static_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_libs\",\n    srcs = shared_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_jni_libs\",\n    srcs = shared_jni_srcs,\n    visibility = [\"//visibility:public\"],\n)\n",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simPigeonIMU/24.3.0/simPigeonIMU-24.3.0-osxuniversal.zip",
+              "sha256": "3a54639915f6aa92444887544433bc1634c2def018bcc6fd5d6d9431dbd11765",
+              "build_file": "@@bzlmodrio-phoenix6~override//private/cpp/simPigeonIMU:shared.BUILD.bazel",
               "patch_cmds": [
                 "install_name_tool -id @rpath/libCTRE_SimPigeonIMU.dylib osx/universal/shared/libCTRE_SimPigeonIMU.dylib"
               ]
@@ -7739,8 +7828,8 @@
             "ruleClassName": "http_archive",
             "attributes": {
               "name": "bzlmodrio-phoenix6~override~setup_bzlmodrio_phoenix6_cpp_dependencies~bazelrio_com_ctre_phoenix6_sim_simtalonsrx_headers",
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simTalonSRX/24.2.0/simTalonSRX-24.2.0-headers.zip",
-              "sha256": "8a86914a05ef8e28bb313223d5b86b0a7d1a93e145d8b7a798db698fca7d6d0c",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simTalonSRX/24.3.0/simTalonSRX-24.3.0-headers.zip",
+              "sha256": "25f0e0ea7db7cc195f201410b9eefdbce2f773fb95e486bf150c4521fae1d13c",
               "build_file_content": "cc_library(\n    name = \"headers\",\n    hdrs = glob([\"**\"]),\n    includes = [\".\"],\n    visibility = [\"//visibility:public\"],\n)\n"
             }
           },
@@ -7749,9 +7838,9 @@
             "ruleClassName": "http_archive",
             "attributes": {
               "name": "bzlmodrio-phoenix6~override~setup_bzlmodrio_phoenix6_cpp_dependencies~bazelrio_com_ctre_phoenix6_tools_linuxathena",
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/tools/24.2.0/tools-24.2.0-linuxathena.zip",
-              "sha256": "af91c343fa31809193f149a2a7c6606be7a5e94f4afdada54faca635b8070963",
-              "build_file_content": "\nJNI_PATTERN=[\n    \"**/*jni.dll\",\n    \"**/*jni.so*\",\n    \"**/*jni.dylib\",\n    \"**/*_java*.dll\",\n    \"**/lib*_java*.dylib\",\n    \"**/lib*_java*.so\",\n]\n\nstatic_srcs = glob([\n        \"**/*.lib\",\n        \"**/*.a\"\n    ],\n    exclude=[\"**/*jni.lib\"]\n)\nshared_srcs = glob([\n        \"**/*.dll\",\n        \"**/*.so*\",\n        \"**/*.dylib\",\n    ],\n    exclude=JNI_PATTERN + [\"**/*.so.debug\"]\n)\nshared_jni_srcs = glob(JNI_PATTERN, exclude=[\"**/*.so.debug\"])\n\nfilegroup(\n    name = \"static_libs\",\n    srcs = static_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_libs\",\n    srcs = shared_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_jni_libs\",\n    srcs = shared_jni_srcs,\n    visibility = [\"//visibility:public\"],\n)\n"
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/tools/24.3.0/tools-24.3.0-linuxathena.zip",
+              "sha256": "dd932cae4a807a2a3babaab328eac1ea298cdad50d71522bc40addf01f8d1bac",
+              "build_file": "@@bzlmodrio-phoenix6~override//private/cpp/tools:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_simpigeonimu_headers": {
@@ -7759,8 +7848,8 @@
             "ruleClassName": "http_archive",
             "attributes": {
               "name": "bzlmodrio-phoenix6~override~setup_bzlmodrio_phoenix6_cpp_dependencies~bazelrio_com_ctre_phoenix6_sim_simpigeonimu_headers",
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simPigeonIMU/24.2.0/simPigeonIMU-24.2.0-headers.zip",
-              "sha256": "8a86914a05ef8e28bb313223d5b86b0a7d1a93e145d8b7a798db698fca7d6d0c",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simPigeonIMU/24.3.0/simPigeonIMU-24.3.0-headers.zip",
+              "sha256": "25f0e0ea7db7cc195f201410b9eefdbce2f773fb95e486bf150c4521fae1d13c",
               "build_file_content": "cc_library(\n    name = \"headers\",\n    hdrs = glob([\"**\"]),\n    includes = [\".\"],\n    visibility = [\"//visibility:public\"],\n)\n"
             }
           },
@@ -7769,9 +7858,9 @@
             "ruleClassName": "http_archive",
             "attributes": {
               "name": "bzlmodrio-phoenix6~override~setup_bzlmodrio_phoenix6_cpp_dependencies~bazelrio_com_ctre_phoenix6_sim_simprotalonfx_windowsx86-64",
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProTalonFX/24.2.0/simProTalonFX-24.2.0-windowsx86-64.zip",
-              "sha256": "9e39d42f91014e541272f790a39067027184997cce10218967ad3389790403d3",
-              "build_file_content": "\nJNI_PATTERN=[\n    \"**/*jni.dll\",\n    \"**/*jni.so*\",\n    \"**/*jni.dylib\",\n    \"**/*_java*.dll\",\n    \"**/lib*_java*.dylib\",\n    \"**/lib*_java*.so\",\n]\n\nstatic_srcs = glob([\n        \"**/*.lib\",\n        \"**/*.a\"\n    ],\n    exclude=[\"**/*jni.lib\"]\n)\nshared_srcs = glob([\n        \"**/*.dll\",\n        \"**/*.so*\",\n        \"**/*.dylib\",\n    ],\n    exclude=JNI_PATTERN + [\"**/*.so.debug\"]\n)\nshared_jni_srcs = glob(JNI_PATTERN, exclude=[\"**/*.so.debug\"])\n\nfilegroup(\n    name = \"static_libs\",\n    srcs = static_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_libs\",\n    srcs = shared_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_jni_libs\",\n    srcs = shared_jni_srcs,\n    visibility = [\"//visibility:public\"],\n)\n"
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProTalonFX/24.3.0/simProTalonFX-24.3.0-windowsx86-64.zip",
+              "sha256": "0cad279c649dec3e65a27e273520997679aad488af3333421c931eb23bf7a0a9",
+              "build_file": "@@bzlmodrio-phoenix6~override//private/cpp/simProTalonFX:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_wpiapi-cpp-sim_headers": {
@@ -7779,8 +7868,8 @@
             "ruleClassName": "http_archive",
             "attributes": {
               "name": "bzlmodrio-phoenix6~override~setup_bzlmodrio_phoenix6_cpp_dependencies~bazelrio_com_ctre_phoenix6_sim_wpiapi-cpp-sim_headers",
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/wpiapi-cpp-sim/24.2.0/wpiapi-cpp-sim-24.2.0-headers.zip",
-              "sha256": "c003b8d6596ff90a17022a1a639c1b7d4ee3d9e68b2de20ff8c68c00c34b7390",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/wpiapi-cpp-sim/24.3.0/wpiapi-cpp-sim-24.3.0-headers.zip",
+              "sha256": "6bcdb2b8c89e1760c06b293dd76302cb00d88e10f94f2f2437e002516a1f8afe",
               "build_file_content": "cc_library(\n    name = \"headers\",\n    hdrs = glob([\"**\"]),\n    includes = [\".\"],\n    visibility = [\"//visibility:public\"],\n)\n"
             }
           },
@@ -7789,9 +7878,9 @@
             "ruleClassName": "http_archive",
             "attributes": {
               "name": "bzlmodrio-phoenix6~override~setup_bzlmodrio_phoenix6_cpp_dependencies~bazelrio_com_ctre_phoenix6_tools_linuxx86-64",
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/tools/24.2.0/tools-24.2.0-linuxx86-64.zip",
-              "sha256": "affe736b74ab87883bd484ccf561991a8139625ea88fbf9236093ce0db74d22f",
-              "build_file_content": "\nJNI_PATTERN=[\n    \"**/*jni.dll\",\n    \"**/*jni.so*\",\n    \"**/*jni.dylib\",\n    \"**/*_java*.dll\",\n    \"**/lib*_java*.dylib\",\n    \"**/lib*_java*.so\",\n]\n\nstatic_srcs = glob([\n        \"**/*.lib\",\n        \"**/*.a\"\n    ],\n    exclude=[\"**/*jni.lib\"]\n)\nshared_srcs = glob([\n        \"**/*.dll\",\n        \"**/*.so*\",\n        \"**/*.dylib\",\n    ],\n    exclude=JNI_PATTERN + [\"**/*.so.debug\"]\n)\nshared_jni_srcs = glob(JNI_PATTERN, exclude=[\"**/*.so.debug\"])\n\nfilegroup(\n    name = \"static_libs\",\n    srcs = static_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_libs\",\n    srcs = shared_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_jni_libs\",\n    srcs = shared_jni_srcs,\n    visibility = [\"//visibility:public\"],\n)\n"
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/tools/24.3.0/tools-24.3.0-linuxx86-64.zip",
+              "sha256": "737048c9972479cff09dd0e27531c7a632559953a42dc1924d9466a9c1efb8a0",
+              "build_file": "@@bzlmodrio-phoenix6~override//private/cpp/tools:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_simcancoder_headers": {
@@ -7799,8 +7888,8 @@
             "ruleClassName": "http_archive",
             "attributes": {
               "name": "bzlmodrio-phoenix6~override~setup_bzlmodrio_phoenix6_cpp_dependencies~bazelrio_com_ctre_phoenix6_sim_simcancoder_headers",
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simCANCoder/24.2.0/simCANCoder-24.2.0-headers.zip",
-              "sha256": "8a86914a05ef8e28bb313223d5b86b0a7d1a93e145d8b7a798db698fca7d6d0c",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simCANCoder/24.3.0/simCANCoder-24.3.0-headers.zip",
+              "sha256": "25f0e0ea7db7cc195f201410b9eefdbce2f773fb95e486bf150c4521fae1d13c",
               "build_file_content": "cc_library(\n    name = \"headers\",\n    hdrs = glob([\"**\"]),\n    includes = [\".\"],\n    visibility = [\"//visibility:public\"],\n)\n"
             }
           },
@@ -7809,9 +7898,9 @@
             "ruleClassName": "http_archive",
             "attributes": {
               "name": "bzlmodrio-phoenix6~override~setup_bzlmodrio_phoenix6_cpp_dependencies~bazelrio_com_ctre_phoenix6_sim_simtalonsrx_linuxx86-64",
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simTalonSRX/24.2.0/simTalonSRX-24.2.0-linuxx86-64.zip",
-              "sha256": "b68b8a210748c9b29a2acd06c333bf78e1caef722b102e509813e6146e4d92e2",
-              "build_file_content": "\nJNI_PATTERN=[\n    \"**/*jni.dll\",\n    \"**/*jni.so*\",\n    \"**/*jni.dylib\",\n    \"**/*_java*.dll\",\n    \"**/lib*_java*.dylib\",\n    \"**/lib*_java*.so\",\n]\n\nstatic_srcs = glob([\n        \"**/*.lib\",\n        \"**/*.a\"\n    ],\n    exclude=[\"**/*jni.lib\"]\n)\nshared_srcs = glob([\n        \"**/*.dll\",\n        \"**/*.so*\",\n        \"**/*.dylib\",\n    ],\n    exclude=JNI_PATTERN + [\"**/*.so.debug\"]\n)\nshared_jni_srcs = glob(JNI_PATTERN, exclude=[\"**/*.so.debug\"])\n\nfilegroup(\n    name = \"static_libs\",\n    srcs = static_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_libs\",\n    srcs = shared_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_jni_libs\",\n    srcs = shared_jni_srcs,\n    visibility = [\"//visibility:public\"],\n)\n"
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simTalonSRX/24.3.0/simTalonSRX-24.3.0-linuxx86-64.zip",
+              "sha256": "aa15fabb09088f49a699514f4e67d1163eb305ae18f98725271e5feca7d4d6f8",
+              "build_file": "@@bzlmodrio-phoenix6~override//private/cpp/simTalonSRX:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_simvictorspx_osxuniversal": {
@@ -7819,9 +7908,9 @@
             "ruleClassName": "http_archive",
             "attributes": {
               "name": "bzlmodrio-phoenix6~override~setup_bzlmodrio_phoenix6_cpp_dependencies~bazelrio_com_ctre_phoenix6_sim_simvictorspx_osxuniversal",
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simVictorSPX/24.2.0/simVictorSPX-24.2.0-osxuniversal.zip",
-              "sha256": "cc268e30f02f49c901ec06e31f746a74838a038707cf37c42ff5756d394fead8",
-              "build_file_content": "\nJNI_PATTERN=[\n    \"**/*jni.dll\",\n    \"**/*jni.so*\",\n    \"**/*jni.dylib\",\n    \"**/*_java*.dll\",\n    \"**/lib*_java*.dylib\",\n    \"**/lib*_java*.so\",\n]\n\nstatic_srcs = glob([\n        \"**/*.lib\",\n        \"**/*.a\"\n    ],\n    exclude=[\"**/*jni.lib\"]\n)\nshared_srcs = glob([\n        \"**/*.dll\",\n        \"**/*.so*\",\n        \"**/*.dylib\",\n    ],\n    exclude=JNI_PATTERN + [\"**/*.so.debug\"]\n)\nshared_jni_srcs = glob(JNI_PATTERN, exclude=[\"**/*.so.debug\"])\n\nfilegroup(\n    name = \"static_libs\",\n    srcs = static_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_libs\",\n    srcs = shared_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_jni_libs\",\n    srcs = shared_jni_srcs,\n    visibility = [\"//visibility:public\"],\n)\n",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simVictorSPX/24.3.0/simVictorSPX-24.3.0-osxuniversal.zip",
+              "sha256": "5851fede81d511f8f5aed2cee1cd4c3b7ccd02585dcca6b49c518765ec9d2705",
+              "build_file": "@@bzlmodrio-phoenix6~override//private/cpp/simVictorSPX:shared.BUILD.bazel",
               "patch_cmds": [
                 "install_name_tool -id @rpath/libCTRE_SimVictorSPX.dylib osx/universal/shared/libCTRE_SimVictorSPX.dylib"
               ]
@@ -7832,8 +7921,8 @@
             "ruleClassName": "http_archive",
             "attributes": {
               "name": "bzlmodrio-phoenix6~override~setup_bzlmodrio_phoenix6_cpp_dependencies~bazelrio_com_ctre_phoenix6_sim_simprotalonfx_headers",
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProTalonFX/24.2.0/simProTalonFX-24.2.0-headers.zip",
-              "sha256": "8a86914a05ef8e28bb313223d5b86b0a7d1a93e145d8b7a798db698fca7d6d0c",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProTalonFX/24.3.0/simProTalonFX-24.3.0-headers.zip",
+              "sha256": "25f0e0ea7db7cc195f201410b9eefdbce2f773fb95e486bf150c4521fae1d13c",
               "build_file_content": "cc_library(\n    name = \"headers\",\n    hdrs = glob([\"**\"]),\n    includes = [\".\"],\n    visibility = [\"//visibility:public\"],\n)\n"
             }
           },
@@ -7842,8 +7931,8 @@
             "ruleClassName": "http_archive",
             "attributes": {
               "name": "bzlmodrio-phoenix6~override~setup_bzlmodrio_phoenix6_cpp_dependencies~bazelrio_com_ctre_phoenix6_sim_simvictorspx_headers",
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simVictorSPX/24.2.0/simVictorSPX-24.2.0-headers.zip",
-              "sha256": "8a86914a05ef8e28bb313223d5b86b0a7d1a93e145d8b7a798db698fca7d6d0c",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simVictorSPX/24.3.0/simVictorSPX-24.3.0-headers.zip",
+              "sha256": "25f0e0ea7db7cc195f201410b9eefdbce2f773fb95e486bf150c4521fae1d13c",
               "build_file_content": "cc_library(\n    name = \"headers\",\n    hdrs = glob([\"**\"]),\n    includes = [\".\"],\n    visibility = [\"//visibility:public\"],\n)\n"
             }
           },
@@ -7852,9 +7941,9 @@
             "ruleClassName": "http_archive",
             "attributes": {
               "name": "bzlmodrio-phoenix6~override~setup_bzlmodrio_phoenix6_cpp_dependencies~bazelrio_com_ctre_phoenix6_sim_simtalonsrx_windowsx86-64",
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simTalonSRX/24.2.0/simTalonSRX-24.2.0-windowsx86-64.zip",
-              "sha256": "60bfa3ac0c52e77dfc54dd3d665e4dcfcf32d75413bf157d8c4ab90afd70568f",
-              "build_file_content": "\nJNI_PATTERN=[\n    \"**/*jni.dll\",\n    \"**/*jni.so*\",\n    \"**/*jni.dylib\",\n    \"**/*_java*.dll\",\n    \"**/lib*_java*.dylib\",\n    \"**/lib*_java*.so\",\n]\n\nstatic_srcs = glob([\n        \"**/*.lib\",\n        \"**/*.a\"\n    ],\n    exclude=[\"**/*jni.lib\"]\n)\nshared_srcs = glob([\n        \"**/*.dll\",\n        \"**/*.so*\",\n        \"**/*.dylib\",\n    ],\n    exclude=JNI_PATTERN + [\"**/*.so.debug\"]\n)\nshared_jni_srcs = glob(JNI_PATTERN, exclude=[\"**/*.so.debug\"])\n\nfilegroup(\n    name = \"static_libs\",\n    srcs = static_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_libs\",\n    srcs = shared_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_jni_libs\",\n    srcs = shared_jni_srcs,\n    visibility = [\"//visibility:public\"],\n)\n"
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simTalonSRX/24.3.0/simTalonSRX-24.3.0-windowsx86-64.zip",
+              "sha256": "c3dae0acc49808b4b3debb199bccf337a261b984bbb34724c222fc27ede27c93",
+              "build_file": "@@bzlmodrio-phoenix6~override//private/cpp/simTalonSRX:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_simtalonsrx_osxuniversal": {
@@ -7862,9 +7951,9 @@
             "ruleClassName": "http_archive",
             "attributes": {
               "name": "bzlmodrio-phoenix6~override~setup_bzlmodrio_phoenix6_cpp_dependencies~bazelrio_com_ctre_phoenix6_sim_simtalonsrx_osxuniversal",
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simTalonSRX/24.2.0/simTalonSRX-24.2.0-osxuniversal.zip",
-              "sha256": "8d89d910bbc2c17562cb0cddd27b59e5bdf8040711f469b6a144e7c66777180c",
-              "build_file_content": "\nJNI_PATTERN=[\n    \"**/*jni.dll\",\n    \"**/*jni.so*\",\n    \"**/*jni.dylib\",\n    \"**/*_java*.dll\",\n    \"**/lib*_java*.dylib\",\n    \"**/lib*_java*.so\",\n]\n\nstatic_srcs = glob([\n        \"**/*.lib\",\n        \"**/*.a\"\n    ],\n    exclude=[\"**/*jni.lib\"]\n)\nshared_srcs = glob([\n        \"**/*.dll\",\n        \"**/*.so*\",\n        \"**/*.dylib\",\n    ],\n    exclude=JNI_PATTERN + [\"**/*.so.debug\"]\n)\nshared_jni_srcs = glob(JNI_PATTERN, exclude=[\"**/*.so.debug\"])\n\nfilegroup(\n    name = \"static_libs\",\n    srcs = static_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_libs\",\n    srcs = shared_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_jni_libs\",\n    srcs = shared_jni_srcs,\n    visibility = [\"//visibility:public\"],\n)\n",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simTalonSRX/24.3.0/simTalonSRX-24.3.0-osxuniversal.zip",
+              "sha256": "54e1f0d28f6eda55f3be3efebd8864503aeebeeb42d9ee1ad2258b3f61853644",
+              "build_file": "@@bzlmodrio-phoenix6~override//private/cpp/simTalonSRX:shared.BUILD.bazel",
               "patch_cmds": [
                 "install_name_tool -id @rpath/libCTRE_SimTalonSRX.dylib osx/universal/shared/libCTRE_SimTalonSRX.dylib"
               ]
@@ -7875,9 +7964,9 @@
             "ruleClassName": "http_archive",
             "attributes": {
               "name": "bzlmodrio-phoenix6~override~setup_bzlmodrio_phoenix6_cpp_dependencies~bazelrio_com_ctre_phoenix6_sim_tools-sim_windowsx86-64",
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/tools-sim/24.2.0/tools-sim-24.2.0-windowsx86-64.zip",
-              "sha256": "48ca308ee2c3a96373ffaeed428f42588e362f20a6eef522bf55c116d4bb71c8",
-              "build_file_content": "\nJNI_PATTERN=[\n    \"**/*jni.dll\",\n    \"**/*jni.so*\",\n    \"**/*jni.dylib\",\n    \"**/*_java*.dll\",\n    \"**/lib*_java*.dylib\",\n    \"**/lib*_java*.so\",\n]\n\nstatic_srcs = glob([\n        \"**/*.lib\",\n        \"**/*.a\"\n    ],\n    exclude=[\"**/*jni.lib\"]\n)\nshared_srcs = glob([\n        \"**/*.dll\",\n        \"**/*.so*\",\n        \"**/*.dylib\",\n    ],\n    exclude=JNI_PATTERN + [\"**/*.so.debug\"]\n)\nshared_jni_srcs = glob(JNI_PATTERN, exclude=[\"**/*.so.debug\"])\n\nfilegroup(\n    name = \"static_libs\",\n    srcs = static_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_libs\",\n    srcs = shared_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_jni_libs\",\n    srcs = shared_jni_srcs,\n    visibility = [\"//visibility:public\"],\n)\n"
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/tools-sim/24.3.0/tools-sim-24.3.0-windowsx86-64.zip",
+              "sha256": "0735dced0280c34687249e106497557dfbab3456875341d966d9e6b000a18f49",
+              "build_file": "@@bzlmodrio-phoenix6~override//private/cpp/tools-sim:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_tools-sim_osxuniversal": {
@@ -7885,9 +7974,9 @@
             "ruleClassName": "http_archive",
             "attributes": {
               "name": "bzlmodrio-phoenix6~override~setup_bzlmodrio_phoenix6_cpp_dependencies~bazelrio_com_ctre_phoenix6_sim_tools-sim_osxuniversal",
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/tools-sim/24.2.0/tools-sim-24.2.0-osxuniversal.zip",
-              "sha256": "a646e3a02eb9a14b3a478ceb486e6c337d2e8e273cf88e6ff064f7ee2c3cc1ed",
-              "build_file_content": "\nJNI_PATTERN=[\n    \"**/*jni.dll\",\n    \"**/*jni.so*\",\n    \"**/*jni.dylib\",\n    \"**/*_java*.dll\",\n    \"**/lib*_java*.dylib\",\n    \"**/lib*_java*.so\",\n]\n\nstatic_srcs = glob([\n        \"**/*.lib\",\n        \"**/*.a\"\n    ],\n    exclude=[\"**/*jni.lib\"]\n)\nshared_srcs = glob([\n        \"**/*.dll\",\n        \"**/*.so*\",\n        \"**/*.dylib\",\n    ],\n    exclude=JNI_PATTERN + [\"**/*.so.debug\"]\n)\nshared_jni_srcs = glob(JNI_PATTERN, exclude=[\"**/*.so.debug\"])\n\nfilegroup(\n    name = \"static_libs\",\n    srcs = static_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_libs\",\n    srcs = shared_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_jni_libs\",\n    srcs = shared_jni_srcs,\n    visibility = [\"//visibility:public\"],\n)\n",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/tools-sim/24.3.0/tools-sim-24.3.0-osxuniversal.zip",
+              "sha256": "7876ffaa7a2b6cbb71c80a4dcca92e56045d6db5aa89a0f1645f2802590d761a",
+              "build_file": "@@bzlmodrio-phoenix6~override//private/cpp/tools-sim:shared.BUILD.bazel",
               "patch_cmds": [
                 "install_name_tool -id @rpath/libCTRE_PhoenixTools_Sim.dylib osx/universal/shared/libCTRE_PhoenixTools_Sim.dylib",
                 "install_name_tool -change libCTRE_SimCANCoder.dylib @rpath/libCTRE_SimCANCoder.dylib osx/universal/shared/libCTRE_PhoenixTools_Sim.dylib",
@@ -7906,9 +7995,9 @@
             "ruleClassName": "http_archive",
             "attributes": {
               "name": "bzlmodrio-phoenix6~override~setup_bzlmodrio_phoenix6_cpp_dependencies~bazelrio_com_ctre_phoenix6_wpiapi-cpp_linuxx86-64",
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/wpiapi-cpp/24.2.0/wpiapi-cpp-24.2.0-linuxx86-64.zip",
-              "sha256": "eb49ba28043233cbea22c9f06d42b14c648d00b8812279e52f226f137906ed34",
-              "build_file_content": "\nJNI_PATTERN=[\n    \"**/*jni.dll\",\n    \"**/*jni.so*\",\n    \"**/*jni.dylib\",\n    \"**/*_java*.dll\",\n    \"**/lib*_java*.dylib\",\n    \"**/lib*_java*.so\",\n]\n\nstatic_srcs = glob([\n        \"**/*.lib\",\n        \"**/*.a\"\n    ],\n    exclude=[\"**/*jni.lib\"]\n)\nshared_srcs = glob([\n        \"**/*.dll\",\n        \"**/*.so*\",\n        \"**/*.dylib\",\n    ],\n    exclude=JNI_PATTERN + [\"**/*.so.debug\"]\n)\nshared_jni_srcs = glob(JNI_PATTERN, exclude=[\"**/*.so.debug\"])\n\nfilegroup(\n    name = \"static_libs\",\n    srcs = static_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_libs\",\n    srcs = shared_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_jni_libs\",\n    srcs = shared_jni_srcs,\n    visibility = [\"//visibility:public\"],\n)\n"
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/wpiapi-cpp/24.3.0/wpiapi-cpp-24.3.0-linuxx86-64.zip",
+              "sha256": "07d776a0f755abdd6cdaf4ed27b04ca226c61c43025beaf657d20c6463630562",
+              "build_file": "@@bzlmodrio-phoenix6~override//private/cpp/wpiapi-cpp:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_simtalonfx_osxuniversal": {
@@ -7916,9 +8005,9 @@
             "ruleClassName": "http_archive",
             "attributes": {
               "name": "bzlmodrio-phoenix6~override~setup_bzlmodrio_phoenix6_cpp_dependencies~bazelrio_com_ctre_phoenix6_sim_simtalonfx_osxuniversal",
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simTalonFX/24.2.0/simTalonFX-24.2.0-osxuniversal.zip",
-              "sha256": "f2e2935fa8d260dd7fae33c1a0218f5a98259965f0a66b7caf6724a1a847f326",
-              "build_file_content": "\nJNI_PATTERN=[\n    \"**/*jni.dll\",\n    \"**/*jni.so*\",\n    \"**/*jni.dylib\",\n    \"**/*_java*.dll\",\n    \"**/lib*_java*.dylib\",\n    \"**/lib*_java*.so\",\n]\n\nstatic_srcs = glob([\n        \"**/*.lib\",\n        \"**/*.a\"\n    ],\n    exclude=[\"**/*jni.lib\"]\n)\nshared_srcs = glob([\n        \"**/*.dll\",\n        \"**/*.so*\",\n        \"**/*.dylib\",\n    ],\n    exclude=JNI_PATTERN + [\"**/*.so.debug\"]\n)\nshared_jni_srcs = glob(JNI_PATTERN, exclude=[\"**/*.so.debug\"])\n\nfilegroup(\n    name = \"static_libs\",\n    srcs = static_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_libs\",\n    srcs = shared_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_jni_libs\",\n    srcs = shared_jni_srcs,\n    visibility = [\"//visibility:public\"],\n)\n",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simTalonFX/24.3.0/simTalonFX-24.3.0-osxuniversal.zip",
+              "sha256": "3fb8e0b0c285048dbd553aa56bd2c679deab397a38f65301bae6e69b61290475",
+              "build_file": "@@bzlmodrio-phoenix6~override//private/cpp/simTalonFX:shared.BUILD.bazel",
               "patch_cmds": [
                 "install_name_tool -id @rpath/libCTRE_SimTalonFX.dylib osx/universal/shared/libCTRE_SimTalonFX.dylib"
               ]
@@ -7929,9 +8018,9 @@
             "ruleClassName": "http_archive",
             "attributes": {
               "name": "bzlmodrio-phoenix6~override~setup_bzlmodrio_phoenix6_cpp_dependencies~bazelrio_com_ctre_phoenix6_sim_simprotalonfx_linuxx86-64",
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProTalonFX/24.2.0/simProTalonFX-24.2.0-linuxx86-64.zip",
-              "sha256": "1fec9cfc3db570b10ecd21e657b58f7dd78c461b8f93e001b06df8df163f4d19",
-              "build_file_content": "\nJNI_PATTERN=[\n    \"**/*jni.dll\",\n    \"**/*jni.so*\",\n    \"**/*jni.dylib\",\n    \"**/*_java*.dll\",\n    \"**/lib*_java*.dylib\",\n    \"**/lib*_java*.so\",\n]\n\nstatic_srcs = glob([\n        \"**/*.lib\",\n        \"**/*.a\"\n    ],\n    exclude=[\"**/*jni.lib\"]\n)\nshared_srcs = glob([\n        \"**/*.dll\",\n        \"**/*.so*\",\n        \"**/*.dylib\",\n    ],\n    exclude=JNI_PATTERN + [\"**/*.so.debug\"]\n)\nshared_jni_srcs = glob(JNI_PATTERN, exclude=[\"**/*.so.debug\"])\n\nfilegroup(\n    name = \"static_libs\",\n    srcs = static_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_libs\",\n    srcs = shared_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_jni_libs\",\n    srcs = shared_jni_srcs,\n    visibility = [\"//visibility:public\"],\n)\n"
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProTalonFX/24.3.0/simProTalonFX-24.3.0-linuxx86-64.zip",
+              "sha256": "86e8581f3cffffa29364699ac93cfb1c091af952c81d8f4891588466cea6d5bc",
+              "build_file": "@@bzlmodrio-phoenix6~override//private/cpp/simProTalonFX:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_simtalonfx_linuxx86-64": {
@@ -7939,9 +8028,9 @@
             "ruleClassName": "http_archive",
             "attributes": {
               "name": "bzlmodrio-phoenix6~override~setup_bzlmodrio_phoenix6_cpp_dependencies~bazelrio_com_ctre_phoenix6_sim_simtalonfx_linuxx86-64",
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simTalonFX/24.2.0/simTalonFX-24.2.0-linuxx86-64.zip",
-              "sha256": "754ab01616e50f257d39880a362f1e12c95afcbea2d5ca703b7460bf03d7c81f",
-              "build_file_content": "\nJNI_PATTERN=[\n    \"**/*jni.dll\",\n    \"**/*jni.so*\",\n    \"**/*jni.dylib\",\n    \"**/*_java*.dll\",\n    \"**/lib*_java*.dylib\",\n    \"**/lib*_java*.so\",\n]\n\nstatic_srcs = glob([\n        \"**/*.lib\",\n        \"**/*.a\"\n    ],\n    exclude=[\"**/*jni.lib\"]\n)\nshared_srcs = glob([\n        \"**/*.dll\",\n        \"**/*.so*\",\n        \"**/*.dylib\",\n    ],\n    exclude=JNI_PATTERN + [\"**/*.so.debug\"]\n)\nshared_jni_srcs = glob(JNI_PATTERN, exclude=[\"**/*.so.debug\"])\n\nfilegroup(\n    name = \"static_libs\",\n    srcs = static_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_libs\",\n    srcs = shared_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_jni_libs\",\n    srcs = shared_jni_srcs,\n    visibility = [\"//visibility:public\"],\n)\n"
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simTalonFX/24.3.0/simTalonFX-24.3.0-linuxx86-64.zip",
+              "sha256": "96356efc89b3f77042a4eb51a62000fcf7a7df3f00dd6540e3c5d1e5bc6ae63a",
+              "build_file": "@@bzlmodrio-phoenix6~override//private/cpp/simTalonFX:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_simcancoder_linuxx86-64": {
@@ -7949,9 +8038,9 @@
             "ruleClassName": "http_archive",
             "attributes": {
               "name": "bzlmodrio-phoenix6~override~setup_bzlmodrio_phoenix6_cpp_dependencies~bazelrio_com_ctre_phoenix6_sim_simcancoder_linuxx86-64",
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simCANCoder/24.2.0/simCANCoder-24.2.0-linuxx86-64.zip",
-              "sha256": "90803fed88833ee28b1d4f98bcfa283ba2bd22471abdcec1538063cf5f8191b3",
-              "build_file_content": "\nJNI_PATTERN=[\n    \"**/*jni.dll\",\n    \"**/*jni.so*\",\n    \"**/*jni.dylib\",\n    \"**/*_java*.dll\",\n    \"**/lib*_java*.dylib\",\n    \"**/lib*_java*.so\",\n]\n\nstatic_srcs = glob([\n        \"**/*.lib\",\n        \"**/*.a\"\n    ],\n    exclude=[\"**/*jni.lib\"]\n)\nshared_srcs = glob([\n        \"**/*.dll\",\n        \"**/*.so*\",\n        \"**/*.dylib\",\n    ],\n    exclude=JNI_PATTERN + [\"**/*.so.debug\"]\n)\nshared_jni_srcs = glob(JNI_PATTERN, exclude=[\"**/*.so.debug\"])\n\nfilegroup(\n    name = \"static_libs\",\n    srcs = static_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_libs\",\n    srcs = shared_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_jni_libs\",\n    srcs = shared_jni_srcs,\n    visibility = [\"//visibility:public\"],\n)\n"
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simCANCoder/24.3.0/simCANCoder-24.3.0-linuxx86-64.zip",
+              "sha256": "0acd4090cc42ba3efedc1c20766a10fb59d558bcc750b0a5f8847646a48607e7",
+              "build_file": "@@bzlmodrio-phoenix6~override//private/cpp/simCANCoder:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_simprocancoder_linuxx86-64": {
@@ -7959,9 +8048,9 @@
             "ruleClassName": "http_archive",
             "attributes": {
               "name": "bzlmodrio-phoenix6~override~setup_bzlmodrio_phoenix6_cpp_dependencies~bazelrio_com_ctre_phoenix6_sim_simprocancoder_linuxx86-64",
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProCANcoder/24.2.0/simProCANcoder-24.2.0-linuxx86-64.zip",
-              "sha256": "25a9b51466f9940ad013554100254c1ef3232b669a46f893dae8a9c6a73e9aea",
-              "build_file_content": "\nJNI_PATTERN=[\n    \"**/*jni.dll\",\n    \"**/*jni.so*\",\n    \"**/*jni.dylib\",\n    \"**/*_java*.dll\",\n    \"**/lib*_java*.dylib\",\n    \"**/lib*_java*.so\",\n]\n\nstatic_srcs = glob([\n        \"**/*.lib\",\n        \"**/*.a\"\n    ],\n    exclude=[\"**/*jni.lib\"]\n)\nshared_srcs = glob([\n        \"**/*.dll\",\n        \"**/*.so*\",\n        \"**/*.dylib\",\n    ],\n    exclude=JNI_PATTERN + [\"**/*.so.debug\"]\n)\nshared_jni_srcs = glob(JNI_PATTERN, exclude=[\"**/*.so.debug\"])\n\nfilegroup(\n    name = \"static_libs\",\n    srcs = static_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_libs\",\n    srcs = shared_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_jni_libs\",\n    srcs = shared_jni_srcs,\n    visibility = [\"//visibility:public\"],\n)\n"
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProCANcoder/24.3.0/simProCANcoder-24.3.0-linuxx86-64.zip",
+              "sha256": "803ba05f6a3fea27b13e74942626badfefb0f7108bc3f4cf3c6b4f69cdf1e4e2",
+              "build_file": "@@bzlmodrio-phoenix6~override//private/cpp/simProCANcoder:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_wpiapi-cpp_headers": {
@@ -7969,8 +8058,8 @@
             "ruleClassName": "http_archive",
             "attributes": {
               "name": "bzlmodrio-phoenix6~override~setup_bzlmodrio_phoenix6_cpp_dependencies~bazelrio_com_ctre_phoenix6_wpiapi-cpp_headers",
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/wpiapi-cpp/24.2.0/wpiapi-cpp-24.2.0-headers.zip",
-              "sha256": "c003b8d6596ff90a17022a1a639c1b7d4ee3d9e68b2de20ff8c68c00c34b7390",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/wpiapi-cpp/24.3.0/wpiapi-cpp-24.3.0-headers.zip",
+              "sha256": "6bcdb2b8c89e1760c06b293dd76302cb00d88e10f94f2f2437e002516a1f8afe",
               "build_file_content": "cc_library(\n    name = \"headers\",\n    hdrs = glob([\"**\"]),\n    includes = [\".\"],\n    visibility = [\"//visibility:public\"],\n)\n"
             }
           },
@@ -7979,8 +8068,8 @@
             "ruleClassName": "http_archive",
             "attributes": {
               "name": "bzlmodrio-phoenix6~override~setup_bzlmodrio_phoenix6_cpp_dependencies~bazelrio_com_ctre_phoenix6_sim_simprocancoder_headers",
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProCANcoder/24.2.0/simProCANcoder-24.2.0-headers.zip",
-              "sha256": "8a86914a05ef8e28bb313223d5b86b0a7d1a93e145d8b7a798db698fca7d6d0c",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProCANcoder/24.3.0/simProCANcoder-24.3.0-headers.zip",
+              "sha256": "25f0e0ea7db7cc195f201410b9eefdbce2f773fb95e486bf150c4521fae1d13c",
               "build_file_content": "cc_library(\n    name = \"headers\",\n    hdrs = glob([\"**\"]),\n    includes = [\".\"],\n    visibility = [\"//visibility:public\"],\n)\n"
             }
           },
@@ -7989,9 +8078,9 @@
             "ruleClassName": "http_archive",
             "attributes": {
               "name": "bzlmodrio-phoenix6~override~setup_bzlmodrio_phoenix6_cpp_dependencies~bazelrio_com_ctre_phoenix6_wpiapi-cpp_linuxathena",
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/wpiapi-cpp/24.2.0/wpiapi-cpp-24.2.0-linuxathena.zip",
-              "sha256": "28e92a4aa6f6fb58650e584dc4a0587dd09ffb901918bc3dc33eaeb246160cba",
-              "build_file_content": "\nJNI_PATTERN=[\n    \"**/*jni.dll\",\n    \"**/*jni.so*\",\n    \"**/*jni.dylib\",\n    \"**/*_java*.dll\",\n    \"**/lib*_java*.dylib\",\n    \"**/lib*_java*.so\",\n]\n\nstatic_srcs = glob([\n        \"**/*.lib\",\n        \"**/*.a\"\n    ],\n    exclude=[\"**/*jni.lib\"]\n)\nshared_srcs = glob([\n        \"**/*.dll\",\n        \"**/*.so*\",\n        \"**/*.dylib\",\n    ],\n    exclude=JNI_PATTERN + [\"**/*.so.debug\"]\n)\nshared_jni_srcs = glob(JNI_PATTERN, exclude=[\"**/*.so.debug\"])\n\nfilegroup(\n    name = \"static_libs\",\n    srcs = static_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_libs\",\n    srcs = shared_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_jni_libs\",\n    srcs = shared_jni_srcs,\n    visibility = [\"//visibility:public\"],\n)\n"
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/wpiapi-cpp/24.3.0/wpiapi-cpp-24.3.0-linuxathena.zip",
+              "sha256": "9cfbabc57af02b1f87a604a2ca6b2da10a7ecb30d6c1935d11ebc1b470d02bd5",
+              "build_file": "@@bzlmodrio-phoenix6~override//private/cpp/wpiapi-cpp:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_wpiapi-cpp-sim_windowsx86-64": {
@@ -7999,9 +8088,9 @@
             "ruleClassName": "http_archive",
             "attributes": {
               "name": "bzlmodrio-phoenix6~override~setup_bzlmodrio_phoenix6_cpp_dependencies~bazelrio_com_ctre_phoenix6_sim_wpiapi-cpp-sim_windowsx86-64",
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/wpiapi-cpp-sim/24.2.0/wpiapi-cpp-sim-24.2.0-windowsx86-64.zip",
-              "sha256": "f5c812962731fa9c85f7c90fa6d3bbf45738f0a8065bbee60a38e870eb8d898b",
-              "build_file_content": "\nJNI_PATTERN=[\n    \"**/*jni.dll\",\n    \"**/*jni.so*\",\n    \"**/*jni.dylib\",\n    \"**/*_java*.dll\",\n    \"**/lib*_java*.dylib\",\n    \"**/lib*_java*.so\",\n]\n\nstatic_srcs = glob([\n        \"**/*.lib\",\n        \"**/*.a\"\n    ],\n    exclude=[\"**/*jni.lib\"]\n)\nshared_srcs = glob([\n        \"**/*.dll\",\n        \"**/*.so*\",\n        \"**/*.dylib\",\n    ],\n    exclude=JNI_PATTERN + [\"**/*.so.debug\"]\n)\nshared_jni_srcs = glob(JNI_PATTERN, exclude=[\"**/*.so.debug\"])\n\nfilegroup(\n    name = \"static_libs\",\n    srcs = static_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_libs\",\n    srcs = shared_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_jni_libs\",\n    srcs = shared_jni_srcs,\n    visibility = [\"//visibility:public\"],\n)\n"
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/wpiapi-cpp-sim/24.3.0/wpiapi-cpp-sim-24.3.0-windowsx86-64.zip",
+              "sha256": "ec773746c15163ed9f828e1be176606f4de9a07640339550955c36d70a55104e",
+              "build_file": "@@bzlmodrio-phoenix6~override//private/cpp/wpiapi-cpp-sim:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_simprocancoder_windowsx86-64": {
@@ -8009,9 +8098,9 @@
             "ruleClassName": "http_archive",
             "attributes": {
               "name": "bzlmodrio-phoenix6~override~setup_bzlmodrio_phoenix6_cpp_dependencies~bazelrio_com_ctre_phoenix6_sim_simprocancoder_windowsx86-64",
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProCANcoder/24.2.0/simProCANcoder-24.2.0-windowsx86-64.zip",
-              "sha256": "8cc72679c5c74bac80c13e1a6b887d2f79bdfd1261b2d76b78765016bcfb9339",
-              "build_file_content": "\nJNI_PATTERN=[\n    \"**/*jni.dll\",\n    \"**/*jni.so*\",\n    \"**/*jni.dylib\",\n    \"**/*_java*.dll\",\n    \"**/lib*_java*.dylib\",\n    \"**/lib*_java*.so\",\n]\n\nstatic_srcs = glob([\n        \"**/*.lib\",\n        \"**/*.a\"\n    ],\n    exclude=[\"**/*jni.lib\"]\n)\nshared_srcs = glob([\n        \"**/*.dll\",\n        \"**/*.so*\",\n        \"**/*.dylib\",\n    ],\n    exclude=JNI_PATTERN + [\"**/*.so.debug\"]\n)\nshared_jni_srcs = glob(JNI_PATTERN, exclude=[\"**/*.so.debug\"])\n\nfilegroup(\n    name = \"static_libs\",\n    srcs = static_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_libs\",\n    srcs = shared_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_jni_libs\",\n    srcs = shared_jni_srcs,\n    visibility = [\"//visibility:public\"],\n)\n"
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProCANcoder/24.3.0/simProCANcoder-24.3.0-windowsx86-64.zip",
+              "sha256": "540d6d2014d59cdcdd15d4f8d38ea4bcbe7236a013c96ce3312cf468b353cb74",
+              "build_file": "@@bzlmodrio-phoenix6~override//private/cpp/simProCANcoder:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_simcancoder_osxuniversal": {
@@ -8019,9 +8108,9 @@
             "ruleClassName": "http_archive",
             "attributes": {
               "name": "bzlmodrio-phoenix6~override~setup_bzlmodrio_phoenix6_cpp_dependencies~bazelrio_com_ctre_phoenix6_sim_simcancoder_osxuniversal",
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simCANCoder/24.2.0/simCANCoder-24.2.0-osxuniversal.zip",
-              "sha256": "7053326cc39fee4cb7a7f2cdc17879317bdca6068d84019575446d3712ed294e",
-              "build_file_content": "\nJNI_PATTERN=[\n    \"**/*jni.dll\",\n    \"**/*jni.so*\",\n    \"**/*jni.dylib\",\n    \"**/*_java*.dll\",\n    \"**/lib*_java*.dylib\",\n    \"**/lib*_java*.so\",\n]\n\nstatic_srcs = glob([\n        \"**/*.lib\",\n        \"**/*.a\"\n    ],\n    exclude=[\"**/*jni.lib\"]\n)\nshared_srcs = glob([\n        \"**/*.dll\",\n        \"**/*.so*\",\n        \"**/*.dylib\",\n    ],\n    exclude=JNI_PATTERN + [\"**/*.so.debug\"]\n)\nshared_jni_srcs = glob(JNI_PATTERN, exclude=[\"**/*.so.debug\"])\n\nfilegroup(\n    name = \"static_libs\",\n    srcs = static_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_libs\",\n    srcs = shared_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_jni_libs\",\n    srcs = shared_jni_srcs,\n    visibility = [\"//visibility:public\"],\n)\n",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simCANCoder/24.3.0/simCANCoder-24.3.0-osxuniversal.zip",
+              "sha256": "14d6aa1dd6408efee8f66147bff828bb1e5edf03e9b7b2a4cf4958dea360228e",
+              "build_file": "@@bzlmodrio-phoenix6~override//private/cpp/simCANCoder:shared.BUILD.bazel",
               "patch_cmds": [
                 "install_name_tool -id @rpath/libCTRE_SimCANCoder.dylib osx/universal/shared/libCTRE_SimCANCoder.dylib"
               ]
@@ -8032,9 +8121,9 @@
             "ruleClassName": "http_archive",
             "attributes": {
               "name": "bzlmodrio-phoenix6~override~setup_bzlmodrio_phoenix6_cpp_dependencies~bazelrio_com_ctre_phoenix6_sim_wpiapi-cpp-sim_linuxx86-64",
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/wpiapi-cpp-sim/24.2.0/wpiapi-cpp-sim-24.2.0-linuxx86-64.zip",
-              "sha256": "717f70b73367393330084d3361d4d2669562ddb0df76c53c2c82ba582b63fb02",
-              "build_file_content": "\nJNI_PATTERN=[\n    \"**/*jni.dll\",\n    \"**/*jni.so*\",\n    \"**/*jni.dylib\",\n    \"**/*_java*.dll\",\n    \"**/lib*_java*.dylib\",\n    \"**/lib*_java*.so\",\n]\n\nstatic_srcs = glob([\n        \"**/*.lib\",\n        \"**/*.a\"\n    ],\n    exclude=[\"**/*jni.lib\"]\n)\nshared_srcs = glob([\n        \"**/*.dll\",\n        \"**/*.so*\",\n        \"**/*.dylib\",\n    ],\n    exclude=JNI_PATTERN + [\"**/*.so.debug\"]\n)\nshared_jni_srcs = glob(JNI_PATTERN, exclude=[\"**/*.so.debug\"])\n\nfilegroup(\n    name = \"static_libs\",\n    srcs = static_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_libs\",\n    srcs = shared_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_jni_libs\",\n    srcs = shared_jni_srcs,\n    visibility = [\"//visibility:public\"],\n)\n"
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/wpiapi-cpp-sim/24.3.0/wpiapi-cpp-sim-24.3.0-linuxx86-64.zip",
+              "sha256": "27ca0f14a4564fa71eb5fca7d8b1d5529b45f630e796568156f935dd4c6290dc",
+              "build_file": "@@bzlmodrio-phoenix6~override//private/cpp/wpiapi-cpp-sim:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_simvictorspx_windowsx86-64": {
@@ -8042,9 +8131,9 @@
             "ruleClassName": "http_archive",
             "attributes": {
               "name": "bzlmodrio-phoenix6~override~setup_bzlmodrio_phoenix6_cpp_dependencies~bazelrio_com_ctre_phoenix6_sim_simvictorspx_windowsx86-64",
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simVictorSPX/24.2.0/simVictorSPX-24.2.0-windowsx86-64.zip",
-              "sha256": "f6cc410ab33eab3a1c5a926fd25883512f58ea80edea591279cd69d3c8b633cd",
-              "build_file_content": "\nJNI_PATTERN=[\n    \"**/*jni.dll\",\n    \"**/*jni.so*\",\n    \"**/*jni.dylib\",\n    \"**/*_java*.dll\",\n    \"**/lib*_java*.dylib\",\n    \"**/lib*_java*.so\",\n]\n\nstatic_srcs = glob([\n        \"**/*.lib\",\n        \"**/*.a\"\n    ],\n    exclude=[\"**/*jni.lib\"]\n)\nshared_srcs = glob([\n        \"**/*.dll\",\n        \"**/*.so*\",\n        \"**/*.dylib\",\n    ],\n    exclude=JNI_PATTERN + [\"**/*.so.debug\"]\n)\nshared_jni_srcs = glob(JNI_PATTERN, exclude=[\"**/*.so.debug\"])\n\nfilegroup(\n    name = \"static_libs\",\n    srcs = static_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_libs\",\n    srcs = shared_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_jni_libs\",\n    srcs = shared_jni_srcs,\n    visibility = [\"//visibility:public\"],\n)\n"
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simVictorSPX/24.3.0/simVictorSPX-24.3.0-windowsx86-64.zip",
+              "sha256": "6b23ed4f1a91fb711feb2713ae162a68992441fe0fd73c90489da518063e0d7e",
+              "build_file": "@@bzlmodrio-phoenix6~override//private/cpp/simVictorSPX:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_simprotalonfx_osxuniversal": {
@@ -8052,9 +8141,9 @@
             "ruleClassName": "http_archive",
             "attributes": {
               "name": "bzlmodrio-phoenix6~override~setup_bzlmodrio_phoenix6_cpp_dependencies~bazelrio_com_ctre_phoenix6_sim_simprotalonfx_osxuniversal",
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProTalonFX/24.2.0/simProTalonFX-24.2.0-osxuniversal.zip",
-              "sha256": "40da920f7dabd3c4463265c11b863d52d2d54e26a582522ef37b723cf84076c8",
-              "build_file_content": "\nJNI_PATTERN=[\n    \"**/*jni.dll\",\n    \"**/*jni.so*\",\n    \"**/*jni.dylib\",\n    \"**/*_java*.dll\",\n    \"**/lib*_java*.dylib\",\n    \"**/lib*_java*.so\",\n]\n\nstatic_srcs = glob([\n        \"**/*.lib\",\n        \"**/*.a\"\n    ],\n    exclude=[\"**/*jni.lib\"]\n)\nshared_srcs = glob([\n        \"**/*.dll\",\n        \"**/*.so*\",\n        \"**/*.dylib\",\n    ],\n    exclude=JNI_PATTERN + [\"**/*.so.debug\"]\n)\nshared_jni_srcs = glob(JNI_PATTERN, exclude=[\"**/*.so.debug\"])\n\nfilegroup(\n    name = \"static_libs\",\n    srcs = static_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_libs\",\n    srcs = shared_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_jni_libs\",\n    srcs = shared_jni_srcs,\n    visibility = [\"//visibility:public\"],\n)\n",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProTalonFX/24.3.0/simProTalonFX-24.3.0-osxuniversal.zip",
+              "sha256": "6410965d8b1af715478c79172b27a848f59aa557cd3305b0fea7392b59f75553",
+              "build_file": "@@bzlmodrio-phoenix6~override//private/cpp/simProTalonFX:shared.BUILD.bazel",
               "patch_cmds": [
                 "install_name_tool -id @rpath/libCTRE_SimProTalonFX.dylib osx/universal/shared/libCTRE_SimProTalonFX.dylib"
               ]
@@ -8065,8 +8154,8 @@
             "ruleClassName": "http_archive",
             "attributes": {
               "name": "bzlmodrio-phoenix6~override~setup_bzlmodrio_phoenix6_cpp_dependencies~bazelrio_com_ctre_phoenix6_tools_headers",
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/tools/24.2.0/tools-24.2.0-headers.zip",
-              "sha256": "35fa9f35d01a3cfbe0be385ff3d6cda2c5e9e0329ae7fa656d251e96f31a483f",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/tools/24.3.0/tools-24.3.0-headers.zip",
+              "sha256": "d71c46404e14bc9c26f60582e11b425cc29032cfd5979ed30ff7cb51f1b42964",
               "build_file_content": "cc_library(\n    name = \"headers\",\n    hdrs = glob([\"**\"]),\n    includes = [\".\"],\n    visibility = [\"//visibility:public\"],\n)\n"
             }
           },
@@ -8075,9 +8164,9 @@
             "ruleClassName": "http_archive",
             "attributes": {
               "name": "bzlmodrio-phoenix6~override~setup_bzlmodrio_phoenix6_cpp_dependencies~bazelrio_com_ctre_phoenix6_sim_tools-sim_linuxx86-64",
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/tools-sim/24.2.0/tools-sim-24.2.0-linuxx86-64.zip",
-              "sha256": "44e83c1ec780ba5f3529794f7b1db30f4c233865dc7130df165f754853946a10",
-              "build_file_content": "\nJNI_PATTERN=[\n    \"**/*jni.dll\",\n    \"**/*jni.so*\",\n    \"**/*jni.dylib\",\n    \"**/*_java*.dll\",\n    \"**/lib*_java*.dylib\",\n    \"**/lib*_java*.so\",\n]\n\nstatic_srcs = glob([\n        \"**/*.lib\",\n        \"**/*.a\"\n    ],\n    exclude=[\"**/*jni.lib\"]\n)\nshared_srcs = glob([\n        \"**/*.dll\",\n        \"**/*.so*\",\n        \"**/*.dylib\",\n    ],\n    exclude=JNI_PATTERN + [\"**/*.so.debug\"]\n)\nshared_jni_srcs = glob(JNI_PATTERN, exclude=[\"**/*.so.debug\"])\n\nfilegroup(\n    name = \"static_libs\",\n    srcs = static_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_libs\",\n    srcs = shared_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_jni_libs\",\n    srcs = shared_jni_srcs,\n    visibility = [\"//visibility:public\"],\n)\n"
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/tools-sim/24.3.0/tools-sim-24.3.0-linuxx86-64.zip",
+              "sha256": "f81150b57a7e6aa68c785e2eb5ddc6f3454a96925ca476ff0c3ceb7c94602da4",
+              "build_file": "@@bzlmodrio-phoenix6~override//private/cpp/tools-sim:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_wpiapi-cpp_windowsx86-64": {
@@ -8085,9 +8174,9 @@
             "ruleClassName": "http_archive",
             "attributes": {
               "name": "bzlmodrio-phoenix6~override~setup_bzlmodrio_phoenix6_cpp_dependencies~bazelrio_com_ctre_phoenix6_wpiapi-cpp_windowsx86-64",
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/wpiapi-cpp/24.2.0/wpiapi-cpp-24.2.0-windowsx86-64.zip",
-              "sha256": "04d544fdebf2be2830199f01166345d0787e02cbcfa01d597790e782240a257f",
-              "build_file_content": "\nJNI_PATTERN=[\n    \"**/*jni.dll\",\n    \"**/*jni.so*\",\n    \"**/*jni.dylib\",\n    \"**/*_java*.dll\",\n    \"**/lib*_java*.dylib\",\n    \"**/lib*_java*.so\",\n]\n\nstatic_srcs = glob([\n        \"**/*.lib\",\n        \"**/*.a\"\n    ],\n    exclude=[\"**/*jni.lib\"]\n)\nshared_srcs = glob([\n        \"**/*.dll\",\n        \"**/*.so*\",\n        \"**/*.dylib\",\n    ],\n    exclude=JNI_PATTERN + [\"**/*.so.debug\"]\n)\nshared_jni_srcs = glob(JNI_PATTERN, exclude=[\"**/*.so.debug\"])\n\nfilegroup(\n    name = \"static_libs\",\n    srcs = static_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_libs\",\n    srcs = shared_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_jni_libs\",\n    srcs = shared_jni_srcs,\n    visibility = [\"//visibility:public\"],\n)\n"
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/wpiapi-cpp/24.3.0/wpiapi-cpp-24.3.0-windowsx86-64.zip",
+              "sha256": "b1f9167803facbe83fe68f252a419983e94f60670bfed0fae14d08f71d33945a",
+              "build_file": "@@bzlmodrio-phoenix6~override//private/cpp/wpiapi-cpp:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_tools_windowsx86-64": {
@@ -8095,9 +8184,9 @@
             "ruleClassName": "http_archive",
             "attributes": {
               "name": "bzlmodrio-phoenix6~override~setup_bzlmodrio_phoenix6_cpp_dependencies~bazelrio_com_ctre_phoenix6_tools_windowsx86-64",
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/tools/24.2.0/tools-24.2.0-windowsx86-64.zip",
-              "sha256": "cefca8583b8b7567687abba0b89154712607c67e4d79df3ee5a20ed14efa0de8",
-              "build_file_content": "\nJNI_PATTERN=[\n    \"**/*jni.dll\",\n    \"**/*jni.so*\",\n    \"**/*jni.dylib\",\n    \"**/*_java*.dll\",\n    \"**/lib*_java*.dylib\",\n    \"**/lib*_java*.so\",\n]\n\nstatic_srcs = glob([\n        \"**/*.lib\",\n        \"**/*.a\"\n    ],\n    exclude=[\"**/*jni.lib\"]\n)\nshared_srcs = glob([\n        \"**/*.dll\",\n        \"**/*.so*\",\n        \"**/*.dylib\",\n    ],\n    exclude=JNI_PATTERN + [\"**/*.so.debug\"]\n)\nshared_jni_srcs = glob(JNI_PATTERN, exclude=[\"**/*.so.debug\"])\n\nfilegroup(\n    name = \"static_libs\",\n    srcs = static_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_libs\",\n    srcs = shared_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_jni_libs\",\n    srcs = shared_jni_srcs,\n    visibility = [\"//visibility:public\"],\n)\n"
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/tools/24.3.0/tools-24.3.0-windowsx86-64.zip",
+              "sha256": "28922674e1a01ba9befc126000f59e8b63016615954c96db52cffae448f9b5ea",
+              "build_file": "@@bzlmodrio-phoenix6~override//private/cpp/tools:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_wpiapi-cpp-sim_osxuniversal": {
@@ -8105,9 +8194,9 @@
             "ruleClassName": "http_archive",
             "attributes": {
               "name": "bzlmodrio-phoenix6~override~setup_bzlmodrio_phoenix6_cpp_dependencies~bazelrio_com_ctre_phoenix6_sim_wpiapi-cpp-sim_osxuniversal",
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/wpiapi-cpp-sim/24.2.0/wpiapi-cpp-sim-24.2.0-osxuniversal.zip",
-              "sha256": "ef97d2214bdad7edb528f7da6368598c3cbde14ab6b81926f46056e36f73d1c8",
-              "build_file_content": "\nJNI_PATTERN=[\n    \"**/*jni.dll\",\n    \"**/*jni.so*\",\n    \"**/*jni.dylib\",\n    \"**/*_java*.dll\",\n    \"**/lib*_java*.dylib\",\n    \"**/lib*_java*.so\",\n]\n\nstatic_srcs = glob([\n        \"**/*.lib\",\n        \"**/*.a\"\n    ],\n    exclude=[\"**/*jni.lib\"]\n)\nshared_srcs = glob([\n        \"**/*.dll\",\n        \"**/*.so*\",\n        \"**/*.dylib\",\n    ],\n    exclude=JNI_PATTERN + [\"**/*.so.debug\"]\n)\nshared_jni_srcs = glob(JNI_PATTERN, exclude=[\"**/*.so.debug\"])\n\nfilegroup(\n    name = \"static_libs\",\n    srcs = static_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_libs\",\n    srcs = shared_srcs,\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"shared_jni_libs\",\n    srcs = shared_jni_srcs,\n    visibility = [\"//visibility:public\"],\n)\n",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/wpiapi-cpp-sim/24.3.0/wpiapi-cpp-sim-24.3.0-osxuniversal.zip",
+              "sha256": "e3175ee1f1ff0965b2108da2cdedb82d5a1cad40f4699d4ac91e323036b6eb54",
+              "build_file": "@@bzlmodrio-phoenix6~override//private/cpp/wpiapi-cpp-sim:shared.BUILD.bazel",
               "patch_cmds": [
                 "install_name_tool -id @rpath/libCTRE_Phoenix6_WPISim.dylib osx/universal/shared/libCTRE_Phoenix6_WPISim.dylib",
                 "install_name_tool -change libCTRE_PhoenixTools_Sim.dylib @rpath/libCTRE_PhoenixTools_Sim.dylib osx/universal/shared/libCTRE_Phoenix6_WPISim.dylib",
@@ -8135,7 +8224,7 @@
     },
     "@bzlmodrio-phoenix6~override//:maven_java_deps.bzl%setup_bzlmodrio_phoenix6_java_dependencies": {
       "general": {
-        "bzlTransitiveDigest": "qBTsbj+FmstKC4UGRWcmhZ0BWE6M5TWUqIjwtbWg6wA=",
+        "bzlTransitiveDigest": "7pzi58+OnCxGG9BlFSkSFLY/xAqqlitVay6Z1pn+IPg=",
         "accumulatedFileDigests": {},
         "envVariables": {},
         "generatedRepoSpecs": {
@@ -8144,17 +8233,17 @@
             "ruleClassName": "jvm_import_external",
             "attributes": {
               "artifact_urls": [
-                "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/wpiapi-java/24.2.0/wpiapi-java-24.2.0.jar"
+                "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/wpiapi-java/24.3.0/wpiapi-java-24.3.0.jar"
               ],
               "srcjar_urls": [],
-              "canonical_id": "com.ctre.phoenix6:wpiapi-java:24.2.0",
+              "canonical_id": "com.ctre.phoenix6:wpiapi-java:24.3.0",
               "rule_name": "java_import",
               "rule_load": "load(\"@rules_java//java:defs.bzl\", \"java_import\")",
               "tags": [
-                "maven_coordinates=com.ctre.phoenix6:wpiapi-java:24.2.0"
+                "maven_coordinates=com.ctre.phoenix6:wpiapi-java:24.3.0"
               ],
               "name": "bzlmodrio-phoenix6~override~setup_bzlmodrio_phoenix6_java_dependencies~com_ctre_phoenix6_wpiapi_java",
-              "artifact_sha256": "bc1ce2ec33c2d72839b29bc3985163ef615e828d8059c7ecbb9c307fc4efc62a"
+              "artifact_sha256": "20d7f7bbcd948d013910b59f82f1b0b879d276e803f1bcbba38eb7137bd66ce2"
             }
           }
         }
@@ -11422,119 +11511,564 @@
         }
       }
     },
-    "@rules_python~0.21.0//python:extensions.bzl%python": {
+    "@rules_python~0.30.0//python/extensions:python.bzl%python": {
       "general": {
-        "bzlTransitiveDigest": "fLfwSTyVx+zS9TmWExshttdLur3XKuDDKJy5SHyyUfw=",
+        "bzlTransitiveDigest": "9li64tcsbQLc0uB/B+w6wzLIYSds6B7gHl4g35U/vZU=",
         "accumulatedFileDigests": {},
         "envVariables": {},
         "generatedRepoSpecs": {
-          "python3_10_aarch64-apple-darwin": {
-            "bzlFile": "@@rules_python~0.21.0//python:repositories.bzl",
+          "python_3_11_s390x-unknown-linux-gnu": {
+            "bzlFile": "@@rules_python~0.30.0//python:repositories.bzl",
             "ruleClassName": "python_repository",
             "attributes": {
-              "name": "rules_python~0.21.0~python~python3_10_aarch64-apple-darwin",
-              "sha256": "018d05a779b2de7a476f3b3ff2d10f503d69d14efcedd0774e6dab8c22ef84ff",
+              "name": "rules_python~0.30.0~python~python_3_11_s390x-unknown-linux-gnu",
+              "sha256": "49520e3ff494708020f306e30b0964f079170be83e956be4504f850557378a22",
+              "patches": [],
+              "platform": "s390x-unknown-linux-gnu",
+              "python_version": "3.11.7",
+              "release_filename": "20240107/cpython-3.11.7+20240107-s390x-unknown-linux-gnu-install_only.tar.gz",
+              "urls": [
+                "https://github.com/indygreg/python-build-standalone/releases/download/20240107/cpython-3.11.7+20240107-s390x-unknown-linux-gnu-install_only.tar.gz"
+              ],
+              "distutils_content": "",
+              "strip_prefix": "python",
+              "coverage_tool": "",
+              "ignore_root_user_error": false
+            }
+          },
+          "python_3_11_host": {
+            "bzlFile": "@@rules_python~0.30.0//python/private:toolchains_repo.bzl",
+            "ruleClassName": "host_toolchain",
+            "attributes": {
+              "name": "rules_python~0.30.0~python~python_3_11_host",
+              "python_version": "3.11.7",
+              "user_repository_name": "python_3_11",
+              "platforms": [
+                "aarch64-apple-darwin",
+                "aarch64-unknown-linux-gnu",
+                "ppc64le-unknown-linux-gnu",
+                "s390x-unknown-linux-gnu",
+                "x86_64-apple-darwin",
+                "x86_64-pc-windows-msvc",
+                "x86_64-unknown-linux-gnu"
+              ]
+            }
+          },
+          "python_3_10_aarch64-apple-darwin": {
+            "bzlFile": "@@rules_python~0.30.0//python:repositories.bzl",
+            "ruleClassName": "python_repository",
+            "attributes": {
+              "name": "rules_python~0.30.0~python~python_3_10_aarch64-apple-darwin",
+              "sha256": "fd027b1dedf1ea034cdaa272e91771bdf75ddef4c8653b05d224a0645aa2ca3c",
               "patches": [],
               "platform": "aarch64-apple-darwin",
-              "python_version": "3.10.9",
-              "release_filename": "20230116/cpython-3.10.9+20230116-aarch64-apple-darwin-install_only.tar.gz",
+              "python_version": "3.10.13",
+              "release_filename": "20231002/cpython-3.10.13+20231002-aarch64-apple-darwin-install_only.tar.gz",
               "urls": [
-                "https://github.com/indygreg/python-build-standalone/releases/download/20230116/cpython-3.10.9+20230116-aarch64-apple-darwin-install_only.tar.gz"
+                "https://github.com/indygreg/python-build-standalone/releases/download/20231002/cpython-3.10.13+20231002-aarch64-apple-darwin-install_only.tar.gz"
               ],
               "distutils_content": "",
               "strip_prefix": "python",
+              "coverage_tool": "",
               "ignore_root_user_error": false
             }
           },
-          "python3_10_x86_64-pc-windows-msvc": {
-            "bzlFile": "@@rules_python~0.21.0//python:repositories.bzl",
+          "python_3_10_x86_64-apple-darwin": {
+            "bzlFile": "@@rules_python~0.30.0//python:repositories.bzl",
             "ruleClassName": "python_repository",
             "attributes": {
-              "name": "rules_python~0.21.0~python~python3_10_x86_64-pc-windows-msvc",
-              "sha256": "59c6970cecb357dc1d8554bd0540eb81ee7f6d16a07acf3d14ed294ece02c035",
-              "patches": [],
-              "platform": "x86_64-pc-windows-msvc",
-              "python_version": "3.10.9",
-              "release_filename": "20230116/cpython-3.10.9+20230116-x86_64-pc-windows-msvc-shared-install_only.tar.gz",
-              "urls": [
-                "https://github.com/indygreg/python-build-standalone/releases/download/20230116/cpython-3.10.9+20230116-x86_64-pc-windows-msvc-shared-install_only.tar.gz"
-              ],
-              "distutils_content": "",
-              "strip_prefix": "python",
-              "ignore_root_user_error": false
-            }
-          },
-          "python3_10_x86_64-unknown-linux-gnu": {
-            "bzlFile": "@@rules_python~0.21.0//python:repositories.bzl",
-            "ruleClassName": "python_repository",
-            "attributes": {
-              "name": "rules_python~0.21.0~python~python3_10_x86_64-unknown-linux-gnu",
-              "sha256": "d196347aeb701a53fe2bb2b095abec38d27d0fa0443f8a1c2023a1bed6e18cdf",
-              "patches": [],
-              "platform": "x86_64-unknown-linux-gnu",
-              "python_version": "3.10.9",
-              "release_filename": "20230116/cpython-3.10.9+20230116-x86_64-unknown-linux-gnu-install_only.tar.gz",
-              "urls": [
-                "https://github.com/indygreg/python-build-standalone/releases/download/20230116/cpython-3.10.9+20230116-x86_64-unknown-linux-gnu-install_only.tar.gz"
-              ],
-              "distutils_content": "",
-              "strip_prefix": "python",
-              "ignore_root_user_error": false
-            }
-          },
-          "python3_10_aarch64-unknown-linux-gnu": {
-            "bzlFile": "@@rules_python~0.21.0//python:repositories.bzl",
-            "ruleClassName": "python_repository",
-            "attributes": {
-              "name": "rules_python~0.21.0~python~python3_10_aarch64-unknown-linux-gnu",
-              "sha256": "2003750f40cd09d4bf7a850342613992f8d9454f03b3c067989911fb37e7a4d1",
-              "patches": [],
-              "platform": "aarch64-unknown-linux-gnu",
-              "python_version": "3.10.9",
-              "release_filename": "20230116/cpython-3.10.9+20230116-aarch64-unknown-linux-gnu-install_only.tar.gz",
-              "urls": [
-                "https://github.com/indygreg/python-build-standalone/releases/download/20230116/cpython-3.10.9+20230116-aarch64-unknown-linux-gnu-install_only.tar.gz"
-              ],
-              "distutils_content": "",
-              "strip_prefix": "python",
-              "ignore_root_user_error": false
-            }
-          },
-          "python3_10_toolchains": {
-            "bzlFile": "@@rules_python~0.21.0//python/private:toolchains_repo.bzl",
-            "ruleClassName": "toolchains_repo",
-            "attributes": {
-              "name": "rules_python~0.21.0~python~python3_10_toolchains",
-              "python_version": "3.10.9",
-              "set_python_version_constraint": false,
-              "user_repository_name": "python3_10"
-            }
-          },
-          "python3_10": {
-            "bzlFile": "@@rules_python~0.21.0//python/private:toolchains_repo.bzl",
-            "ruleClassName": "toolchain_aliases",
-            "attributes": {
-              "name": "rules_python~0.21.0~python~python3_10",
-              "python_version": "3.10.9",
-              "user_repository_name": "python3_10"
-            }
-          },
-          "python3_10_x86_64-apple-darwin": {
-            "bzlFile": "@@rules_python~0.21.0//python:repositories.bzl",
-            "ruleClassName": "python_repository",
-            "attributes": {
-              "name": "rules_python~0.21.0~python~python3_10_x86_64-apple-darwin",
-              "sha256": "0e685f98dce0e5bc8da93c7081f4e6c10219792e223e4b5886730fd73a7ba4c6",
+              "name": "rules_python~0.30.0~python~python_3_10_x86_64-apple-darwin",
+              "sha256": "be0b19b6af1f7d8c667e5abef5505ad06cf72e5a11bb5844970c395a7e5b1275",
               "patches": [],
               "platform": "x86_64-apple-darwin",
-              "python_version": "3.10.9",
-              "release_filename": "20230116/cpython-3.10.9+20230116-x86_64-apple-darwin-install_only.tar.gz",
+              "python_version": "3.10.13",
+              "release_filename": "20231002/cpython-3.10.13+20231002-x86_64-apple-darwin-install_only.tar.gz",
               "urls": [
-                "https://github.com/indygreg/python-build-standalone/releases/download/20230116/cpython-3.10.9+20230116-x86_64-apple-darwin-install_only.tar.gz"
+                "https://github.com/indygreg/python-build-standalone/releases/download/20231002/cpython-3.10.13+20231002-x86_64-apple-darwin-install_only.tar.gz"
               ],
               "distutils_content": "",
               "strip_prefix": "python",
+              "coverage_tool": "",
               "ignore_root_user_error": false
+            }
+          },
+          "python_3_11_aarch64-unknown-linux-gnu": {
+            "bzlFile": "@@rules_python~0.30.0//python:repositories.bzl",
+            "ruleClassName": "python_repository",
+            "attributes": {
+              "name": "rules_python~0.30.0~python~python_3_11_aarch64-unknown-linux-gnu",
+              "sha256": "b102eaf865eb715aa98a8a2ef19037b6cc3ae7dfd4a632802650f29de635aa13",
+              "patches": [],
+              "platform": "aarch64-unknown-linux-gnu",
+              "python_version": "3.11.7",
+              "release_filename": "20240107/cpython-3.11.7+20240107-aarch64-unknown-linux-gnu-install_only.tar.gz",
+              "urls": [
+                "https://github.com/indygreg/python-build-standalone/releases/download/20240107/cpython-3.11.7+20240107-aarch64-unknown-linux-gnu-install_only.tar.gz"
+              ],
+              "distutils_content": "",
+              "strip_prefix": "python",
+              "coverage_tool": "",
+              "ignore_root_user_error": false
+            }
+          },
+          "python_3_11_aarch64-apple-darwin": {
+            "bzlFile": "@@rules_python~0.30.0//python:repositories.bzl",
+            "ruleClassName": "python_repository",
+            "attributes": {
+              "name": "rules_python~0.30.0~python~python_3_11_aarch64-apple-darwin",
+              "sha256": "b042c966920cf8465385ca3522986b12d745151a72c060991088977ca36d3883",
+              "patches": [],
+              "platform": "aarch64-apple-darwin",
+              "python_version": "3.11.7",
+              "release_filename": "20240107/cpython-3.11.7+20240107-aarch64-apple-darwin-install_only.tar.gz",
+              "urls": [
+                "https://github.com/indygreg/python-build-standalone/releases/download/20240107/cpython-3.11.7+20240107-aarch64-apple-darwin-install_only.tar.gz"
+              ],
+              "distutils_content": "",
+              "strip_prefix": "python",
+              "coverage_tool": "",
+              "ignore_root_user_error": false
+            }
+          },
+          "python_3_10_ppc64le-unknown-linux-gnu": {
+            "bzlFile": "@@rules_python~0.30.0//python:repositories.bzl",
+            "ruleClassName": "python_repository",
+            "attributes": {
+              "name": "rules_python~0.30.0~python~python_3_10_ppc64le-unknown-linux-gnu",
+              "sha256": "f3f9c43eec1a0c3f72845d0b705da17a336d3906b7df212d2640b8f47e8ff375",
+              "patches": [],
+              "platform": "ppc64le-unknown-linux-gnu",
+              "python_version": "3.10.13",
+              "release_filename": "20231002/cpython-3.10.13+20231002-ppc64le-unknown-linux-gnu-install_only.tar.gz",
+              "urls": [
+                "https://github.com/indygreg/python-build-standalone/releases/download/20231002/cpython-3.10.13+20231002-ppc64le-unknown-linux-gnu-install_only.tar.gz"
+              ],
+              "distutils_content": "",
+              "strip_prefix": "python",
+              "coverage_tool": "",
+              "ignore_root_user_error": false
+            }
+          },
+          "python_3_10_x86_64-pc-windows-msvc": {
+            "bzlFile": "@@rules_python~0.30.0//python:repositories.bzl",
+            "ruleClassName": "python_repository",
+            "attributes": {
+              "name": "rules_python~0.30.0~python~python_3_10_x86_64-pc-windows-msvc",
+              "sha256": "b8d930ce0d04bda83037ad3653d7450f8907c88e24bb8255a29b8dab8930d6f1",
+              "patches": [],
+              "platform": "x86_64-pc-windows-msvc",
+              "python_version": "3.10.13",
+              "release_filename": "20231002/cpython-3.10.13+20231002-x86_64-pc-windows-msvc-shared-install_only.tar.gz",
+              "urls": [
+                "https://github.com/indygreg/python-build-standalone/releases/download/20231002/cpython-3.10.13+20231002-x86_64-pc-windows-msvc-shared-install_only.tar.gz"
+              ],
+              "distutils_content": "",
+              "strip_prefix": "python",
+              "coverage_tool": "",
+              "ignore_root_user_error": false
+            }
+          },
+          "pythons_hub": {
+            "bzlFile": "@@rules_python~0.30.0//python/private/bzlmod:pythons_hub.bzl",
+            "ruleClassName": "hub_repo",
+            "attributes": {
+              "name": "rules_python~0.30.0~python~pythons_hub",
+              "default_python_version": "3.11",
+              "toolchain_prefixes": [
+                "_0000_python_3_10_",
+                "_0001_python_3_11_"
+              ],
+              "toolchain_python_versions": [
+                "3.10",
+                "3.11"
+              ],
+              "toolchain_set_python_version_constraints": [
+                "True",
+                "False"
+              ],
+              "toolchain_user_repository_names": [
+                "python_3_10",
+                "python_3_11"
+              ]
+            }
+          },
+          "python_3_11_x86_64-pc-windows-msvc": {
+            "bzlFile": "@@rules_python~0.30.0//python:repositories.bzl",
+            "ruleClassName": "python_repository",
+            "attributes": {
+              "name": "rules_python~0.30.0~python~python_3_11_x86_64-pc-windows-msvc",
+              "sha256": "67077e6fa918e4f4fd60ba169820b00be7c390c497bf9bc9cab2c255ea8e6f3e",
+              "patches": [],
+              "platform": "x86_64-pc-windows-msvc",
+              "python_version": "3.11.7",
+              "release_filename": "20240107/cpython-3.11.7+20240107-x86_64-pc-windows-msvc-shared-install_only.tar.gz",
+              "urls": [
+                "https://github.com/indygreg/python-build-standalone/releases/download/20240107/cpython-3.11.7+20240107-x86_64-pc-windows-msvc-shared-install_only.tar.gz"
+              ],
+              "distutils_content": "",
+              "strip_prefix": "python",
+              "coverage_tool": "",
+              "ignore_root_user_error": false
+            }
+          },
+          "python_3_10_aarch64-unknown-linux-gnu": {
+            "bzlFile": "@@rules_python~0.30.0//python:repositories.bzl",
+            "ruleClassName": "python_repository",
+            "attributes": {
+              "name": "rules_python~0.30.0~python~python_3_10_aarch64-unknown-linux-gnu",
+              "sha256": "8675915ff454ed2f1597e27794bc7df44f5933c26b94aa06af510fe91b58bb97",
+              "patches": [],
+              "platform": "aarch64-unknown-linux-gnu",
+              "python_version": "3.10.13",
+              "release_filename": "20231002/cpython-3.10.13+20231002-aarch64-unknown-linux-gnu-install_only.tar.gz",
+              "urls": [
+                "https://github.com/indygreg/python-build-standalone/releases/download/20231002/cpython-3.10.13+20231002-aarch64-unknown-linux-gnu-install_only.tar.gz"
+              ],
+              "distutils_content": "",
+              "strip_prefix": "python",
+              "coverage_tool": "",
+              "ignore_root_user_error": false
+            }
+          },
+          "python_3_11": {
+            "bzlFile": "@@rules_python~0.30.0//python/private:toolchains_repo.bzl",
+            "ruleClassName": "toolchain_aliases",
+            "attributes": {
+              "name": "rules_python~0.30.0~python~python_3_11",
+              "python_version": "3.11.7",
+              "user_repository_name": "python_3_11",
+              "platforms": [
+                "aarch64-apple-darwin",
+                "aarch64-unknown-linux-gnu",
+                "ppc64le-unknown-linux-gnu",
+                "s390x-unknown-linux-gnu",
+                "x86_64-apple-darwin",
+                "x86_64-pc-windows-msvc",
+                "x86_64-unknown-linux-gnu"
+              ]
+            }
+          },
+          "python_3_10_s390x-unknown-linux-gnu": {
+            "bzlFile": "@@rules_python~0.30.0//python:repositories.bzl",
+            "ruleClassName": "python_repository",
+            "attributes": {
+              "name": "rules_python~0.30.0~python~python_3_10_s390x-unknown-linux-gnu",
+              "sha256": "859f6cfe9aedb6e8858892fdc124037e83ab05f28d42a7acd314c6a16d6bd66c",
+              "patches": [],
+              "platform": "s390x-unknown-linux-gnu",
+              "python_version": "3.10.13",
+              "release_filename": "20231002/cpython-3.10.13+20231002-s390x-unknown-linux-gnu-install_only.tar.gz",
+              "urls": [
+                "https://github.com/indygreg/python-build-standalone/releases/download/20231002/cpython-3.10.13+20231002-s390x-unknown-linux-gnu-install_only.tar.gz"
+              ],
+              "distutils_content": "",
+              "strip_prefix": "python",
+              "coverage_tool": "",
+              "ignore_root_user_error": false
+            }
+          },
+          "python_3_10": {
+            "bzlFile": "@@rules_python~0.30.0//python/private:toolchains_repo.bzl",
+            "ruleClassName": "toolchain_aliases",
+            "attributes": {
+              "name": "rules_python~0.30.0~python~python_3_10",
+              "python_version": "3.10.13",
+              "user_repository_name": "python_3_10",
+              "platforms": [
+                "aarch64-apple-darwin",
+                "aarch64-unknown-linux-gnu",
+                "ppc64le-unknown-linux-gnu",
+                "s390x-unknown-linux-gnu",
+                "x86_64-apple-darwin",
+                "x86_64-pc-windows-msvc",
+                "x86_64-unknown-linux-gnu"
+              ]
+            }
+          },
+          "python_3_11_ppc64le-unknown-linux-gnu": {
+            "bzlFile": "@@rules_python~0.30.0//python:repositories.bzl",
+            "ruleClassName": "python_repository",
+            "attributes": {
+              "name": "rules_python~0.30.0~python~python_3_11_ppc64le-unknown-linux-gnu",
+              "sha256": "b44e1b74afe75c7b19143413632c4386708ae229117f8f950c2094e9681d34c7",
+              "patches": [],
+              "platform": "ppc64le-unknown-linux-gnu",
+              "python_version": "3.11.7",
+              "release_filename": "20240107/cpython-3.11.7+20240107-ppc64le-unknown-linux-gnu-install_only.tar.gz",
+              "urls": [
+                "https://github.com/indygreg/python-build-standalone/releases/download/20240107/cpython-3.11.7+20240107-ppc64le-unknown-linux-gnu-install_only.tar.gz"
+              ],
+              "distutils_content": "",
+              "strip_prefix": "python",
+              "coverage_tool": "",
+              "ignore_root_user_error": false
+            }
+          },
+          "python_3_11_x86_64-apple-darwin": {
+            "bzlFile": "@@rules_python~0.30.0//python:repositories.bzl",
+            "ruleClassName": "python_repository",
+            "attributes": {
+              "name": "rules_python~0.30.0~python~python_3_11_x86_64-apple-darwin",
+              "sha256": "a0e615eef1fafdc742da0008425a9030b7ea68a4ae4e73ac557ef27b112836d4",
+              "patches": [],
+              "platform": "x86_64-apple-darwin",
+              "python_version": "3.11.7",
+              "release_filename": "20240107/cpython-3.11.7+20240107-x86_64-apple-darwin-install_only.tar.gz",
+              "urls": [
+                "https://github.com/indygreg/python-build-standalone/releases/download/20240107/cpython-3.11.7+20240107-x86_64-apple-darwin-install_only.tar.gz"
+              ],
+              "distutils_content": "",
+              "strip_prefix": "python",
+              "coverage_tool": "",
+              "ignore_root_user_error": false
+            }
+          },
+          "python_versions": {
+            "bzlFile": "@@rules_python~0.30.0//python/private:toolchains_repo.bzl",
+            "ruleClassName": "multi_toolchain_aliases",
+            "attributes": {
+              "name": "rules_python~0.30.0~python~python_versions",
+              "python_versions": {
+                "3.10": "python_3_10",
+                "3.11": "python_3_11"
+              }
+            }
+          },
+          "python_3_10_x86_64-unknown-linux-gnu": {
+            "bzlFile": "@@rules_python~0.30.0//python:repositories.bzl",
+            "ruleClassName": "python_repository",
+            "attributes": {
+              "name": "rules_python~0.30.0~python~python_3_10_x86_64-unknown-linux-gnu",
+              "sha256": "5d0429c67c992da19ba3eb58b3acd0b35ec5e915b8cae9a4aa8ca565c423847a",
+              "patches": [],
+              "platform": "x86_64-unknown-linux-gnu",
+              "python_version": "3.10.13",
+              "release_filename": "20231002/cpython-3.10.13+20231002-x86_64-unknown-linux-gnu-install_only.tar.gz",
+              "urls": [
+                "https://github.com/indygreg/python-build-standalone/releases/download/20231002/cpython-3.10.13+20231002-x86_64-unknown-linux-gnu-install_only.tar.gz"
+              ],
+              "distutils_content": "",
+              "strip_prefix": "python",
+              "coverage_tool": "",
+              "ignore_root_user_error": false
+            }
+          },
+          "python_3_10_host": {
+            "bzlFile": "@@rules_python~0.30.0//python/private:toolchains_repo.bzl",
+            "ruleClassName": "host_toolchain",
+            "attributes": {
+              "name": "rules_python~0.30.0~python~python_3_10_host",
+              "python_version": "3.10.13",
+              "user_repository_name": "python_3_10",
+              "platforms": [
+                "aarch64-apple-darwin",
+                "aarch64-unknown-linux-gnu",
+                "ppc64le-unknown-linux-gnu",
+                "s390x-unknown-linux-gnu",
+                "x86_64-apple-darwin",
+                "x86_64-pc-windows-msvc",
+                "x86_64-unknown-linux-gnu"
+              ]
+            }
+          },
+          "python_3_11_x86_64-unknown-linux-gnu": {
+            "bzlFile": "@@rules_python~0.30.0//python:repositories.bzl",
+            "ruleClassName": "python_repository",
+            "attributes": {
+              "name": "rules_python~0.30.0~python~python_3_11_x86_64-unknown-linux-gnu",
+              "sha256": "4a51ce60007a6facf64e5495f4cf322e311ba9f39a8cd3f3e4c026eae488e140",
+              "patches": [],
+              "platform": "x86_64-unknown-linux-gnu",
+              "python_version": "3.11.7",
+              "release_filename": "20240107/cpython-3.11.7+20240107-x86_64-unknown-linux-gnu-install_only.tar.gz",
+              "urls": [
+                "https://github.com/indygreg/python-build-standalone/releases/download/20240107/cpython-3.11.7+20240107-x86_64-unknown-linux-gnu-install_only.tar.gz"
+              ],
+              "distutils_content": "",
+              "strip_prefix": "python",
+              "coverage_tool": "",
+              "ignore_root_user_error": false
+            }
+          }
+        }
+      }
+    },
+    "@rules_python~0.30.0//python/private/bzlmod:internal_deps.bzl%internal_deps": {
+      "general": {
+        "bzlTransitiveDigest": "b1XSTlsBBPzFeVVSavIGqXSs4RTzDSmIuifTyEhK+aQ=",
+        "accumulatedFileDigests": {},
+        "envVariables": {},
+        "generatedRepoSpecs": {
+          "pypi__wheel": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_archive",
+            "attributes": {
+              "name": "rules_python~0.30.0~internal_deps~pypi__wheel",
+              "url": "https://files.pythonhosted.org/packages/b8/8b/31273bf66016be6ad22bb7345c37ff350276cfd46e389a0c2ac5da9d9073/wheel-0.41.2-py3-none-any.whl",
+              "sha256": "75909db2664838d015e3d9139004ee16711748a52c8f336b52882266540215d8",
+              "type": "zip",
+              "build_file_content": "package(default_visibility = [\"//visibility:public\"])\n\nload(\"@rules_python//python:defs.bzl\", \"py_library\")\n\npy_library(\n    name = \"lib\",\n    srcs = glob([\"**/*.py\"]),\n    data = glob([\"**/*\"], exclude=[\n        # These entries include those put into user-installed dependencies by\n        # data_exclude in /python/pip_install/tools/bazel.py\n        # to avoid non-determinism following pip install's behavior.\n        \"**/*.py\",\n        \"**/*.pyc\",\n        \"**/*.pyc.*\",  # During pyc creation, temp files named *.pyc.NNN are created\n        \"**/* *\",\n        \"**/*.dist-info/RECORD\",\n        \"BUILD\",\n        \"WORKSPACE\",\n    ]),\n    # This makes this directory a top-level in the python import\n    # search path for anything that depends on this.\n    imports = [\".\"],\n)\n"
+            }
+          },
+          "pypi__click": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_archive",
+            "attributes": {
+              "name": "rules_python~0.30.0~internal_deps~pypi__click",
+              "url": "https://files.pythonhosted.org/packages/00/2e/d53fa4befbf2cfa713304affc7ca780ce4fc1fd8710527771b58311a3229/click-8.1.7-py3-none-any.whl",
+              "sha256": "ae74fb96c20a0277a1d615f1e4d73c8414f5a98db8b799a7931d1582f3390c28",
+              "type": "zip",
+              "build_file_content": "package(default_visibility = [\"//visibility:public\"])\n\nload(\"@rules_python//python:defs.bzl\", \"py_library\")\n\npy_library(\n    name = \"lib\",\n    srcs = glob([\"**/*.py\"]),\n    data = glob([\"**/*\"], exclude=[\n        # These entries include those put into user-installed dependencies by\n        # data_exclude in /python/pip_install/tools/bazel.py\n        # to avoid non-determinism following pip install's behavior.\n        \"**/*.py\",\n        \"**/*.pyc\",\n        \"**/*.pyc.*\",  # During pyc creation, temp files named *.pyc.NNN are created\n        \"**/* *\",\n        \"**/*.dist-info/RECORD\",\n        \"BUILD\",\n        \"WORKSPACE\",\n    ]),\n    # This makes this directory a top-level in the python import\n    # search path for anything that depends on this.\n    imports = [\".\"],\n)\n"
+            }
+          },
+          "pypi__importlib_metadata": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_archive",
+            "attributes": {
+              "name": "rules_python~0.30.0~internal_deps~pypi__importlib_metadata",
+              "url": "https://files.pythonhosted.org/packages/cc/37/db7ba97e676af155f5fcb1a35466f446eadc9104e25b83366e8088c9c926/importlib_metadata-6.8.0-py3-none-any.whl",
+              "sha256": "3ebb78df84a805d7698245025b975d9d67053cd94c79245ba4b3eb694abe68bb",
+              "type": "zip",
+              "build_file_content": "package(default_visibility = [\"//visibility:public\"])\n\nload(\"@rules_python//python:defs.bzl\", \"py_library\")\n\npy_library(\n    name = \"lib\",\n    srcs = glob([\"**/*.py\"]),\n    data = glob([\"**/*\"], exclude=[\n        # These entries include those put into user-installed dependencies by\n        # data_exclude in /python/pip_install/tools/bazel.py\n        # to avoid non-determinism following pip install's behavior.\n        \"**/*.py\",\n        \"**/*.pyc\",\n        \"**/*.pyc.*\",  # During pyc creation, temp files named *.pyc.NNN are created\n        \"**/* *\",\n        \"**/*.dist-info/RECORD\",\n        \"BUILD\",\n        \"WORKSPACE\",\n    ]),\n    # This makes this directory a top-level in the python import\n    # search path for anything that depends on this.\n    imports = [\".\"],\n)\n"
+            }
+          },
+          "pypi__pyproject_hooks": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_archive",
+            "attributes": {
+              "name": "rules_python~0.30.0~internal_deps~pypi__pyproject_hooks",
+              "url": "https://files.pythonhosted.org/packages/d5/ea/9ae603de7fbb3df820b23a70f6aff92bf8c7770043254ad8d2dc9d6bcba4/pyproject_hooks-1.0.0-py3-none-any.whl",
+              "sha256": "283c11acd6b928d2f6a7c73fa0d01cb2bdc5f07c57a2eeb6e83d5e56b97976f8",
+              "type": "zip",
+              "build_file_content": "package(default_visibility = [\"//visibility:public\"])\n\nload(\"@rules_python//python:defs.bzl\", \"py_library\")\n\npy_library(\n    name = \"lib\",\n    srcs = glob([\"**/*.py\"]),\n    data = glob([\"**/*\"], exclude=[\n        # These entries include those put into user-installed dependencies by\n        # data_exclude in /python/pip_install/tools/bazel.py\n        # to avoid non-determinism following pip install's behavior.\n        \"**/*.py\",\n        \"**/*.pyc\",\n        \"**/*.pyc.*\",  # During pyc creation, temp files named *.pyc.NNN are created\n        \"**/* *\",\n        \"**/*.dist-info/RECORD\",\n        \"BUILD\",\n        \"WORKSPACE\",\n    ]),\n    # This makes this directory a top-level in the python import\n    # search path for anything that depends on this.\n    imports = [\".\"],\n)\n"
+            }
+          },
+          "pypi__pep517": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_archive",
+            "attributes": {
+              "name": "rules_python~0.30.0~internal_deps~pypi__pep517",
+              "url": "https://files.pythonhosted.org/packages/ee/2f/ef63e64e9429111e73d3d6cbee80591672d16f2725e648ebc52096f3d323/pep517-0.13.0-py3-none-any.whl",
+              "sha256": "4ba4446d80aed5b5eac6509ade100bff3e7943a8489de249654a5ae9b33ee35b",
+              "type": "zip",
+              "build_file_content": "package(default_visibility = [\"//visibility:public\"])\n\nload(\"@rules_python//python:defs.bzl\", \"py_library\")\n\npy_library(\n    name = \"lib\",\n    srcs = glob([\"**/*.py\"]),\n    data = glob([\"**/*\"], exclude=[\n        # These entries include those put into user-installed dependencies by\n        # data_exclude in /python/pip_install/tools/bazel.py\n        # to avoid non-determinism following pip install's behavior.\n        \"**/*.py\",\n        \"**/*.pyc\",\n        \"**/*.pyc.*\",  # During pyc creation, temp files named *.pyc.NNN are created\n        \"**/* *\",\n        \"**/*.dist-info/RECORD\",\n        \"BUILD\",\n        \"WORKSPACE\",\n    ]),\n    # This makes this directory a top-level in the python import\n    # search path for anything that depends on this.\n    imports = [\".\"],\n)\n"
+            }
+          },
+          "pypi__packaging": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_archive",
+            "attributes": {
+              "name": "rules_python~0.30.0~internal_deps~pypi__packaging",
+              "url": "https://files.pythonhosted.org/packages/ab/c3/57f0601a2d4fe15de7a553c00adbc901425661bf048f2a22dfc500caf121/packaging-23.1-py3-none-any.whl",
+              "sha256": "994793af429502c4ea2ebf6bf664629d07c1a9fe974af92966e4b8d2df7edc61",
+              "type": "zip",
+              "build_file_content": "package(default_visibility = [\"//visibility:public\"])\n\nload(\"@rules_python//python:defs.bzl\", \"py_library\")\n\npy_library(\n    name = \"lib\",\n    srcs = glob([\"**/*.py\"]),\n    data = glob([\"**/*\"], exclude=[\n        # These entries include those put into user-installed dependencies by\n        # data_exclude in /python/pip_install/tools/bazel.py\n        # to avoid non-determinism following pip install's behavior.\n        \"**/*.py\",\n        \"**/*.pyc\",\n        \"**/*.pyc.*\",  # During pyc creation, temp files named *.pyc.NNN are created\n        \"**/* *\",\n        \"**/*.dist-info/RECORD\",\n        \"BUILD\",\n        \"WORKSPACE\",\n    ]),\n    # This makes this directory a top-level in the python import\n    # search path for anything that depends on this.\n    imports = [\".\"],\n)\n"
+            }
+          },
+          "pypi__pip_tools": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_archive",
+            "attributes": {
+              "name": "rules_python~0.30.0~internal_deps~pypi__pip_tools",
+              "url": "https://files.pythonhosted.org/packages/e8/df/47e6267c6b5cdae867adbdd84b437393e6202ce4322de0a5e0b92960e1d6/pip_tools-7.3.0-py3-none-any.whl",
+              "sha256": "8717693288720a8c6ebd07149c93ab0be1fced0b5191df9e9decd3263e20d85e",
+              "type": "zip",
+              "build_file_content": "package(default_visibility = [\"//visibility:public\"])\n\nload(\"@rules_python//python:defs.bzl\", \"py_library\")\n\npy_library(\n    name = \"lib\",\n    srcs = glob([\"**/*.py\"]),\n    data = glob([\"**/*\"], exclude=[\n        # These entries include those put into user-installed dependencies by\n        # data_exclude in /python/pip_install/tools/bazel.py\n        # to avoid non-determinism following pip install's behavior.\n        \"**/*.py\",\n        \"**/*.pyc\",\n        \"**/*.pyc.*\",  # During pyc creation, temp files named *.pyc.NNN are created\n        \"**/* *\",\n        \"**/*.dist-info/RECORD\",\n        \"BUILD\",\n        \"WORKSPACE\",\n    ]),\n    # This makes this directory a top-level in the python import\n    # search path for anything that depends on this.\n    imports = [\".\"],\n)\n"
+            }
+          },
+          "pypi__setuptools": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_archive",
+            "attributes": {
+              "name": "rules_python~0.30.0~internal_deps~pypi__setuptools",
+              "url": "https://files.pythonhosted.org/packages/4f/ab/0bcfebdfc3bfa8554b2b2c97a555569c4c1ebc74ea288741ea8326c51906/setuptools-68.1.2-py3-none-any.whl",
+              "sha256": "3d8083eed2d13afc9426f227b24fd1659489ec107c0e86cec2ffdde5c92e790b",
+              "type": "zip",
+              "build_file_content": "package(default_visibility = [\"//visibility:public\"])\n\nload(\"@rules_python//python:defs.bzl\", \"py_library\")\n\npy_library(\n    name = \"lib\",\n    srcs = glob([\"**/*.py\"]),\n    data = glob([\"**/*\"], exclude=[\n        # These entries include those put into user-installed dependencies by\n        # data_exclude in /python/pip_install/tools/bazel.py\n        # to avoid non-determinism following pip install's behavior.\n        \"**/*.py\",\n        \"**/*.pyc\",\n        \"**/*.pyc.*\",  # During pyc creation, temp files named *.pyc.NNN are created\n        \"**/* *\",\n        \"**/*.dist-info/RECORD\",\n        \"BUILD\",\n        \"WORKSPACE\",\n    ]),\n    # This makes this directory a top-level in the python import\n    # search path for anything that depends on this.\n    imports = [\".\"],\n)\n"
+            }
+          },
+          "pypi__zipp": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_archive",
+            "attributes": {
+              "name": "rules_python~0.30.0~internal_deps~pypi__zipp",
+              "url": "https://files.pythonhosted.org/packages/8c/08/d3006317aefe25ea79d3b76c9650afabaf6d63d1c8443b236e7405447503/zipp-3.16.2-py3-none-any.whl",
+              "sha256": "679e51dd4403591b2d6838a48de3d283f3d188412a9782faadf845f298736ba0",
+              "type": "zip",
+              "build_file_content": "package(default_visibility = [\"//visibility:public\"])\n\nload(\"@rules_python//python:defs.bzl\", \"py_library\")\n\npy_library(\n    name = \"lib\",\n    srcs = glob([\"**/*.py\"]),\n    data = glob([\"**/*\"], exclude=[\n        # These entries include those put into user-installed dependencies by\n        # data_exclude in /python/pip_install/tools/bazel.py\n        # to avoid non-determinism following pip install's behavior.\n        \"**/*.py\",\n        \"**/*.pyc\",\n        \"**/*.pyc.*\",  # During pyc creation, temp files named *.pyc.NNN are created\n        \"**/* *\",\n        \"**/*.dist-info/RECORD\",\n        \"BUILD\",\n        \"WORKSPACE\",\n    ]),\n    # This makes this directory a top-level in the python import\n    # search path for anything that depends on this.\n    imports = [\".\"],\n)\n"
+            }
+          },
+          "pypi__colorama": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_archive",
+            "attributes": {
+              "name": "rules_python~0.30.0~internal_deps~pypi__colorama",
+              "url": "https://files.pythonhosted.org/packages/d1/d6/3965ed04c63042e047cb6a3e6ed1a63a35087b6a609aa3a15ed8ac56c221/colorama-0.4.6-py2.py3-none-any.whl",
+              "sha256": "4f1d9991f5acc0ca119f9d443620b77f9d6b33703e51011c16baf57afb285fc6",
+              "type": "zip",
+              "build_file_content": "package(default_visibility = [\"//visibility:public\"])\n\nload(\"@rules_python//python:defs.bzl\", \"py_library\")\n\npy_library(\n    name = \"lib\",\n    srcs = glob([\"**/*.py\"]),\n    data = glob([\"**/*\"], exclude=[\n        # These entries include those put into user-installed dependencies by\n        # data_exclude in /python/pip_install/tools/bazel.py\n        # to avoid non-determinism following pip install's behavior.\n        \"**/*.py\",\n        \"**/*.pyc\",\n        \"**/*.pyc.*\",  # During pyc creation, temp files named *.pyc.NNN are created\n        \"**/* *\",\n        \"**/*.dist-info/RECORD\",\n        \"BUILD\",\n        \"WORKSPACE\",\n    ]),\n    # This makes this directory a top-level in the python import\n    # search path for anything that depends on this.\n    imports = [\".\"],\n)\n"
+            }
+          },
+          "pypi__build": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_archive",
+            "attributes": {
+              "name": "rules_python~0.30.0~internal_deps~pypi__build",
+              "url": "https://files.pythonhosted.org/packages/58/91/17b00d5fac63d3dca605f1b8269ba3c65e98059e1fd99d00283e42a454f0/build-0.10.0-py3-none-any.whl",
+              "sha256": "af266720050a66c893a6096a2f410989eeac74ff9a68ba194b3f6473e8e26171",
+              "type": "zip",
+              "build_file_content": "package(default_visibility = [\"//visibility:public\"])\n\nload(\"@rules_python//python:defs.bzl\", \"py_library\")\n\npy_library(\n    name = \"lib\",\n    srcs = glob([\"**/*.py\"]),\n    data = glob([\"**/*\"], exclude=[\n        # These entries include those put into user-installed dependencies by\n        # data_exclude in /python/pip_install/tools/bazel.py\n        # to avoid non-determinism following pip install's behavior.\n        \"**/*.py\",\n        \"**/*.pyc\",\n        \"**/*.pyc.*\",  # During pyc creation, temp files named *.pyc.NNN are created\n        \"**/* *\",\n        \"**/*.dist-info/RECORD\",\n        \"BUILD\",\n        \"WORKSPACE\",\n    ]),\n    # This makes this directory a top-level in the python import\n    # search path for anything that depends on this.\n    imports = [\".\"],\n)\n"
+            }
+          },
+          "rules_python_internal": {
+            "bzlFile": "@@rules_python~0.30.0//python/private:internal_config_repo.bzl",
+            "ruleClassName": "internal_config_repo",
+            "attributes": {
+              "name": "rules_python~0.30.0~internal_deps~rules_python_internal"
+            }
+          },
+          "pypi__pip": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_archive",
+            "attributes": {
+              "name": "rules_python~0.30.0~internal_deps~pypi__pip",
+              "url": "https://files.pythonhosted.org/packages/50/c2/e06851e8cc28dcad7c155f4753da8833ac06a5c704c109313b8d5a62968a/pip-23.2.1-py3-none-any.whl",
+              "sha256": "7ccf472345f20d35bdc9d1841ff5f313260c2c33fe417f48c30ac46cccabf5be",
+              "type": "zip",
+              "build_file_content": "package(default_visibility = [\"//visibility:public\"])\n\nload(\"@rules_python//python:defs.bzl\", \"py_library\")\n\npy_library(\n    name = \"lib\",\n    srcs = glob([\"**/*.py\"]),\n    data = glob([\"**/*\"], exclude=[\n        # These entries include those put into user-installed dependencies by\n        # data_exclude in /python/pip_install/tools/bazel.py\n        # to avoid non-determinism following pip install's behavior.\n        \"**/*.py\",\n        \"**/*.pyc\",\n        \"**/*.pyc.*\",  # During pyc creation, temp files named *.pyc.NNN are created\n        \"**/* *\",\n        \"**/*.dist-info/RECORD\",\n        \"BUILD\",\n        \"WORKSPACE\",\n    ]),\n    # This makes this directory a top-level in the python import\n    # search path for anything that depends on this.\n    imports = [\".\"],\n)\n"
+            }
+          },
+          "pypi__installer": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_archive",
+            "attributes": {
+              "name": "rules_python~0.30.0~internal_deps~pypi__installer",
+              "url": "https://files.pythonhosted.org/packages/e5/ca/1172b6638d52f2d6caa2dd262ec4c811ba59eee96d54a7701930726bce18/installer-0.7.0-py3-none-any.whl",
+              "sha256": "05d1933f0a5ba7d8d6296bb6d5018e7c94fa473ceb10cf198a92ccea19c27b53",
+              "type": "zip",
+              "build_file_content": "package(default_visibility = [\"//visibility:public\"])\n\nload(\"@rules_python//python:defs.bzl\", \"py_library\")\n\npy_library(\n    name = \"lib\",\n    srcs = glob([\"**/*.py\"]),\n    data = glob([\"**/*\"], exclude=[\n        # These entries include those put into user-installed dependencies by\n        # data_exclude in /python/pip_install/tools/bazel.py\n        # to avoid non-determinism following pip install's behavior.\n        \"**/*.py\",\n        \"**/*.pyc\",\n        \"**/*.pyc.*\",  # During pyc creation, temp files named *.pyc.NNN are created\n        \"**/* *\",\n        \"**/*.dist-info/RECORD\",\n        \"BUILD\",\n        \"WORKSPACE\",\n    ]),\n    # This makes this directory a top-level in the python import\n    # search path for anything that depends on this.\n    imports = [\".\"],\n)\n"
+            }
+          },
+          "pypi__more_itertools": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_archive",
+            "attributes": {
+              "name": "rules_python~0.30.0~internal_deps~pypi__more_itertools",
+              "url": "https://files.pythonhosted.org/packages/5a/cb/6dce742ea14e47d6f565589e859ad225f2a5de576d7696e0623b784e226b/more_itertools-10.1.0-py3-none-any.whl",
+              "sha256": "64e0735fcfdc6f3464ea133afe8ea4483b1c5fe3a3d69852e6503b43a0b222e6",
+              "type": "zip",
+              "build_file_content": "package(default_visibility = [\"//visibility:public\"])\n\nload(\"@rules_python//python:defs.bzl\", \"py_library\")\n\npy_library(\n    name = \"lib\",\n    srcs = glob([\"**/*.py\"]),\n    data = glob([\"**/*\"], exclude=[\n        # These entries include those put into user-installed dependencies by\n        # data_exclude in /python/pip_install/tools/bazel.py\n        # to avoid non-determinism following pip install's behavior.\n        \"**/*.py\",\n        \"**/*.pyc\",\n        \"**/*.pyc.*\",  # During pyc creation, temp files named *.pyc.NNN are created\n        \"**/* *\",\n        \"**/*.dist-info/RECORD\",\n        \"BUILD\",\n        \"WORKSPACE\",\n    ]),\n    # This makes this directory a top-level in the python import\n    # search path for anything that depends on this.\n    imports = [\".\"],\n)\n"
+            }
+          },
+          "pypi__tomli": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_archive",
+            "attributes": {
+              "name": "rules_python~0.30.0~internal_deps~pypi__tomli",
+              "url": "https://files.pythonhosted.org/packages/97/75/10a9ebee3fd790d20926a90a2547f0bf78f371b2f13aa822c759680ca7b9/tomli-2.0.1-py3-none-any.whl",
+              "sha256": "939de3e7a6161af0c887ef91b7d41a53e7c5a1ca976325f429cb46ea9bc30ecc",
+              "type": "zip",
+              "build_file_content": "package(default_visibility = [\"//visibility:public\"])\n\nload(\"@rules_python//python:defs.bzl\", \"py_library\")\n\npy_library(\n    name = \"lib\",\n    srcs = glob([\"**/*.py\"]),\n    data = glob([\"**/*\"], exclude=[\n        # These entries include those put into user-installed dependencies by\n        # data_exclude in /python/pip_install/tools/bazel.py\n        # to avoid non-determinism following pip install's behavior.\n        \"**/*.py\",\n        \"**/*.pyc\",\n        \"**/*.pyc.*\",  # During pyc creation, temp files named *.pyc.NNN are created\n        \"**/* *\",\n        \"**/*.dist-info/RECORD\",\n        \"BUILD\",\n        \"WORKSPACE\",\n    ]),\n    # This makes this directory a top-level in the python import\n    # search path for anything that depends on this.\n    imports = [\".\"],\n)\n"
             }
           }
         }
