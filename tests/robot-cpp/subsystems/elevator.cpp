@@ -31,15 +31,16 @@ units::turn_t MetersToTurns(units::meter_t meters) {
 } // namespace
 
 Elevator::Elevator()
-    : frc2::PIDSubsystem(frc::PIDController{kP, kI, kD}),
-      m_motor{kElevatorMotorPort}, m_position(m_motor.GetPosition()),
-      m_motorSim(m_motor.GetSimState()),
+    : m_motor{kElevatorMotorPort}, m_positionControl{0_tr},
+      m_position(m_motor.GetPosition()), m_motorSim(m_motor.GetSimState()),
       m_elevatorSim(kElevatorGearbox, kElevatorGearing, kCarriageMass,
                     kElevatorDrumRadius, kMinElevatorHeight, kMaxElevatorHeight,
                     true, units::meter_t{0}) {
-  m_controller.SetTolerance(0.005);
-
-  SetName("Elevator");
+  ctre::phoenix6::configs::TalonFXConfiguration configs{};
+  configs.Slot0.kP = kP;
+  configs.Slot0.kI = kI;
+  configs.Slot0.kD = kD;
+  m_motor.GetConfigurator().Apply(configs);
 }
 
 void Elevator::Log() {
@@ -51,10 +52,19 @@ units::meter_t Elevator::GetElevatorHeight() {
   return TurnsToMeters(m_position.GetValue());
 }
 
-double Elevator::GetMeasurement() { return GetElevatorHeight().to<double>(); }
-
-void Elevator::UseOutput(double output, double /* setpoint */) {
+void Elevator::SetVoltage(double output) {
   m_motor.SetVoltage(kGravityOffset + units::volt_t(output));
+}
+
+void Elevator::GoToHeight(units::meter_t height) {
+  m_positionControl.Position = MetersToTurns(height);
+  m_motor.SetControl(m_positionControl);
+}
+
+bool Elevator::IsAtHeight() {
+  units::meter_t error =
+      TurnsToMeters(m_positionControl.Position) - GetElevatorHeight();
+  return error < 2_in;
 }
 
 void Elevator::Periodic() { Log(); }

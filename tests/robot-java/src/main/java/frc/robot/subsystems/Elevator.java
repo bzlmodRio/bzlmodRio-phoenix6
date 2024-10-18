@@ -1,18 +1,19 @@
 package frc.robot.subsystems;
 
 import com.ctre.phoenix6.StatusSignal;
+import com.ctre.phoenix6.controls.PositionVoltage;
 import com.ctre.phoenix6.hardware.TalonFX;
 import com.ctre.phoenix6.sim.TalonFXSimState;
-import edu.wpi.first.math.controller.PIDController;
 import edu.wpi.first.math.system.plant.DCMotor;
 import edu.wpi.first.math.util.Units;
+import edu.wpi.first.units.measure.Angle;
 import edu.wpi.first.wpilibj.RobotBase;
 import edu.wpi.first.wpilibj.RobotController;
 import edu.wpi.first.wpilibj.simulation.ElevatorSim;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import edu.wpi.first.wpilibj2.command.PIDSubsystem;
+import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
-public class Elevator extends PIDSubsystem {
+public class Elevator extends SubsystemBase {
   private static final double kP = 4;
   private static final double kI = 0.0;
   private static final double kD = 0.0;
@@ -27,8 +28,11 @@ public class Elevator extends PIDSubsystem {
 
   private final TalonFX m_motor;
 
+  // Control
+  private final PositionVoltage m_positionControl;
+
   // Signals
-  private final StatusSignal<Double> m_position;
+  private final StatusSignal<Angle> m_position;
 
   // Sim
   private TalonFXSimState m_motorSim;
@@ -37,12 +41,10 @@ public class Elevator extends PIDSubsystem {
   /** Create a new elevator subsystem. */
   @SuppressWarnings("this-escape")
   public Elevator() {
-    super(new PIDController(kP, kI, kD));
-
     m_motor = new TalonFX(PortMap.kElevatorMotorPort);
     m_position = m_motor.getPosition();
 
-    getController().setTolerance(0.005);
+    m_positionControl = new PositionVoltage(0);
 
     if (RobotBase.isSimulation()) {
       m_motorSim = m_motor.getSimState();
@@ -60,17 +62,21 @@ public class Elevator extends PIDSubsystem {
   }
 
   public void log() {
-    SmartDashboard.putNumber("Elevator Height", m_position.getValue());
+    SmartDashboard.putNumber("Elevator Height", m_position.getValueAsDouble());
   }
 
-  @Override
-  public double getMeasurement() {
-    return m_position.getValue();
-  }
-
-  @Override
-  public void useOutput(double output, double setpoint) {
+  public void setVoltage(double output) {
     m_motor.set(output);
+  }
+
+  public void goToHeight(double height) {
+    m_positionControl.Position = height;
+    m_motor.setControl(m_positionControl);
+  }
+
+  public boolean isAtHeight() {
+    double error = m_positionControl.Position - m_motor.getPosition().getValueAsDouble();
+    return error < 0.5;
   }
 
   @Override

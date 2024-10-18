@@ -9,6 +9,8 @@ import com.ctre.phoenix6.controls.Follower;
 import com.ctre.phoenix6.hardware.TalonFX;
 import com.ctre.phoenix6.sim.TalonFXSimState;
 import edu.wpi.first.math.kinematics.DifferentialDriveOdometry;
+import edu.wpi.first.units.measure.Angle;
+import edu.wpi.first.units.measure.AngularVelocity;
 import edu.wpi.first.wpilibj.ADXRS450_Gyro;
 import edu.wpi.first.wpilibj.RobotBase;
 import edu.wpi.first.wpilibj.RobotController;
@@ -33,10 +35,10 @@ public class DriveTrain extends SubsystemBase {
   private final Field2d m_field;
 
   // Signals
-  private final StatusSignal<Double> m_leftPosition;
-  private final StatusSignal<Double> m_leftVelocity;
-  private final StatusSignal<Double> m_rightPosition;
-  private final StatusSignal<Double> m_rightVelocity;
+  private final StatusSignal<Angle> m_leftPosition;
+  private final StatusSignal<AngularVelocity> m_leftVelocity;
+  private final StatusSignal<Angle> m_rightPosition;
+  private final StatusSignal<AngularVelocity> m_rightVelocity;
 
   // Sim
   private TalonFXSimState m_leftSim;
@@ -82,10 +84,10 @@ public class DriveTrain extends SubsystemBase {
   }
 
   public void log() {
-    SmartDashboard.putNumber("Left Distance", m_leftPosition.getValue());
-    SmartDashboard.putNumber("Right Distance", m_rightPosition.getValue());
-    SmartDashboard.putNumber("Left Speed", m_leftVelocity.getValue());
-    SmartDashboard.putNumber("Right Speed", m_rightVelocity.getValue());
+    SmartDashboard.putNumber("Left Distance", m_leftPosition.getValueAsDouble());
+    SmartDashboard.putNumber("Right Distance", m_rightPosition.getValueAsDouble());
+    SmartDashboard.putNumber("Left Speed", m_leftVelocity.getValueAsDouble());
+    SmartDashboard.putNumber("Right Speed", m_rightVelocity.getValueAsDouble());
     SmartDashboard.putNumber("Gyro", m_gyro.getAngle());
   }
 
@@ -103,12 +105,14 @@ public class DriveTrain extends SubsystemBase {
   }
 
   public double getAverageDistance() {
-    return (m_leftPosition.getValue() + m_rightPosition.getValue()) / 2;
+    return (m_leftPosition.getValueAsDouble() + m_rightPosition.getValueAsDouble()) / 2;
   }
 
   void updateOdometry() {
     m_odometry.update(
-        m_gyro.getRotation2d(), m_leftPosition.getValue(), m_rightPosition.getValue());
+        m_gyro.getRotation2d(),
+        m_leftPosition.getValueAsDouble(),
+        m_rightPosition.getValueAsDouble());
     m_field.setRobotPose(m_odometry.getPoseMeters());
   }
 
