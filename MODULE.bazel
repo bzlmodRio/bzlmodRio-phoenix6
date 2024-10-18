@@ -1,20 +1,32 @@
 module(
     name = "bzlmodrio-phoenix6",
-    version = "24.3.0",
-    compatibility_level = 2024,
+    version = "25.0.0-beta-1",
+    compatibility_level = 2025,
 )
 
 bazel_dep(name = "platforms", version = "0.0.9")
 bazel_dep(name = "rules_cc", version = "0.0.9")
 bazel_dep(name = "rules_java", version = "7.6.5")
 bazel_dep(name = "rules_bzlmodrio_toolchains", version = "2024-1.bcr1")
-bazel_dep(name = "bzlmodrio-allwpilib", version = "2024.1.1")
+bazel_dep(name = "bzlmodrio-allwpilib", version = "2025.1.1-beta-1")
 bazel_dep(name = "bzlmodrio-opencv", version = "2024.4.8.0-4.bcr1")
-bazel_dep(name = "bzlmodrio-ni", version = "2024.2.1.bcr1")
+bazel_dep(name = "bzlmodrio-ni", version = "2025.0.0")
 
 setup_bzlmodrio_phoenix6_cpp_dependencies = use_extension("//:maven_cpp_deps.bzl", "setup_bzlmodrio_phoenix6_cpp_dependencies")
 use_repo(
     setup_bzlmodrio_phoenix6_cpp_dependencies,
+    "bazelrio_com_ctre_phoenix6_api-cpp_linuxathena",
+    "bazelrio_com_ctre_phoenix6_replay_api-cpp-replay_linuxx86-64",
+    "bazelrio_com_ctre_phoenix6_replay_api-cpp-replay_windowsx86-64",
+    "bazelrio_com_ctre_phoenix6_replay_tools-replay_headers",
+    "bazelrio_com_ctre_phoenix6_replay_tools-replay_linuxx86-64",
+    "bazelrio_com_ctre_phoenix6_replay_tools-replay_windowsx86-64",
+    "bazelrio_com_ctre_phoenix6_replay_wpiapi-cpp-replay_headers",
+    "bazelrio_com_ctre_phoenix6_replay_wpiapi-cpp-replay_linuxx86-64",
+    "bazelrio_com_ctre_phoenix6_replay_wpiapi-cpp-replay_windowsx86-64",
+    "bazelrio_com_ctre_phoenix6_sim_api-cpp-sim_linuxx86-64",
+    "bazelrio_com_ctre_phoenix6_sim_api-cpp-sim_osxuniversal",
+    "bazelrio_com_ctre_phoenix6_sim_api-cpp-sim_windowsx86-64",
     "bazelrio_com_ctre_phoenix6_sim_simcancoder_headers",
     "bazelrio_com_ctre_phoenix6_sim_simcancoder_linuxx86-64",
     "bazelrio_com_ctre_phoenix6_sim_simcancoder_osxuniversal",
@@ -35,10 +47,6 @@ use_repo(
     "bazelrio_com_ctre_phoenix6_sim_simprotalonfx_linuxx86-64",
     "bazelrio_com_ctre_phoenix6_sim_simprotalonfx_osxuniversal",
     "bazelrio_com_ctre_phoenix6_sim_simprotalonfx_windowsx86-64",
-    "bazelrio_com_ctre_phoenix6_sim_simtalonfx_headers",
-    "bazelrio_com_ctre_phoenix6_sim_simtalonfx_linuxx86-64",
-    "bazelrio_com_ctre_phoenix6_sim_simtalonfx_osxuniversal",
-    "bazelrio_com_ctre_phoenix6_sim_simtalonfx_windowsx86-64",
     "bazelrio_com_ctre_phoenix6_sim_simtalonsrx_headers",
     "bazelrio_com_ctre_phoenix6_sim_simtalonsrx_linuxx86-64",
     "bazelrio_com_ctre_phoenix6_sim_simtalonsrx_osxuniversal",
@@ -57,12 +65,8 @@ use_repo(
     "bazelrio_com_ctre_phoenix6_sim_wpiapi-cpp-sim_windowsx86-64",
     "bazelrio_com_ctre_phoenix6_tools_headers",
     "bazelrio_com_ctre_phoenix6_tools_linuxathena",
-    "bazelrio_com_ctre_phoenix6_tools_linuxx86-64",
-    "bazelrio_com_ctre_phoenix6_tools_windowsx86-64",
     "bazelrio_com_ctre_phoenix6_wpiapi-cpp_headers",
     "bazelrio_com_ctre_phoenix6_wpiapi-cpp_linuxathena",
-    "bazelrio_com_ctre_phoenix6_wpiapi-cpp_linuxx86-64",
-    "bazelrio_com_ctre_phoenix6_wpiapi-cpp_windowsx86-64",
 )
 
 setup_bzlmodrio_phoenix6_java_dependencies = use_extension("//:maven_java_deps.bzl", "setup_bzlmodrio_phoenix6_java_dependencies")

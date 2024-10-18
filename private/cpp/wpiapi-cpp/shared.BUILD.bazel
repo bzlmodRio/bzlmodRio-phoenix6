@@ -23,11 +23,6 @@ shared_srcs = glob([
     exclude=JNI_PATTERN + ["**/*.so.debug"]
 )
 shared_jni_srcs = glob(JNI_PATTERN, exclude=["**/*.so.debug"])
-filegroup(
-    name = "shared_interface",
-    srcs = static_srcs,
-    visibility = ["@bzlmodrio-phoenix6//:__subpackages__"],
-)
 
 filegroup(
     name = "shared",
