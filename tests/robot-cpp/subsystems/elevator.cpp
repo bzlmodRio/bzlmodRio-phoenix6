@@ -28,11 +28,13 @@ units::meter_t TurnsToMeters(units::turn_t rotations) {
 units::turn_t MetersToTurns(units::meter_t meters) {
   return meters / (kElevatorDrumRadius / 1_tr);
 }
-} // namespace
+}  // namespace
 
 Elevator::Elevator()
-    : m_motor{kElevatorMotorPort}, m_positionControl{0_tr},
-      m_position(m_motor.GetPosition()), m_motorSim(m_motor.GetSimState()),
+    : m_motor{kElevatorMotorPort},
+      m_positionControl{0_tr},
+      m_position(m_motor.GetPosition()),
+      m_motorSim(m_motor.GetSimState()),
       m_elevatorSim(kElevatorGearbox, kElevatorGearing, kCarriageMass,
                     kElevatorDrumRadius, kMinElevatorHeight, kMaxElevatorHeight,
                     true, units::meter_t{0}) {

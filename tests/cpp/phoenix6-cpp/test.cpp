@@ -1,5 +1,6 @@
 
 #include <chrono>
+#include <iostream>
 #include <thread>
 
 #include "ctre/phoenix6/Pigeon2.hpp"

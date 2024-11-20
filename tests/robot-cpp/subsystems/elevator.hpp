@@ -7,7 +7,7 @@
 #include <ctre/phoenix6/TalonFX.hpp>
 
 class Elevator : public frc2::Subsystem {
-public:
+ public:
   Elevator();
 
   void Stop();
@@ -24,7 +24,7 @@ public:
 
   units::meter_t GetElevatorHeight();
 
-private:
+ private:
   void Log();
 
   ctre::phoenix6::hardware::TalonFX m_motor;
