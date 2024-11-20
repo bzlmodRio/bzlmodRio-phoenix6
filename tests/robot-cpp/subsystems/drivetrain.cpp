@@ -26,13 +26,14 @@ units::turn_t MetersToTurns(units::meter_t meters) {
 units::turns_per_second_t MPSToTPS(units::meters_per_second_t meters) {
   return meters / kWheelCircumference;
 }
-} // namespace
+}  // namespace
 
 DriveTrain::DriveTrain()
     : m_leftMotorA{kDrivetrainMotorLeftAPort},
       m_leftMotorB{kDrivetrainMotorLeftBPort},
       m_rightMotorA{kDrivetrainMotorRightAPort},
-      m_rightMotorB{kDrivetrainMotorRightBPort}, m_gyro{kPigeonPort},
+      m_rightMotorB{kDrivetrainMotorRightBPort},
+      m_gyro{kPigeonPort},
       m_robotDrive{m_leftMotorA, m_rightMotorA},
       m_odometry{frc::Rotation2d(), 0_m, 0_m},
 
