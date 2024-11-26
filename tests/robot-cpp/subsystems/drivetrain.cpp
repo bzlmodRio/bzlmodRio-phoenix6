@@ -34,9 +34,8 @@ DriveTrain::DriveTrain()
       m_rightMotorA{kDrivetrainMotorRightAPort},
       m_rightMotorB{kDrivetrainMotorRightBPort},
       m_gyro{kPigeonPort},
-      m_robotDrive{
-        [this](double output) { m_leftMotorA.Set(output); },
-        [this](double output) { m_leftMotorB.Set(output); }},
+      m_robotDrive{[this](double output) { m_leftMotorA.Set(output); },
+                   [this](double output) { m_leftMotorB.Set(output); }},
       m_odometry{frc::Rotation2d(), 0_m, 0_m},
 
       m_leftPosition(m_leftMotorA.GetPosition()),
