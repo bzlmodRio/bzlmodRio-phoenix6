@@ -60,7 +60,7 @@ public class DriveTrain extends SubsystemBase {
     m_rightPosition = m_rightLeader.getPosition();
     m_rightVelocity = m_rightLeader.getVelocity();
 
-    m_drive = new DifferentialDrive(m_leftLeader, m_rightLeader);
+    m_drive = new DifferentialDrive(m_leftLeader::set, m_rightLeader::set);
 
     m_gyro = new ADXRS450_Gyro();
 
