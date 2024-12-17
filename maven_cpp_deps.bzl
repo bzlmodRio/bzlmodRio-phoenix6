@@ -171,6 +171,9 @@ def __setup_bzlmodrio_phoenix6_cpp_dependencies(mctx):
         url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProCANrange/25.0.0-beta-4/simProCANrange-25.0.0-beta-4-osxuniversal.zip",
         sha256 = "4368af0d821a1f0e32e9f7a46530cb0a529432651a045ee584b6e0c47a4a776b",
         build_file = "@bzlmodrio-phoenix6//private/cpp/simProCANrange:shared.BUILD.bazel",
+        patch_cmds = [
+            "install_name_tool -id @rpath/libCTRE_SimProCANrange.dylib osx/universal/shared/libCTRE_SimProCANrange.dylib",
+        ],
     )
     maybe(
         http_archive,
