@@ -9,9 +9,9 @@ def get_phoenix6_dependencies(
     use_local_allwpilib=False,
     use_local_opencv=False,
     use_local_ni=True,
-    allwpilib_version_override="2025.1.1-beta-1",
-    opencv_version_override="2024.4.8.0-4.bcr1",
-    ni_version_override="2025.0.0",
+    allwpilib_version_override="2025.1.1",
+    opencv_version_override="2025.4.10.0-3",
+    ni_version_override="2025.2.0",
 ):
     sim_install_name_classes = [
         "simCANCoder",
