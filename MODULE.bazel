@@ -1,6 +1,6 @@
 module(
     name = "bzlmodrio-phoenix6",
-    version = "25.1.0",
+    version = "25.2.0",
     compatibility_level = 2025,
 )
 
@@ -53,6 +53,11 @@ use_repo(
     "bazelrio_com_ctre_phoenix6_sim_simprotalonfx_linuxx86-64",
     "bazelrio_com_ctre_phoenix6_sim_simprotalonfx_osxuniversal",
     "bazelrio_com_ctre_phoenix6_sim_simprotalonfx_windowsx86-64",
+    "bazelrio_com_ctre_phoenix6_sim_simprotalonfxs_headers",
+    "bazelrio_com_ctre_phoenix6_sim_simprotalonfxs_linuxarm64",
+    "bazelrio_com_ctre_phoenix6_sim_simprotalonfxs_linuxx86-64",
+    "bazelrio_com_ctre_phoenix6_sim_simprotalonfxs_osxuniversal",
+    "bazelrio_com_ctre_phoenix6_sim_simprotalonfxs_windowsx86-64",
     "bazelrio_com_ctre_phoenix6_sim_simtalonsrx_headers",
     "bazelrio_com_ctre_phoenix6_sim_simtalonsrx_linuxarm64",
     "bazelrio_com_ctre_phoenix6_sim_simtalonsrx_linuxx86-64",
