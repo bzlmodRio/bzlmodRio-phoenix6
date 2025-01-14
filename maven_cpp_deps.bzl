@@ -285,6 +285,9 @@ def __setup_bzlmodrio_phoenix6_cpp_dependencies(mctx):
         url = "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProTalonFXS/25.2.0/simProTalonFXS-25.2.0-osxuniversal.zip",
         sha256 = "a1d146d6f77c638cd7a412828acf585aef9e68b96494489d58f9d3746c06cd79",
         build_file = "@bzlmodrio-phoenix6//private/cpp/simProTalonFXS:shared.BUILD.bazel",
+        patch_cmds = [
+            "install_name_tool -id @rpath/libCTRE_SimProTalonFXS.dylib osx/universal/shared/libCTRE_SimProTalonFXS.dylib",
+        ],
     )
     maybe(
         http_archive,

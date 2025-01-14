@@ -4995,7 +4995,7 @@
     },
     "@@bzlmodrio-phoenix6~//:maven_cpp_deps.bzl%setup_bzlmodrio_phoenix6_cpp_dependencies": {
       "general": {
-        "bzlTransitiveDigest": "Frav3X5zn9c/nM7YA7FhCuSJw7w7OmohQbVJL2faBNg=",
+        "bzlTransitiveDigest": "I/xaYWd3jppHddMwzJU3qwDu3zHfamvfWGBvaVGdVic=",
         "usagesDigest": "KLthnmpDkN77ZxQN0B2x8i0ZHf+SMQ9UgpEtzlyLr3w=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
@@ -5414,7 +5414,10 @@
             "attributes": {
               "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProTalonFXS/25.2.0/simProTalonFXS-25.2.0-osxuniversal.zip",
               "sha256": "a1d146d6f77c638cd7a412828acf585aef9e68b96494489d58f9d3746c06cd79",
-              "build_file": "@@bzlmodrio-phoenix6~//private/cpp/simProTalonFXS:shared.BUILD.bazel"
+              "build_file": "@@bzlmodrio-phoenix6~//private/cpp/simProTalonFXS:shared.BUILD.bazel",
+              "patch_cmds": [
+                "install_name_tool -id @rpath/libCTRE_SimProTalonFXS.dylib osx/universal/shared/libCTRE_SimProTalonFXS.dylib"
+              ]
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_simpigeonimu_windowsx86-64": {
