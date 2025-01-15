@@ -51,6 +51,9 @@ def get_phoenix6_dependencies(
                 deps=[], artifact_install_name="CTRE_SimProCANcoder"
             ),
             "simProTalonFX": dict(deps=[], artifact_install_name="CTRE_SimProTalonFX"),
+            "simProTalonFXS": dict(
+                deps=[], artifact_install_name="CTRE_SimProTalonFXS"
+            ),
             "simTalonFX": dict(deps=[], artifact_install_name="CTRE_SimTalonFX"),
             "simTalonSRX": dict(deps=[], artifact_install_name="CTRE_SimTalonSRX"),
             "simVictorSPX": dict(deps=[], artifact_install_name="CTRE_SimVictorSPX"),
@@ -89,6 +92,7 @@ def get_phoenix6_dependencies(
                 "simProCANrange",
                 "simProPigeon2",
                 "simProTalonFX",
+                "simProTalonFXS",
                 "simTalonSRX",
                 "simVictorSPX",
                 "tools-sim",
@@ -106,6 +110,7 @@ def get_phoenix6_dependencies(
                 "simProCANrange",
                 "simProPigeon2",
                 "simProTalonFX",
+                "simProTalonFXS",
                 "simTalonSRX",
                 "simVictorSPX",
                 "tools-sim",
