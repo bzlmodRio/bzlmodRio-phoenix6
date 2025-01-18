@@ -1,6 +1,6 @@
 module(
     name = "bzlmodrio-phoenix6",
-    version = "25.2.0",
+    version = "25.2.1",
     compatibility_level = 2025,
 )
 
