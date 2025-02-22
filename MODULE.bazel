@@ -1,6 +1,6 @@
 module(
     name = "bzlmodrio-phoenix6",
-    version = "25.2.2",
+    version = "25.3.0",
     compatibility_level = 2025,
 )
 
@@ -38,6 +38,11 @@ use_repo(
     "bazelrio_com_ctre_phoenix6_sim_simprocancoder_linuxx86-64",
     "bazelrio_com_ctre_phoenix6_sim_simprocancoder_osxuniversal",
     "bazelrio_com_ctre_phoenix6_sim_simprocancoder_windowsx86-64",
+    "bazelrio_com_ctre_phoenix6_sim_simprocandi_headers",
+    "bazelrio_com_ctre_phoenix6_sim_simprocandi_linuxarm64",
+    "bazelrio_com_ctre_phoenix6_sim_simprocandi_linuxx86-64",
+    "bazelrio_com_ctre_phoenix6_sim_simprocandi_osxuniversal",
+    "bazelrio_com_ctre_phoenix6_sim_simprocandi_windowsx86-64",
     "bazelrio_com_ctre_phoenix6_sim_simprocanrange_headers",
     "bazelrio_com_ctre_phoenix6_sim_simprocanrange_linuxarm64",
     "bazelrio_com_ctre_phoenix6_sim_simprocanrange_linuxx86-64",
