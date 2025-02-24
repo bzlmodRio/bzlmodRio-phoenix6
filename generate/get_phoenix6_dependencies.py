@@ -18,6 +18,7 @@ def get_phoenix6_dependencies(
         "simPigeonIMU",
         "simProPigeon2",
         "simProCANcoder",
+        "simProCANdi",
         "simProTalonFX",
         "simTalonSRX",
         "simVictorSPX",
@@ -50,6 +51,7 @@ def get_phoenix6_dependencies(
             "simProCANcoder": dict(
                 deps=[], artifact_install_name="CTRE_SimProCANcoder"
             ),
+            "simProCANdi": dict(deps=[], artifact_install_name="CTRE_SimProCANdi"),
             "simProTalonFX": dict(deps=[], artifact_install_name="CTRE_SimProTalonFX"),
             "simProTalonFXS": dict(
                 deps=[], artifact_install_name="CTRE_SimProTalonFXS"
@@ -89,6 +91,7 @@ def get_phoenix6_dependencies(
                 "simCANCoder",
                 "simPigeonIMU",
                 "simProCANcoder",
+                "simProCANdi",
                 "simProCANrange",
                 "simProPigeon2",
                 "simProTalonFX",
@@ -107,6 +110,7 @@ def get_phoenix6_dependencies(
                 "simCANCoder",
                 "simPigeonIMU",
                 "simProCANcoder",
+                "simProCANdi",
                 "simProCANrange",
                 "simProPigeon2",
                 "simProTalonFX",
