@@ -1,6 +1,6 @@
 module(
     name = "bzlmodrio-phoenix6",
-    version = "25.3.2",
+    version = "25.4.0",
     compatibility_level = 2025,
 )
 
@@ -8,9 +8,9 @@ bazel_dep(name = "platforms", version = "0.0.9")
 bazel_dep(name = "rules_cc", version = "0.0.9")
 bazel_dep(name = "rules_java", version = "7.6.5")
 bazel_dep(name = "rules_bzlmodrio_toolchains", version = "2025-1.bcr2")
-bazel_dep(name = "bzlmodrio-allwpilib", version = "2025.1.1")
-bazel_dep(name = "bzlmodrio-opencv", version = "2025.4.10.0-3")
-bazel_dep(name = "bzlmodrio-ni", version = "2025.2.0")
+bazel_dep(name = "bzlmodrio-allwpilib", version = "2025.3.2.bcr1")
+bazel_dep(name = "bzlmodrio-opencv", version = "2025.4.10.0-3.bcr2")
+bazel_dep(name = "bzlmodrio-ni", version = "2025.2.0.bcr1")
 
 setup_bzlmodrio_phoenix6_cpp_dependencies = use_extension("//:maven_cpp_deps.bzl", "setup_bzlmodrio_phoenix6_cpp_dependencies")
 use_repo(
@@ -43,6 +43,11 @@ use_repo(
     "bazelrio_com_ctre_phoenix6_sim_simprocandi_linuxx86-64",
     "bazelrio_com_ctre_phoenix6_sim_simprocandi_osxuniversal",
     "bazelrio_com_ctre_phoenix6_sim_simprocandi_windowsx86-64",
+    "bazelrio_com_ctre_phoenix6_sim_simprocandle_headers",
+    "bazelrio_com_ctre_phoenix6_sim_simprocandle_linuxarm64",
+    "bazelrio_com_ctre_phoenix6_sim_simprocandle_linuxx86-64",
+    "bazelrio_com_ctre_phoenix6_sim_simprocandle_osxuniversal",
+    "bazelrio_com_ctre_phoenix6_sim_simprocandle_windowsx86-64",
     "bazelrio_com_ctre_phoenix6_sim_simprocanrange_headers",
     "bazelrio_com_ctre_phoenix6_sim_simprocanrange_linuxarm64",
     "bazelrio_com_ctre_phoenix6_sim_simprocanrange_linuxx86-64",
