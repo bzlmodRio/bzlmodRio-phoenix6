@@ -4999,7 +4999,7 @@
     },
     "@@bzlmodrio-phoenix6~//:maven_cpp_deps.bzl%setup_bzlmodrio_phoenix6_cpp_dependencies": {
       "general": {
-        "bzlTransitiveDigest": "M9se8NYemusHMJiJKPMEJlgznNlK6WxIsMYr03vqJBs=",
+        "bzlTransitiveDigest": "gw8lxcnOc71TyENJOyQuTOPYwWyHKKQcvhTg8A0tQCw=",
         "usagesDigest": "hXOYmh3Kn2LhXIaiRfddbDOY9clKUVfoxKP9ml0VsBk=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
@@ -5261,6 +5261,7 @@
                 "install_name_tool -change libCTRE_SimPigeonIMU.dylib @rpath/libCTRE_SimPigeonIMU.dylib osx/universal/shared/libCTRE_PhoenixTools_Sim.dylib",
                 "install_name_tool -change libCTRE_SimProCANcoder.dylib @rpath/libCTRE_SimProCANcoder.dylib osx/universal/shared/libCTRE_PhoenixTools_Sim.dylib",
                 "install_name_tool -change libCTRE_SimProCANdi.dylib @rpath/libCTRE_SimProCANdi.dylib osx/universal/shared/libCTRE_PhoenixTools_Sim.dylib",
+                "install_name_tool -change libCTRE_SimProCANdle.dylib @rpath/libCTRE_SimProCANdle.dylib osx/universal/shared/libCTRE_PhoenixTools_Sim.dylib",
                 "install_name_tool -change libCTRE_SimProPigeon2.dylib @rpath/libCTRE_SimProPigeon2.dylib osx/universal/shared/libCTRE_PhoenixTools_Sim.dylib",
                 "install_name_tool -change libCTRE_SimProTalonFX.dylib @rpath/libCTRE_SimProTalonFX.dylib osx/universal/shared/libCTRE_PhoenixTools_Sim.dylib",
                 "install_name_tool -change libCTRE_SimTalonSRX.dylib @rpath/libCTRE_SimTalonSRX.dylib osx/universal/shared/libCTRE_PhoenixTools_Sim.dylib",
@@ -5363,6 +5364,7 @@
                 "install_name_tool -change libCTRE_SimPigeonIMU.dylib @rpath/libCTRE_SimPigeonIMU.dylib osx/universal/shared/libCTRE_Phoenix6_WPISim.dylib",
                 "install_name_tool -change libCTRE_SimProCANcoder.dylib @rpath/libCTRE_SimProCANcoder.dylib osx/universal/shared/libCTRE_Phoenix6_WPISim.dylib",
                 "install_name_tool -change libCTRE_SimProCANdi.dylib @rpath/libCTRE_SimProCANdi.dylib osx/universal/shared/libCTRE_Phoenix6_WPISim.dylib",
+                "install_name_tool -change libCTRE_SimProCANdle.dylib @rpath/libCTRE_SimProCANdle.dylib osx/universal/shared/libCTRE_Phoenix6_WPISim.dylib",
                 "install_name_tool -change libCTRE_SimProPigeon2.dylib @rpath/libCTRE_SimProPigeon2.dylib osx/universal/shared/libCTRE_Phoenix6_WPISim.dylib",
                 "install_name_tool -change libCTRE_SimProTalonFX.dylib @rpath/libCTRE_SimProTalonFX.dylib osx/universal/shared/libCTRE_Phoenix6_WPISim.dylib",
                 "install_name_tool -change libCTRE_SimTalonSRX.dylib @rpath/libCTRE_SimTalonSRX.dylib osx/universal/shared/libCTRE_Phoenix6_WPISim.dylib",
@@ -5630,7 +5632,10 @@
             "attributes": {
               "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProCANdle/25.4.0/simProCANdle-25.4.0-osxuniversal.zip",
               "sha256": "3b73acec657d5c23766c643f484701082569762c0ed251d91d95c49d7b075c72",
-              "build_file": "@@bzlmodrio-phoenix6~//private/cpp/simProCANdle:shared.BUILD.bazel"
+              "build_file": "@@bzlmodrio-phoenix6~//private/cpp/simProCANdle:shared.BUILD.bazel",
+              "patch_cmds": [
+                "install_name_tool -id @rpath/libCTRE_SimProCANdle.dylib osx/universal/shared/libCTRE_SimProCANdle.dylib"
+              ]
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_api-cpp-sim_osxuniversal": {
