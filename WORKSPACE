@@ -46,8 +46,8 @@ http_archive(
 
 http_archive(
     name = "bzlmodrio-allwpilib",
-    sha256 = "290646b5f48678f11e428b0ee8493f259bccba2e995a32bcf704525c914c0031",
-    url = "https://github.com/bzlmodRio/bzlmodRio-allwpilib/releases/download/2025.3.2.bcr1/bzlmodRio-allwpilib-2025.3.2.bcr1.tar.gz",
+    sha256 = "7fd697e82d8dc8c33ac802bffe15981b974f691545b89213d1d383e507caeaa6",
+    url = "https://github.com/bzlmodRio/bzlmodRio-allwpilib/releases/download/2027.0.0-alpha-1/bzlmodRio-allwpilib-2027.0.0-alpha-1.tar.gz",
 )
 
 http_archive(

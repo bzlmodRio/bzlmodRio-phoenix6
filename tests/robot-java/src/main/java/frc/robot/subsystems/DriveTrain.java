@@ -6,16 +6,16 @@ package frc.robot.subsystems;
 
 import com.ctre.phoenix6.StatusSignal;
 import com.ctre.phoenix6.controls.Follower;
+import com.ctre.phoenix6.hardware.Pigeon2;
 import com.ctre.phoenix6.hardware.TalonFX;
+import com.ctre.phoenix6.sim.Pigeon2SimState;
 import com.ctre.phoenix6.sim.TalonFXSimState;
 import edu.wpi.first.math.kinematics.DifferentialDriveOdometry;
 import edu.wpi.first.units.measure.Angle;
 import edu.wpi.first.units.measure.AngularVelocity;
-import edu.wpi.first.wpilibj.ADXRS450_Gyro;
 import edu.wpi.first.wpilibj.RobotBase;
 import edu.wpi.first.wpilibj.RobotController;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
-import edu.wpi.first.wpilibj.simulation.ADXRS450_GyroSim;
 import edu.wpi.first.wpilibj.simulation.DifferentialDrivetrainSim;
 import edu.wpi.first.wpilibj.smartdashboard.Field2d;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
@@ -29,7 +29,7 @@ public class DriveTrain extends SubsystemBase {
 
   private final DifferentialDrive m_drive;
 
-  private final ADXRS450_Gyro m_gyro;
+  private final Pigeon2 m_gyro;
 
   private final DifferentialDriveOdometry m_odometry;
   private final Field2d m_field;
@@ -43,7 +43,7 @@ public class DriveTrain extends SubsystemBase {
   // Sim
   private TalonFXSimState m_leftSim;
   private TalonFXSimState m_rightSim;
-  private ADXRS450_GyroSim m_gyroSim;
+  private Pigeon2SimState m_gyroSim;
   private DifferentialDrivetrainSim m_drivetrainSimulator;
 
   public DriveTrain() {
@@ -62,7 +62,7 @@ public class DriveTrain extends SubsystemBase {
 
     m_drive = new DifferentialDrive(m_leftLeader::set, m_rightLeader::set);
 
-    m_gyro = new ADXRS450_Gyro();
+    m_gyro = new Pigeon2(1);
 
     m_odometry = new DifferentialDriveOdometry(m_gyro.getRotation2d(), 0, 0);
     m_field = new Field2d();
@@ -72,7 +72,7 @@ public class DriveTrain extends SubsystemBase {
     if (RobotBase.isSimulation()) {
       m_leftSim = m_leftLeader.getSimState();
       m_rightSim = m_rightLeader.getSimState();
-      m_gyroSim = new ADXRS450_GyroSim(m_gyro);
+      m_gyroSim = m_gyro.getSimState();
 
       m_drivetrainSimulator =
           DifferentialDrivetrainSim.createKitbotSim(
@@ -88,7 +88,7 @@ public class DriveTrain extends SubsystemBase {
     SmartDashboard.putNumber("Right Distance", m_rightPosition.getValueAsDouble());
     SmartDashboard.putNumber("Left Speed", m_leftVelocity.getValueAsDouble());
     SmartDashboard.putNumber("Right Speed", m_rightVelocity.getValueAsDouble());
-    SmartDashboard.putNumber("Gyro", m_gyro.getAngle());
+    SmartDashboard.putNumber("Gyro", m_gyro.getRotation2d().getDegrees());
   }
 
   public void arcadeDrive(double throttle, double rotation) {
@@ -96,7 +96,7 @@ public class DriveTrain extends SubsystemBase {
   }
 
   public double getHeading() {
-    return m_gyro.getAngle();
+    return m_gyro.getRotation2d().getDegrees();
   }
 
   /** Reset the robots sensors to the zero states. */
@@ -113,7 +113,7 @@ public class DriveTrain extends SubsystemBase {
         m_gyro.getRotation2d(),
         m_leftPosition.getValueAsDouble(),
         m_rightPosition.getValueAsDouble());
-    m_field.setRobotPose(m_odometry.getPoseMeters());
+    m_field.setRobotPose(m_odometry.getPose());
   }
 
   @Override
@@ -129,11 +129,11 @@ public class DriveTrain extends SubsystemBase {
         m_rightLeader.get() * RobotController.getInputVoltage());
     m_drivetrainSimulator.update(0.02);
 
-    m_leftSim.setRawRotorPosition(m_drivetrainSimulator.getLeftPositionMeters());
-    m_leftSim.setRotorVelocity(m_drivetrainSimulator.getLeftVelocityMetersPerSecond());
-    m_rightSim.setRawRotorPosition(m_drivetrainSimulator.getRightPositionMeters());
-    m_rightSim.setRotorVelocity(m_drivetrainSimulator.getRightVelocityMetersPerSecond());
-    m_gyroSim.setAngle(-m_drivetrainSimulator.getHeading().getDegrees());
+    m_leftSim.setRawRotorPosition(m_drivetrainSimulator.getLeftPosition());
+    m_leftSim.setRotorVelocity(m_drivetrainSimulator.getLeftVelocity());
+    m_rightSim.setRawRotorPosition(m_drivetrainSimulator.getRightPosition());
+    m_rightSim.setRotorVelocity(m_drivetrainSimulator.getRightVelocity());
+    m_gyroSim.setRawYaw(-m_drivetrainSimulator.getHeading().getDegrees());
   }
 
   public void stop() {

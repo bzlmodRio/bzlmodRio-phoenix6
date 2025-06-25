@@ -81,6 +81,6 @@ public class Shooter extends SubsystemBase {
     m_flywheelSim.setInput(m_motor.get() * RobotController.getInputVoltage());
 
     m_flywheelSim.update(0.02);
-    m_motorSim.setRawRotorPosition(m_flywheelSim.getAngularVelocityRPM());
+    m_motorSim.setRawRotorPosition(m_flywheelSim.getAngularVelocity());
   }
 }

@@ -1,9 +1,7 @@
 #pragma once
 
-#include <frc/ADXRS450_Gyro.h>
 #include <frc/drive/DifferentialDrive.h>
 #include <frc/kinematics/DifferentialDriveOdometry.h>
-#include <frc/simulation/ADXRS450_GyroSim.h>
 #include <frc/simulation/DifferentialDrivetrainSim.h>
 #include <frc/smartdashboard/Field2d.h>
 #include <frc2/command/SubsystemBase.h>
