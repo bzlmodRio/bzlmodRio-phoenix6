@@ -1,7 +1,7 @@
 module(
     name = "bzlmodrio-phoenix6",
-    version = "25.4.0",
-    compatibility_level = 2025,
+    version = "25.90.0-alpha-1",
+    compatibility_level = 2027,
 )
 
 bazel_dep(name = "platforms", version = "0.0.9")
@@ -16,7 +16,7 @@ archive_override(
     urls = ["https://github.com/wpilibsuite/rules_bzlmodRio_jdk/archive/4ecd4cbc97dfbfe2ceefa627de1228e2f2ca5773.tar.gz"],
 )
 
-bazel_dep(name = "bzlmodrio-allwpilib", version = "2025.3.2.bcr1")
+bazel_dep(name = "bzlmodrio-allwpilib", version = "2027.0.0-alpha-1")
 bazel_dep(name = "bzlmodrio-opencv", version = "2025.4.10.0-3.bcr2")
 bazel_dep(name = "bzlmodrio-ni", version = "2025.2.0.bcr1")
 
@@ -24,7 +24,7 @@ setup_bzlmodrio_phoenix6_cpp_dependencies = use_extension("//:maven_cpp_deps.bzl
 use_repo(
     setup_bzlmodrio_phoenix6_cpp_dependencies,
     "bazelrio_com_ctre_phoenix6_api-cpp_linuxarm64",
-    "bazelrio_com_ctre_phoenix6_api-cpp_linuxathena",
+    "bazelrio_com_ctre_phoenix6_api-cpp_linuxsystemcore",
     "bazelrio_com_ctre_phoenix6_api-cpp_linuxx86-64",
     "bazelrio_com_ctre_phoenix6_api-cpp_windowsx86-64",
     "bazelrio_com_ctre_phoenix6_sim_api-cpp-sim_linuxarm64",
@@ -98,12 +98,12 @@ use_repo(
     "bazelrio_com_ctre_phoenix6_sim_wpiapi-cpp-sim_windowsx86-64",
     "bazelrio_com_ctre_phoenix6_tools_headers",
     "bazelrio_com_ctre_phoenix6_tools_linuxarm64",
-    "bazelrio_com_ctre_phoenix6_tools_linuxathena",
+    "bazelrio_com_ctre_phoenix6_tools_linuxsystemcore",
     "bazelrio_com_ctre_phoenix6_tools_linuxx86-64",
     "bazelrio_com_ctre_phoenix6_tools_windowsx86-64",
     "bazelrio_com_ctre_phoenix6_wpiapi-cpp_headers",
     "bazelrio_com_ctre_phoenix6_wpiapi-cpp_linuxarm64",
-    "bazelrio_com_ctre_phoenix6_wpiapi-cpp_linuxathena",
+    "bazelrio_com_ctre_phoenix6_wpiapi-cpp_linuxsystemcore",
     "bazelrio_com_ctre_phoenix6_wpiapi-cpp_linuxx86-64",
     "bazelrio_com_ctre_phoenix6_wpiapi-cpp_windowsx86-64",
 )

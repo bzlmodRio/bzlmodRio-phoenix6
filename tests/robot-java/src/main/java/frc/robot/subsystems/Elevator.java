@@ -88,7 +88,7 @@ public class Elevator extends SubsystemBase {
   public void simulationPeriodic() {
     m_elevatorSim.setInput(m_motor.get() * RobotController.getInputVoltage());
     m_elevatorSim.update(0.02);
-    m_motorSim.setRawRotorPosition(m_elevatorSim.getPositionMeters());
+    m_motorSim.setRawRotorPosition(m_elevatorSim.getPosition());
   }
 
   public void stop() {
