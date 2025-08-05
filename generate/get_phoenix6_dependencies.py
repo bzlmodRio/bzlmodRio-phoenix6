@@ -10,7 +10,7 @@ def get_phoenix6_dependencies(
     use_local_opencv=False,
     use_local_ni=True,
     allwpilib_version_override="2025.3.2.bcr1",
-    opencv_version_override="2025.4.10.0-3.bcr2",
+    opencv_version_override="2025.4.10.0-3.bcr3",
     ni_version_override="2025.2.0.bcr1",
 ):
     sim_install_name_classes = [
