@@ -15,6 +15,7 @@ cc_library(
         select({
             "@rules_bzlmodrio_toolchains//constraints/is_roborio:roborio": [
                 "//private/cpp/tools:shared",
+                "@bzlmodrio-ni//libraries/cpp/ni:shared",
             ],
             "//conditions:default": [
                 "//private/cpp/simCANCoder:shared",

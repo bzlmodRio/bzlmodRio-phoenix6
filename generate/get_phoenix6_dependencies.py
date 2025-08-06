@@ -88,6 +88,7 @@ def get_phoenix6_dependencies(
         platform_deps={
             "@rules_bzlmodrio_toolchains//constraints/is_roborio:roborio": [
                 "tools",
+                "ni",
             ],
             "//conditions:default": [
                 "simCANCoder",
