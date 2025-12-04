@@ -7,6 +7,7 @@ package frc.robot.subsystems;
 import com.ctre.phoenix6.StatusSignal;
 import com.ctre.phoenix6.controls.Follower;
 import com.ctre.phoenix6.hardware.TalonFX;
+import com.ctre.phoenix6.signals.MotorAlignmentValue;
 import com.ctre.phoenix6.sim.TalonFXSimState;
 import edu.wpi.first.math.kinematics.DifferentialDriveOdometry;
 import edu.wpi.first.units.measure.Angle;
@@ -52,8 +53,10 @@ public class DriveTrain extends SubsystemBase {
     m_rightLeader = new TalonFX(PortMap.kDrivetrainMotorRightAPort);
     m_rightFollower = new TalonFX(PortMap.kDrivetrainMotorRightBPort);
 
-    m_leftFollower.setControl(new Follower(m_leftLeader.getDeviceID(), false));
-    m_rightFollower.setControl(new Follower(m_rightLeader.getDeviceID(), false));
+    m_leftFollower.setControl(
+        new Follower(m_leftLeader.getDeviceID(), MotorAlignmentValue.Aligned));
+    m_rightFollower.setControl(
+        new Follower(m_rightLeader.getDeviceID(), MotorAlignmentValue.Aligned));
 
     m_leftPosition = m_leftLeader.getPosition();
     m_leftVelocity = m_leftLeader.getVelocity();
