@@ -55,16 +55,16 @@ class DriveTrain : public frc2::SubsystemBase {
   frc::Field2d m_field;
 
   // Signals
-  ctre::phoenix6::StatusSignal<units::angle::turn_t> &m_leftPosition;
-  ctre::phoenix6::StatusSignal<units::angular_velocity::turns_per_second_t>
-      &m_leftVelocity;
-  ctre::phoenix6::StatusSignal<units::angle::turn_t> &m_rightPosition;
-  ctre::phoenix6::StatusSignal<units::angular_velocity::turns_per_second_t>
-      &m_rightVelocity;
+  ctre::phoenix6::StatusSignal<units::angle::turn_t>& m_leftPosition;
+  ctre::phoenix6::StatusSignal<units::angular_velocity::turns_per_second_t>&
+      m_leftVelocity;
+  ctre::phoenix6::StatusSignal<units::angle::turn_t>& m_rightPosition;
+  ctre::phoenix6::StatusSignal<units::angular_velocity::turns_per_second_t>&
+      m_rightVelocity;
 
   // Simulation
-  ctre::phoenix6::sim::TalonFXSimState &m_leftMotorSim;
-  ctre::phoenix6::sim::TalonFXSimState &m_rightMotorSim;
-  ctre::phoenix6::sim::Pigeon2SimState &m_imuSim;
+  ctre::phoenix6::sim::TalonFXSimState& m_leftMotorSim;
+  ctre::phoenix6::sim::TalonFXSimState& m_rightMotorSim;
+  ctre::phoenix6::sim::Pigeon2SimState& m_imuSim;
   frc::sim::DifferentialDrivetrainSim m_drivetrainSimulator;
 };

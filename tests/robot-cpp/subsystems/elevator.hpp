@@ -34,9 +34,9 @@ class Elevator : public frc2::Subsystem {
   ctre::phoenix6::controls::PositionVoltage m_positionControl;
 
   // Signals
-  ctre::phoenix6::StatusSignal<units::angle::turn_t> &m_position;
+  ctre::phoenix6::StatusSignal<units::angle::turn_t>& m_position;
 
   // Sim
-  ctre::phoenix6::sim::TalonFXSimState &m_motorSim;
+  ctre::phoenix6::sim::TalonFXSimState& m_motorSim;
   frc::sim::ElevatorSim m_elevatorSim;
 };
