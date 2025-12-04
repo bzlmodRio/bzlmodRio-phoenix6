@@ -13,6 +13,6 @@ public final class Main {
     TalonFX talon = new TalonFX(1);
     Pigeon2 pigeon = new Pigeon2(2);
     talon.setControl(request.withOutput(12.0));
-    System.out.println(pigeon.getAngle());
+    System.out.println(pigeon.getRotation2d());
   }
 }
