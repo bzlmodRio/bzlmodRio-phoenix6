@@ -156,8 +156,8 @@
   "moduleExtensions": {
     "//:maven_cpp_deps.bzl%setup_bzlmodrio_phoenix6_cpp_dependencies": {
       "general": {
-        "bzlTransitiveDigest": "LffEQptt0KUZOweUVEdcGL7A03Zf8NXy+OSfg0cEaaQ=",
-        "usagesDigest": "wI6TbXtB0x0KV9BVTA0w1vyd4l/m/GM0OPpMs1EbCfc=",
+        "bzlTransitiveDigest": "o0ZEBTyJRbsnxB09RRgWg8+STeBbwhTM9786AdG4R7Q=",
+        "usagesDigest": "c5JNp9s8YYQ1YH33bPxsqXFQCUfhT5kXPWtcTgGmjPQ=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},
@@ -165,40 +165,40 @@
           "bazelrio_com_ctre_phoenix6_sim_simpigeonimu_headers": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simPigeonIMU/26.1.2/simPigeonIMU-26.1.2-headers.zip",
-              "sha256": "d53f1ea2ef42decd9a5c42f3c8c2ce64bfa850bfbf4fe28fb28f9b64bcbbaa1f",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simPigeonIMU/26.1.3/simPigeonIMU-26.1.3-headers.zip",
+              "sha256": "1d85b5780684a888176ed8380a3c87e992580825910c2feadf6092ac544b5e68",
               "build_file_content": "cc_library(\n    name = \"headers\",\n    hdrs = glob([\"**\"]),\n    includes = [\".\"],\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"header_files\",\n    srcs = glob([\"**\"]),\n    visibility = [\"//visibility:public\"],\n)\n"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_simpigeonimu_windowsx86-64": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simPigeonIMU/26.1.2/simPigeonIMU-26.1.2-windowsx86-64.zip",
-              "sha256": "dd6b3e7c03302a012595b495a32c0ff3f1fbc5f92af680f302fe5b9975384428",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simPigeonIMU/26.1.3/simPigeonIMU-26.1.3-windowsx86-64.zip",
+              "sha256": "049cf56446195825180173682f6ba2209d69bfece7c07a3724fe1f1e3fa20f69",
               "build_file": "@@//private/cpp/simPigeonIMU:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_simpigeonimu_linuxx86-64": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simPigeonIMU/26.1.2/simPigeonIMU-26.1.2-linuxx86-64.zip",
-              "sha256": "d6a6ed8b4253b3d0043f8983a2c6ce1cbf7d7be0e49d6fc7a8aca8c3f5d1159b",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simPigeonIMU/26.1.3/simPigeonIMU-26.1.3-linuxx86-64.zip",
+              "sha256": "91fbd4a045c71e9a49ddcdf81fcdd7315977be501a8896f3f85fc3cf437c550b",
               "build_file": "@@//private/cpp/simPigeonIMU:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_simpigeonimu_linuxarm64": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simPigeonIMU/26.1.2/simPigeonIMU-26.1.2-linuxarm64.zip",
-              "sha256": "35b05cc36182cc2188ce446bdcb4b3d18484c14585e4ccaa4b7797a6c9da1364",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simPigeonIMU/26.1.3/simPigeonIMU-26.1.3-linuxarm64.zip",
+              "sha256": "53271839a03ff2d89bef6bf2b084d7c08bdb8ae89bbf7892d5a438a513ca1d42",
               "build_file": "@@//private/cpp/simPigeonIMU:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_simpigeonimu_osxuniversal": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simPigeonIMU/26.1.2/simPigeonIMU-26.1.2-osxuniversal.zip",
-              "sha256": "1dfb8cce9e1d5cd83274b03eb76c8cc3f0e31a91e9dc78dae8f92d511f29370a",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simPigeonIMU/26.1.3/simPigeonIMU-26.1.3-osxuniversal.zip",
+              "sha256": "12f03ef1ea8e56540c75047dde14a164a5baeb157297b3f453f864e19b06ce27",
               "build_file": "@@//private/cpp/simPigeonIMU:shared.BUILD.bazel",
               "patch_cmds": [
                 "install_name_tool -id @rpath/libCTRE_SimPigeonIMU.dylib osx/universal/shared/libCTRE_SimPigeonIMU.dylib"
@@ -208,40 +208,40 @@
           "bazelrio_com_ctre_phoenix6_sim_simprocancoder_headers": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProCANcoder/26.1.2/simProCANcoder-26.1.2-headers.zip",
-              "sha256": "d53f1ea2ef42decd9a5c42f3c8c2ce64bfa850bfbf4fe28fb28f9b64bcbbaa1f",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProCANcoder/26.1.3/simProCANcoder-26.1.3-headers.zip",
+              "sha256": "1d85b5780684a888176ed8380a3c87e992580825910c2feadf6092ac544b5e68",
               "build_file_content": "cc_library(\n    name = \"headers\",\n    hdrs = glob([\"**\"]),\n    includes = [\".\"],\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"header_files\",\n    srcs = glob([\"**\"]),\n    visibility = [\"//visibility:public\"],\n)\n"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_simprocancoder_windowsx86-64": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProCANcoder/26.1.2/simProCANcoder-26.1.2-windowsx86-64.zip",
-              "sha256": "14f28aa3708afdfe1dde8dfbf8dae242b357b165c530839131b46f22ed84b241",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProCANcoder/26.1.3/simProCANcoder-26.1.3-windowsx86-64.zip",
+              "sha256": "f412c1520a5c4092edf4e49b60771999f26288e522cb93113c39f4e5a174d921",
               "build_file": "@@//private/cpp/simProCANcoder:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_simprocancoder_linuxx86-64": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProCANcoder/26.1.2/simProCANcoder-26.1.2-linuxx86-64.zip",
-              "sha256": "152ca51f473cf96959a3961ca0f5ef347e2efe90f1766e4233f621c3d53190de",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProCANcoder/26.1.3/simProCANcoder-26.1.3-linuxx86-64.zip",
+              "sha256": "58bc02a0edafe09902a3ad684ede69c2ff63317dc2e3f5bead5206db71d21ee4",
               "build_file": "@@//private/cpp/simProCANcoder:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_simprocancoder_linuxarm64": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProCANcoder/26.1.2/simProCANcoder-26.1.2-linuxarm64.zip",
-              "sha256": "7a7b3e63f7438b8da1e8ec096a778c49bcdb948461eb155b219ce2713154d9c9",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProCANcoder/26.1.3/simProCANcoder-26.1.3-linuxarm64.zip",
+              "sha256": "4b82b0573662a1a8190142ca56345e566196e179afe70ea1ab3600734503bc6d",
               "build_file": "@@//private/cpp/simProCANcoder:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_simprocancoder_osxuniversal": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProCANcoder/26.1.2/simProCANcoder-26.1.2-osxuniversal.zip",
-              "sha256": "d3c1b95e5c29a0aba983738f28a31a9457f38533caecfb9dd9c1158ec1999a47",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProCANcoder/26.1.3/simProCANcoder-26.1.3-osxuniversal.zip",
+              "sha256": "ceac3dcf15d00d0a049bf95701bef58ad9096aea47add55937e181d4fb94ab10",
               "build_file": "@@//private/cpp/simProCANcoder:shared.BUILD.bazel",
               "patch_cmds": [
                 "install_name_tool -id @rpath/libCTRE_SimProCANcoder.dylib osx/universal/shared/libCTRE_SimProCANcoder.dylib"
@@ -251,40 +251,40 @@
           "bazelrio_com_ctre_phoenix6_sim_simprocandi_headers": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProCANdi/26.1.2/simProCANdi-26.1.2-headers.zip",
-              "sha256": "d53f1ea2ef42decd9a5c42f3c8c2ce64bfa850bfbf4fe28fb28f9b64bcbbaa1f",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProCANdi/26.1.3/simProCANdi-26.1.3-headers.zip",
+              "sha256": "1d85b5780684a888176ed8380a3c87e992580825910c2feadf6092ac544b5e68",
               "build_file_content": "cc_library(\n    name = \"headers\",\n    hdrs = glob([\"**\"]),\n    includes = [\".\"],\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"header_files\",\n    srcs = glob([\"**\"]),\n    visibility = [\"//visibility:public\"],\n)\n"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_simprocandi_windowsx86-64": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProCANdi/26.1.2/simProCANdi-26.1.2-windowsx86-64.zip",
-              "sha256": "08742f5d4bd5b632258411272dea5e6a76d94b1dda17b77c4da5568417bc5659",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProCANdi/26.1.3/simProCANdi-26.1.3-windowsx86-64.zip",
+              "sha256": "672d1b4b76a8b51f7f28d3cc0461157770b2f8f0a05dceaf6dbdd068ef5ff552",
               "build_file": "@@//private/cpp/simProCANdi:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_simprocandi_linuxx86-64": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProCANdi/26.1.2/simProCANdi-26.1.2-linuxx86-64.zip",
-              "sha256": "f37687ca04f976b65f2e3b90ace236c682cf756b04e29baaaa803b73617f5bb7",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProCANdi/26.1.3/simProCANdi-26.1.3-linuxx86-64.zip",
+              "sha256": "860aeec454c1a234d323fe87971813ee9ee375ecf7d820c5d3bb9edfc512f5b9",
               "build_file": "@@//private/cpp/simProCANdi:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_simprocandi_linuxarm64": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProCANdi/26.1.2/simProCANdi-26.1.2-linuxarm64.zip",
-              "sha256": "8bac9bf960fbd78c727919c464988cd28957595e438f6a150eb40ad0daa83836",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProCANdi/26.1.3/simProCANdi-26.1.3-linuxarm64.zip",
+              "sha256": "476663ab1b79e6142624dbebd81be9fcaf6b230dff0f954af7af7a191cc38ae5",
               "build_file": "@@//private/cpp/simProCANdi:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_simprocandi_osxuniversal": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProCANdi/26.1.2/simProCANdi-26.1.2-osxuniversal.zip",
-              "sha256": "460aa16e9a74bf109f568b1fc11cbff9247ffac9360f8657d44a316ec7500ac1",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProCANdi/26.1.3/simProCANdi-26.1.3-osxuniversal.zip",
+              "sha256": "e1b8817ac9cff2238850b8826d21e7b2060b8d2b27595a8492161e4acab569e9",
               "build_file": "@@//private/cpp/simProCANdi:shared.BUILD.bazel",
               "patch_cmds": [
                 "install_name_tool -id @rpath/libCTRE_SimProCANdi.dylib osx/universal/shared/libCTRE_SimProCANdi.dylib"
@@ -294,40 +294,40 @@
           "bazelrio_com_ctre_phoenix6_sim_simprocandle_headers": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProCANdle/26.1.2/simProCANdle-26.1.2-headers.zip",
-              "sha256": "d53f1ea2ef42decd9a5c42f3c8c2ce64bfa850bfbf4fe28fb28f9b64bcbbaa1f",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProCANdle/26.1.3/simProCANdle-26.1.3-headers.zip",
+              "sha256": "1d85b5780684a888176ed8380a3c87e992580825910c2feadf6092ac544b5e68",
               "build_file_content": "cc_library(\n    name = \"headers\",\n    hdrs = glob([\"**\"]),\n    includes = [\".\"],\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"header_files\",\n    srcs = glob([\"**\"]),\n    visibility = [\"//visibility:public\"],\n)\n"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_simprocandle_windowsx86-64": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProCANdle/26.1.2/simProCANdle-26.1.2-windowsx86-64.zip",
-              "sha256": "c1fbade1e06c62ed0efe210287f20966b33ae1bbf6e8831682f1ce9e49ad7b95",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProCANdle/26.1.3/simProCANdle-26.1.3-windowsx86-64.zip",
+              "sha256": "a40b5e5fd57f7d29cc1783047905eb15df16531a60d97aa8d881db25bf50df3b",
               "build_file": "@@//private/cpp/simProCANdle:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_simprocandle_linuxx86-64": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProCANdle/26.1.2/simProCANdle-26.1.2-linuxx86-64.zip",
-              "sha256": "df343a1b193a09eb4ff2cb96a9bb3b929c306abe379bfa09fd3e9a9a55f4beeb",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProCANdle/26.1.3/simProCANdle-26.1.3-linuxx86-64.zip",
+              "sha256": "1537c45d3b70e629910f7514438a9319ecdb9af2bb9e96e7b72cc774a5051ae1",
               "build_file": "@@//private/cpp/simProCANdle:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_simprocandle_linuxarm64": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProCANdle/26.1.2/simProCANdle-26.1.2-linuxarm64.zip",
-              "sha256": "335cbd712f73fc098d0e9dd1a690f4fa5bcc8ba8e39a215c7a1abd531dacac37",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProCANdle/26.1.3/simProCANdle-26.1.3-linuxarm64.zip",
+              "sha256": "0db7dcfd08ed476b0e24f0f1784716114841f5ffc82e7844f285cb42f80e02c3",
               "build_file": "@@//private/cpp/simProCANdle:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_simprocandle_osxuniversal": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProCANdle/26.1.2/simProCANdle-26.1.2-osxuniversal.zip",
-              "sha256": "f3625ea8d9d33646d8210a9532e652006a6cff1bd266f7cd71372cdc0a1e44b3",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProCANdle/26.1.3/simProCANdle-26.1.3-osxuniversal.zip",
+              "sha256": "02a5b4d3d74092d0a010b499241ae13d1a7f711444d82b874f40533cbb69e668",
               "build_file": "@@//private/cpp/simProCANdle:shared.BUILD.bazel",
               "patch_cmds": [
                 "install_name_tool -id @rpath/libCTRE_SimProCANdle.dylib osx/universal/shared/libCTRE_SimProCANdle.dylib"
@@ -337,40 +337,40 @@
           "bazelrio_com_ctre_phoenix6_sim_simprocanrange_headers": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProCANrange/26.1.2/simProCANrange-26.1.2-headers.zip",
-              "sha256": "d53f1ea2ef42decd9a5c42f3c8c2ce64bfa850bfbf4fe28fb28f9b64bcbbaa1f",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProCANrange/26.1.3/simProCANrange-26.1.3-headers.zip",
+              "sha256": "1d85b5780684a888176ed8380a3c87e992580825910c2feadf6092ac544b5e68",
               "build_file_content": "cc_library(\n    name = \"headers\",\n    hdrs = glob([\"**\"]),\n    includes = [\".\"],\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"header_files\",\n    srcs = glob([\"**\"]),\n    visibility = [\"//visibility:public\"],\n)\n"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_simprocanrange_windowsx86-64": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProCANrange/26.1.2/simProCANrange-26.1.2-windowsx86-64.zip",
-              "sha256": "e627647bc2afc42172bb1ed6e3ee96512b869787327d6ffd4296dbe1592bcf0a",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProCANrange/26.1.3/simProCANrange-26.1.3-windowsx86-64.zip",
+              "sha256": "0f6f05e28eea5e5fe272c898c82b59b098bdb502401515f061abd225a9b723e3",
               "build_file": "@@//private/cpp/simProCANrange:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_simprocanrange_linuxx86-64": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProCANrange/26.1.2/simProCANrange-26.1.2-linuxx86-64.zip",
-              "sha256": "b0515dbde314d9a0cc6c08aed1a8826a9010fd87e6667936c23c8479121a99ea",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProCANrange/26.1.3/simProCANrange-26.1.3-linuxx86-64.zip",
+              "sha256": "4c79d6abc240ee576650f068b812e9b0e52e7e6f3fdde193aa39f081ec7041c7",
               "build_file": "@@//private/cpp/simProCANrange:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_simprocanrange_linuxarm64": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProCANrange/26.1.2/simProCANrange-26.1.2-linuxarm64.zip",
-              "sha256": "c195d53369c29198c3092e4bce31c465952488bb443a67d1d62d0e991b2d863d",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProCANrange/26.1.3/simProCANrange-26.1.3-linuxarm64.zip",
+              "sha256": "04df1b97a086c00093da4e06eaf4e59a44990a0b38e3e9d026d801caec55cabc",
               "build_file": "@@//private/cpp/simProCANrange:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_simprocanrange_osxuniversal": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProCANrange/26.1.2/simProCANrange-26.1.2-osxuniversal.zip",
-              "sha256": "717ce90998c1525580cdf21231236816bb598357d7d3be48391986445c6c9701",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProCANrange/26.1.3/simProCANrange-26.1.3-osxuniversal.zip",
+              "sha256": "ec3db8e7f9e7188bfed5dc4ab5231cb58e632f30b66114331bb6cc2561f9134f",
               "build_file": "@@//private/cpp/simProCANrange:shared.BUILD.bazel",
               "patch_cmds": [
                 "install_name_tool -id @rpath/libCTRE_SimProCANrange.dylib osx/universal/shared/libCTRE_SimProCANrange.dylib"
@@ -380,40 +380,40 @@
           "bazelrio_com_ctre_phoenix6_sim_simpropigeon2_headers": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProPigeon2/26.1.2/simProPigeon2-26.1.2-headers.zip",
-              "sha256": "d53f1ea2ef42decd9a5c42f3c8c2ce64bfa850bfbf4fe28fb28f9b64bcbbaa1f",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProPigeon2/26.1.3/simProPigeon2-26.1.3-headers.zip",
+              "sha256": "1d85b5780684a888176ed8380a3c87e992580825910c2feadf6092ac544b5e68",
               "build_file_content": "cc_library(\n    name = \"headers\",\n    hdrs = glob([\"**\"]),\n    includes = [\".\"],\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"header_files\",\n    srcs = glob([\"**\"]),\n    visibility = [\"//visibility:public\"],\n)\n"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_simpropigeon2_windowsx86-64": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProPigeon2/26.1.2/simProPigeon2-26.1.2-windowsx86-64.zip",
-              "sha256": "225b7702771cae130938cfb1d3f3e1ffc94078af4083fbfa1da0ab60bc06fd74",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProPigeon2/26.1.3/simProPigeon2-26.1.3-windowsx86-64.zip",
+              "sha256": "6c1c17b9e150e079b7a05a479758f0d3b82f976d550b129234998550759e53a5",
               "build_file": "@@//private/cpp/simProPigeon2:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_simpropigeon2_linuxx86-64": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProPigeon2/26.1.2/simProPigeon2-26.1.2-linuxx86-64.zip",
-              "sha256": "f30ac1432cc1dbc371f59240b0df780b44543da719b43cfffa357aeeebfa9e39",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProPigeon2/26.1.3/simProPigeon2-26.1.3-linuxx86-64.zip",
+              "sha256": "d920c1c29fa784ac7bd2856839b6933398c15cccc0d4a1a5653710013f9e841c",
               "build_file": "@@//private/cpp/simProPigeon2:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_simpropigeon2_linuxarm64": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProPigeon2/26.1.2/simProPigeon2-26.1.2-linuxarm64.zip",
-              "sha256": "694c9f671076a5a16f92f101c791b618fd2647b2d85557005461d0865070d56d",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProPigeon2/26.1.3/simProPigeon2-26.1.3-linuxarm64.zip",
+              "sha256": "96024af2faf9c8ce9b8e707695971c5b1387c64790315701cf228d511f09949e",
               "build_file": "@@//private/cpp/simProPigeon2:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_simpropigeon2_osxuniversal": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProPigeon2/26.1.2/simProPigeon2-26.1.2-osxuniversal.zip",
-              "sha256": "f186807f2b89d68e81ef7a57f7c15ac569d56d77238fde2fc08dfd3398c688f6",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProPigeon2/26.1.3/simProPigeon2-26.1.3-osxuniversal.zip",
+              "sha256": "db12e38a9bbd035f42676d09ea660259ac6b8e4b77f96c0e45f6f6f768452fda",
               "build_file": "@@//private/cpp/simProPigeon2:shared.BUILD.bazel",
               "patch_cmds": [
                 "install_name_tool -id @rpath/libCTRE_SimProPigeon2.dylib osx/universal/shared/libCTRE_SimProPigeon2.dylib"
@@ -423,40 +423,40 @@
           "bazelrio_com_ctre_phoenix6_sim_simprotalonfx_headers": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProTalonFX/26.1.2/simProTalonFX-26.1.2-headers.zip",
-              "sha256": "d53f1ea2ef42decd9a5c42f3c8c2ce64bfa850bfbf4fe28fb28f9b64bcbbaa1f",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProTalonFX/26.1.3/simProTalonFX-26.1.3-headers.zip",
+              "sha256": "1d85b5780684a888176ed8380a3c87e992580825910c2feadf6092ac544b5e68",
               "build_file_content": "cc_library(\n    name = \"headers\",\n    hdrs = glob([\"**\"]),\n    includes = [\".\"],\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"header_files\",\n    srcs = glob([\"**\"]),\n    visibility = [\"//visibility:public\"],\n)\n"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_simprotalonfx_windowsx86-64": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProTalonFX/26.1.2/simProTalonFX-26.1.2-windowsx86-64.zip",
-              "sha256": "719aed4cff1b210db811b37b7c96a37baf99ba80c3e904caa097805d12cc5791",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProTalonFX/26.1.3/simProTalonFX-26.1.3-windowsx86-64.zip",
+              "sha256": "23594e45433904de9b1b498be2edf75beed1d912a4dcccb0fbc08257dad80b3f",
               "build_file": "@@//private/cpp/simProTalonFX:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_simprotalonfx_linuxx86-64": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProTalonFX/26.1.2/simProTalonFX-26.1.2-linuxx86-64.zip",
-              "sha256": "bb781428d01e7ffd5b4a4927fb4821dc51690419718f78585d63132b8cd328fa",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProTalonFX/26.1.3/simProTalonFX-26.1.3-linuxx86-64.zip",
+              "sha256": "a4cbf8ce2e9ef48955b2e9f7d2ceeda16dff9251a891ac0c57f4212ff1b6ec23",
               "build_file": "@@//private/cpp/simProTalonFX:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_simprotalonfx_linuxarm64": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProTalonFX/26.1.2/simProTalonFX-26.1.2-linuxarm64.zip",
-              "sha256": "c2b39b5c6dc96700cb541d4042adb1226e04e13b03422c9b32a245cfbc6a28fa",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProTalonFX/26.1.3/simProTalonFX-26.1.3-linuxarm64.zip",
+              "sha256": "c239f05ba4f236fce4b7747c19729f08b12b36126b18f65905bc40229f79ec79",
               "build_file": "@@//private/cpp/simProTalonFX:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_simprotalonfx_osxuniversal": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProTalonFX/26.1.2/simProTalonFX-26.1.2-osxuniversal.zip",
-              "sha256": "ca23ce31b1b8bd248ddeca3405b2545332c01caabaf4ccf12cb890b9c694b403",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProTalonFX/26.1.3/simProTalonFX-26.1.3-osxuniversal.zip",
+              "sha256": "b5cf4b6569daf2fec299641eaa70b6b686e7646bc924f3131423673ec5f45f22",
               "build_file": "@@//private/cpp/simProTalonFX:shared.BUILD.bazel",
               "patch_cmds": [
                 "install_name_tool -id @rpath/libCTRE_SimProTalonFX.dylib osx/universal/shared/libCTRE_SimProTalonFX.dylib"
@@ -466,40 +466,40 @@
           "bazelrio_com_ctre_phoenix6_sim_simprotalonfxs_headers": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProTalonFXS/26.1.2/simProTalonFXS-26.1.2-headers.zip",
-              "sha256": "d53f1ea2ef42decd9a5c42f3c8c2ce64bfa850bfbf4fe28fb28f9b64bcbbaa1f",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProTalonFXS/26.1.3/simProTalonFXS-26.1.3-headers.zip",
+              "sha256": "1d85b5780684a888176ed8380a3c87e992580825910c2feadf6092ac544b5e68",
               "build_file_content": "cc_library(\n    name = \"headers\",\n    hdrs = glob([\"**\"]),\n    includes = [\".\"],\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"header_files\",\n    srcs = glob([\"**\"]),\n    visibility = [\"//visibility:public\"],\n)\n"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_simprotalonfxs_windowsx86-64": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProTalonFXS/26.1.2/simProTalonFXS-26.1.2-windowsx86-64.zip",
-              "sha256": "4a0289e3af35b5edac71f0ee21ef738494b867162c06bbcc07d86f67a0465041",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProTalonFXS/26.1.3/simProTalonFXS-26.1.3-windowsx86-64.zip",
+              "sha256": "88d233b2762a88d686f99a1d0003245e309a267ca0b602bb1323eae57b7b2ae8",
               "build_file": "@@//private/cpp/simProTalonFXS:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_simprotalonfxs_linuxx86-64": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProTalonFXS/26.1.2/simProTalonFXS-26.1.2-linuxx86-64.zip",
-              "sha256": "96944b560796dd0d5dbe37387b10d0fc6fbe9965400d6da8f659e05c28f113c5",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProTalonFXS/26.1.3/simProTalonFXS-26.1.3-linuxx86-64.zip",
+              "sha256": "a98493f2acfbdd57a2ac3edb2f1326817e17aa5e16eacdd980862845ccd48f4c",
               "build_file": "@@//private/cpp/simProTalonFXS:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_simprotalonfxs_linuxarm64": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProTalonFXS/26.1.2/simProTalonFXS-26.1.2-linuxarm64.zip",
-              "sha256": "4fc04e958b21d6ab9bba3c4852e9a9a937313043caf6453fe8091474330513ca",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProTalonFXS/26.1.3/simProTalonFXS-26.1.3-linuxarm64.zip",
+              "sha256": "7a7299b78647749005da1ee210a31c25f22f631104ca7ef13027808eedabac7d",
               "build_file": "@@//private/cpp/simProTalonFXS:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_simprotalonfxs_osxuniversal": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProTalonFXS/26.1.2/simProTalonFXS-26.1.2-osxuniversal.zip",
-              "sha256": "38046cb65f6ed6a7ab3c8513cccb46051eea67a5fe986b3b53f4bdb3bc8cb452",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simProTalonFXS/26.1.3/simProTalonFXS-26.1.3-osxuniversal.zip",
+              "sha256": "c63f239c86c70c9f627f21670d9a155abf1ac4cb96d9fef5282525d3bd63b113",
               "build_file": "@@//private/cpp/simProTalonFXS:shared.BUILD.bazel",
               "patch_cmds": [
                 "install_name_tool -id @rpath/libCTRE_SimProTalonFXS.dylib osx/universal/shared/libCTRE_SimProTalonFXS.dylib"
@@ -509,40 +509,40 @@
           "bazelrio_com_ctre_phoenix6_sim_simtalonsrx_headers": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simTalonSRX/26.1.2/simTalonSRX-26.1.2-headers.zip",
-              "sha256": "d53f1ea2ef42decd9a5c42f3c8c2ce64bfa850bfbf4fe28fb28f9b64bcbbaa1f",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simTalonSRX/26.1.3/simTalonSRX-26.1.3-headers.zip",
+              "sha256": "1d85b5780684a888176ed8380a3c87e992580825910c2feadf6092ac544b5e68",
               "build_file_content": "cc_library(\n    name = \"headers\",\n    hdrs = glob([\"**\"]),\n    includes = [\".\"],\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"header_files\",\n    srcs = glob([\"**\"]),\n    visibility = [\"//visibility:public\"],\n)\n"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_simtalonsrx_windowsx86-64": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simTalonSRX/26.1.2/simTalonSRX-26.1.2-windowsx86-64.zip",
-              "sha256": "9f7104513586b3c74e2c8b7cfb1b11b119753f79972a46e79ef444781b829175",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simTalonSRX/26.1.3/simTalonSRX-26.1.3-windowsx86-64.zip",
+              "sha256": "59912f64312bd518a3a42c03b675be209e4b1a843bde3a2c3265dfe3b8119883",
               "build_file": "@@//private/cpp/simTalonSRX:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_simtalonsrx_linuxx86-64": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simTalonSRX/26.1.2/simTalonSRX-26.1.2-linuxx86-64.zip",
-              "sha256": "4b6e739478077566afa711871d279cb707c9f24e3d9b9d2c8ecf37a2d6511b06",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simTalonSRX/26.1.3/simTalonSRX-26.1.3-linuxx86-64.zip",
+              "sha256": "5d0e3aee46f93a148999fe5311a16712a325cde350c80903be29a481bd71065a",
               "build_file": "@@//private/cpp/simTalonSRX:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_simtalonsrx_linuxarm64": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simTalonSRX/26.1.2/simTalonSRX-26.1.2-linuxarm64.zip",
-              "sha256": "e23f6accd97f783cc18a6ce203fac7196b5583edf2252ed30fbf9cb0d3c92d4f",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simTalonSRX/26.1.3/simTalonSRX-26.1.3-linuxarm64.zip",
+              "sha256": "f63d808a2ad1ba46588d056a3986f7455e2b71ac9bede4ff3ba52842dbfadcc3",
               "build_file": "@@//private/cpp/simTalonSRX:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_simtalonsrx_osxuniversal": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simTalonSRX/26.1.2/simTalonSRX-26.1.2-osxuniversal.zip",
-              "sha256": "0940fbef7a2d45d89fc560dbcf24a0476abf2fa60235fe0db47b64a31f8038dc",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simTalonSRX/26.1.3/simTalonSRX-26.1.3-osxuniversal.zip",
+              "sha256": "f514ddbaeb2022dabb0a09f4b0e41d45441eef4cc3d5f44da2922c75e6da371a",
               "build_file": "@@//private/cpp/simTalonSRX:shared.BUILD.bazel",
               "patch_cmds": [
                 "install_name_tool -id @rpath/libCTRE_SimTalonSRX.dylib osx/universal/shared/libCTRE_SimTalonSRX.dylib"
@@ -552,40 +552,40 @@
           "bazelrio_com_ctre_phoenix6_sim_simvictorspx_headers": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simVictorSPX/26.1.2/simVictorSPX-26.1.2-headers.zip",
-              "sha256": "d53f1ea2ef42decd9a5c42f3c8c2ce64bfa850bfbf4fe28fb28f9b64bcbbaa1f",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simVictorSPX/26.1.3/simVictorSPX-26.1.3-headers.zip",
+              "sha256": "1d85b5780684a888176ed8380a3c87e992580825910c2feadf6092ac544b5e68",
               "build_file_content": "cc_library(\n    name = \"headers\",\n    hdrs = glob([\"**\"]),\n    includes = [\".\"],\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"header_files\",\n    srcs = glob([\"**\"]),\n    visibility = [\"//visibility:public\"],\n)\n"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_simvictorspx_windowsx86-64": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simVictorSPX/26.1.2/simVictorSPX-26.1.2-windowsx86-64.zip",
-              "sha256": "6bfb6d8a7a2748be0c6cd0291646fbf782fe3a4559dedfea4ce1d6a264fdb178",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simVictorSPX/26.1.3/simVictorSPX-26.1.3-windowsx86-64.zip",
+              "sha256": "5d907864c762d7ca330c88f79789b84062ab8e756b6520256f31a2f9ae09361c",
               "build_file": "@@//private/cpp/simVictorSPX:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_simvictorspx_linuxx86-64": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simVictorSPX/26.1.2/simVictorSPX-26.1.2-linuxx86-64.zip",
-              "sha256": "2fe9298b29988e58cadb0eb6b231182ea838fa744ba58c444562dab15f31c866",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simVictorSPX/26.1.3/simVictorSPX-26.1.3-linuxx86-64.zip",
+              "sha256": "506da9920058aef95d5363b197625d6a076bb18e0fcb1d34cdfdb7ea3e45ec18",
               "build_file": "@@//private/cpp/simVictorSPX:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_simvictorspx_linuxarm64": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simVictorSPX/26.1.2/simVictorSPX-26.1.2-linuxarm64.zip",
-              "sha256": "365305b09303c252ff714a33ead4999962524ac04fb0508f3b7c62849fb2af62",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simVictorSPX/26.1.3/simVictorSPX-26.1.3-linuxarm64.zip",
+              "sha256": "71d9912bbd2d6d45531a4c0194678722baeccc1add0fc86f2994731d7a1a80f3",
               "build_file": "@@//private/cpp/simVictorSPX:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_simvictorspx_osxuniversal": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simVictorSPX/26.1.2/simVictorSPX-26.1.2-osxuniversal.zip",
-              "sha256": "61218ea84ee624114341a9ea4c4d75f7cbee5fb9573eb58d6a01eaeb91a37e05",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/simVictorSPX/26.1.3/simVictorSPX-26.1.3-osxuniversal.zip",
+              "sha256": "ec2c6a4be8f57e0d7ca3f8b34a234127381b2ac8829d9df687288f19cac78c60",
               "build_file": "@@//private/cpp/simVictorSPX:shared.BUILD.bazel",
               "patch_cmds": [
                 "install_name_tool -id @rpath/libCTRE_SimVictorSPX.dylib osx/universal/shared/libCTRE_SimVictorSPX.dylib"
@@ -595,80 +595,80 @@
           "bazelrio_com_ctre_phoenix6_tools_headers": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/tools/26.1.2/tools-26.1.2-headers.zip",
-              "sha256": "5a0bcd54ccd9904401f131f1f2621e7add72ab2dcb47dcc30e554740d2e74729",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/tools/26.1.3/tools-26.1.3-headers.zip",
+              "sha256": "daa7ba1dd01780b0b68ce9dd0c2467f6a860b15df278917ebc018f150da9f020",
               "build_file_content": "cc_library(\n    name = \"headers\",\n    hdrs = glob([\"**\"]),\n    includes = [\".\"],\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"header_files\",\n    srcs = glob([\"**\"]),\n    visibility = [\"//visibility:public\"],\n)\n"
             }
           },
           "bazelrio_com_ctre_phoenix6_tools_windowsx86-64": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/tools/26.1.2/tools-26.1.2-windowsx86-64.zip",
-              "sha256": "81180893657cf79315d020b7f431c4d08ada7a0bfdbc786f2388029bcfa8c046",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/tools/26.1.3/tools-26.1.3-windowsx86-64.zip",
+              "sha256": "9728ffdbb74639da36d4c7eef1ded89ec130e8b940b319e5a6b593c3562a7947",
               "build_file": "@@//private/cpp/tools:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_tools_linuxx86-64": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/tools/26.1.2/tools-26.1.2-linuxx86-64.zip",
-              "sha256": "8aab354c5f6d2c0a81036dcf67ce42165366041b636e4422657530d209fad550",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/tools/26.1.3/tools-26.1.3-linuxx86-64.zip",
+              "sha256": "ccc4eec96c8ce772814fd9d6ef8ff89e7bf54d0db1b3c4593338501a2f85d2b0",
               "build_file": "@@//private/cpp/tools:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_tools_linuxarm64": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/tools/26.1.2/tools-26.1.2-linuxarm64.zip",
-              "sha256": "8d139ac3e0f0380d52d1bffe31a941fb36576ab7b40bf3f5277b371567d40004",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/tools/26.1.3/tools-26.1.3-linuxarm64.zip",
+              "sha256": "2cd583c17453943ef85122738e9173788810a4853f6b2dcb4f057df5897f1218",
               "build_file": "@@//private/cpp/tools:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_tools_linuxathena": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/tools/26.1.2/tools-26.1.2-linuxathena.zip",
-              "sha256": "227675facdadc77bb1b19d7577ea918497f480b65a77fb6a75f45d933b1a8eef",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/tools/26.1.3/tools-26.1.3-linuxathena.zip",
+              "sha256": "37096f81877c33322c2e85a6a920dc526890ec9aa8be061a5f0d1945d306d55d",
               "build_file": "@@//private/cpp/tools:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_tools-sim_headers": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/tools-sim/26.1.2/tools-sim-26.1.2-headers.zip",
-              "sha256": "5a0bcd54ccd9904401f131f1f2621e7add72ab2dcb47dcc30e554740d2e74729",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/tools-sim/26.1.3/tools-sim-26.1.3-headers.zip",
+              "sha256": "daa7ba1dd01780b0b68ce9dd0c2467f6a860b15df278917ebc018f150da9f020",
               "build_file_content": "cc_library(\n    name = \"headers\",\n    hdrs = glob([\"**\"]),\n    includes = [\".\"],\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"header_files\",\n    srcs = glob([\"**\"]),\n    visibility = [\"//visibility:public\"],\n)\n"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_tools-sim_windowsx86-64": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/tools-sim/26.1.2/tools-sim-26.1.2-windowsx86-64.zip",
-              "sha256": "bc6a95e976974f6e164b56068aed03adb00734e8b14e09a05f5b7739b9aa1b75",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/tools-sim/26.1.3/tools-sim-26.1.3-windowsx86-64.zip",
+              "sha256": "8811e47ea8368393790feb0ccd4ae4da4e1ce38164c79768788db497468d374e",
               "build_file": "@@//private/cpp/tools-sim:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_tools-sim_linuxx86-64": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/tools-sim/26.1.2/tools-sim-26.1.2-linuxx86-64.zip",
-              "sha256": "962cb6a7674c278077c3b043125049240a39fae69550adb5bb1d0dcffc0daf40",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/tools-sim/26.1.3/tools-sim-26.1.3-linuxx86-64.zip",
+              "sha256": "c5291ffe1d72cf3a65da60a1f0bf39c9abba6fbd6ea76fd12d0d7fb52c242872",
               "build_file": "@@//private/cpp/tools-sim:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_tools-sim_linuxarm64": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/tools-sim/26.1.2/tools-sim-26.1.2-linuxarm64.zip",
-              "sha256": "ca65a5290fb46d5b2cfd2eaa28823a2bf35251f233381eed19f99a6ae0172612",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/tools-sim/26.1.3/tools-sim-26.1.3-linuxarm64.zip",
+              "sha256": "70c6978c2bc5cc152c71b79a980c076d22bfb2d9150dee73afba9cf101231143",
               "build_file": "@@//private/cpp/tools-sim:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_tools-sim_osxuniversal": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/tools-sim/26.1.2/tools-sim-26.1.2-osxuniversal.zip",
-              "sha256": "4c2d4cf031ad8e43337b1a4fd01bf96738895fbe4831754b54e2802d7e698f3d",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/tools-sim/26.1.3/tools-sim-26.1.3-osxuniversal.zip",
+              "sha256": "962c74b0533185eb99bba09a3885c1c0704ade5bb18a9b684a589857a58f3cc5",
               "build_file": "@@//private/cpp/tools-sim:shared.BUILD.bazel",
               "patch_cmds": [
                 "install_name_tool -id @rpath/libCTRE_PhoenixTools_Sim.dylib osx/universal/shared/libCTRE_PhoenixTools_Sim.dylib",
@@ -686,80 +686,80 @@
           "bazelrio_com_ctre_phoenix6_wpiapi-cpp_headers": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/wpiapi-cpp/26.1.2/wpiapi-cpp-26.1.2-headers.zip",
-              "sha256": "7ee7aa9eeaef0152ab827c061ee0618fea4833d5333f9b8f561b2baa57ff6df8",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/wpiapi-cpp/26.1.3/wpiapi-cpp-26.1.3-headers.zip",
+              "sha256": "9ee1eb9b7671d0a629f4b1a3218baa736916ef2234ec4edba2c44a583db5e8fc",
               "build_file_content": "cc_library(\n    name = \"headers\",\n    hdrs = glob([\"**\"]),\n    includes = [\".\"],\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"header_files\",\n    srcs = glob([\"**\"]),\n    visibility = [\"//visibility:public\"],\n)\n"
             }
           },
           "bazelrio_com_ctre_phoenix6_wpiapi-cpp_windowsx86-64": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/wpiapi-cpp/26.1.2/wpiapi-cpp-26.1.2-windowsx86-64.zip",
-              "sha256": "3c0f6714e7586c340bd67c533f773ea2ca15f1b97b2534c7868089e6e0d64e31",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/wpiapi-cpp/26.1.3/wpiapi-cpp-26.1.3-windowsx86-64.zip",
+              "sha256": "c3cebcff3a5f2b80e71f7269f091108626dc60ea308440d4a23aa2f387024c11",
               "build_file": "@@//private/cpp/wpiapi-cpp:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_wpiapi-cpp_linuxx86-64": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/wpiapi-cpp/26.1.2/wpiapi-cpp-26.1.2-linuxx86-64.zip",
-              "sha256": "a8117e8c9bb2e1c4c177a8c47bf1a7e33ba491434fa0aa99f23d79767eb48c7a",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/wpiapi-cpp/26.1.3/wpiapi-cpp-26.1.3-linuxx86-64.zip",
+              "sha256": "97f8852e752b10c504302d12cc7d7cce714bdadf17b71052fcdc370c41251976",
               "build_file": "@@//private/cpp/wpiapi-cpp:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_wpiapi-cpp_linuxarm64": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/wpiapi-cpp/26.1.2/wpiapi-cpp-26.1.2-linuxarm64.zip",
-              "sha256": "9163b14b48dcce74e2869348770910fe1ea21e1a8e9ee8c7b78b4fe7624b6b6d",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/wpiapi-cpp/26.1.3/wpiapi-cpp-26.1.3-linuxarm64.zip",
+              "sha256": "94523ca6789a48aeba6c0f74efb0635b1cbb69f4de21e52373561c2a8ad2c59c",
               "build_file": "@@//private/cpp/wpiapi-cpp:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_wpiapi-cpp_linuxathena": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/wpiapi-cpp/26.1.2/wpiapi-cpp-26.1.2-linuxathena.zip",
-              "sha256": "50b880b813372673c14901ac7885c33b22a6102ad15c69e30f8ff3954600a82c",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/wpiapi-cpp/26.1.3/wpiapi-cpp-26.1.3-linuxathena.zip",
+              "sha256": "be8e91c79d71416253fca525ee3f09c48880c01fb21a9db696838b32b249a873",
               "build_file": "@@//private/cpp/wpiapi-cpp:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_wpiapi-cpp-sim_headers": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/wpiapi-cpp-sim/26.1.2/wpiapi-cpp-sim-26.1.2-headers.zip",
-              "sha256": "7ee7aa9eeaef0152ab827c061ee0618fea4833d5333f9b8f561b2baa57ff6df8",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/wpiapi-cpp-sim/26.1.3/wpiapi-cpp-sim-26.1.3-headers.zip",
+              "sha256": "9ee1eb9b7671d0a629f4b1a3218baa736916ef2234ec4edba2c44a583db5e8fc",
               "build_file_content": "cc_library(\n    name = \"headers\",\n    hdrs = glob([\"**\"]),\n    includes = [\".\"],\n    visibility = [\"//visibility:public\"],\n)\n\nfilegroup(\n    name = \"header_files\",\n    srcs = glob([\"**\"]),\n    visibility = [\"//visibility:public\"],\n)\n"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_wpiapi-cpp-sim_windowsx86-64": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/wpiapi-cpp-sim/26.1.2/wpiapi-cpp-sim-26.1.2-windowsx86-64.zip",
-              "sha256": "1b1034890ccd7a6ad5cb7fa40a6c8bf89e90863ed3c2184dc512b8faa44acf34",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/wpiapi-cpp-sim/26.1.3/wpiapi-cpp-sim-26.1.3-windowsx86-64.zip",
+              "sha256": "3665f6c1231bce429f2199c378e26be3a98156ac63511fabdae9bd49e5c90ebb",
               "build_file": "@@//private/cpp/wpiapi-cpp-sim:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_wpiapi-cpp-sim_linuxx86-64": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/wpiapi-cpp-sim/26.1.2/wpiapi-cpp-sim-26.1.2-linuxx86-64.zip",
-              "sha256": "6903fc1608d9a8f6eac822e3b7d8e113c19aa315b475bd2833f71507c71d5799",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/wpiapi-cpp-sim/26.1.3/wpiapi-cpp-sim-26.1.3-linuxx86-64.zip",
+              "sha256": "b2f75c0c223262ed4cca996f448ca5b707e690718c8d0692ccbfe07dc9d89100",
               "build_file": "@@//private/cpp/wpiapi-cpp-sim:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_wpiapi-cpp-sim_linuxarm64": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/wpiapi-cpp-sim/26.1.2/wpiapi-cpp-sim-26.1.2-linuxarm64.zip",
-              "sha256": "505d099deef4864adf037319bbbbaca34cd6da331fa7f0d567fd99c300699b5a",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/wpiapi-cpp-sim/26.1.3/wpiapi-cpp-sim-26.1.3-linuxarm64.zip",
+              "sha256": "a84aa310763f7c7fbed55691e1bc4446a0f0078d7348b27f7e2a32ec469217ef",
               "build_file": "@@//private/cpp/wpiapi-cpp-sim:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_wpiapi-cpp-sim_osxuniversal": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/wpiapi-cpp-sim/26.1.2/wpiapi-cpp-sim-26.1.2-osxuniversal.zip",
-              "sha256": "c5a19ec226b8e7c220898c9234bbc67a4bfad4e2128d9d03b9902074b07675e3",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/wpiapi-cpp-sim/26.1.3/wpiapi-cpp-sim-26.1.3-osxuniversal.zip",
+              "sha256": "1cf08647d19055916b26d4599d1d905e1b5f7e3fe00b6284456cc88a27be51ca",
               "build_file": "@@//private/cpp/wpiapi-cpp-sim:shared.BUILD.bazel",
               "patch_cmds": [
                 "install_name_tool -id @rpath/libCTRE_Phoenix6_WPISim.dylib osx/universal/shared/libCTRE_Phoenix6_WPISim.dylib",
@@ -784,64 +784,64 @@
           "bazelrio_com_ctre_phoenix6_api-cpp_windowsx86-64": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/api-cpp/26.1.2/api-cpp-26.1.2-windowsx86-64.zip",
-              "sha256": "fed8fc6774e27d86d98260bc4e0debdc2503382d43ab79a1db555ca85b957f3d",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/api-cpp/26.1.3/api-cpp-26.1.3-windowsx86-64.zip",
+              "sha256": "38fe3972b36a7f5df727ae1d259881ec0ef21f20924794faf342f62a68a41ff8",
               "build_file": "@@//private/cpp/api-cpp:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_api-cpp_linuxx86-64": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/api-cpp/26.1.2/api-cpp-26.1.2-linuxx86-64.zip",
-              "sha256": "b3cf26c552e2d3f4808a023a1608aef29a55839fc6e220b020bfb6394c2566cc",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/api-cpp/26.1.3/api-cpp-26.1.3-linuxx86-64.zip",
+              "sha256": "7a6a70d88c2d4e89137f59e3bf9c3869d974f4d3c085cbe4a5ffc8cea159161d",
               "build_file": "@@//private/cpp/api-cpp:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_api-cpp_linuxarm64": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/api-cpp/26.1.2/api-cpp-26.1.2-linuxarm64.zip",
-              "sha256": "6ff77ad8193d7f741e3910c5c16ad18d845267592a4bd73fd2cae7dd1b7c742d",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/api-cpp/26.1.3/api-cpp-26.1.3-linuxarm64.zip",
+              "sha256": "4462d57fca75604fd0f73b41e4faeb64ae850f93357060edeb5121455290d35b",
               "build_file": "@@//private/cpp/api-cpp:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_api-cpp_linuxathena": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/api-cpp/26.1.2/api-cpp-26.1.2-linuxathena.zip",
-              "sha256": "f4fbcbe2ad839b283e955bd5550fe13294f0d548c4b3f7d8826e192f68241896",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/api-cpp/26.1.3/api-cpp-26.1.3-linuxathena.zip",
+              "sha256": "e2592646824c50fab96fcfc87189e90c627e506937a933fb4319c902f49047de",
               "build_file": "@@//private/cpp/api-cpp:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_api-cpp-sim_windowsx86-64": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/api-cpp-sim/26.1.2/api-cpp-sim-26.1.2-windowsx86-64.zip",
-              "sha256": "5b80da6e4ef56d4faddbc91d8f2c3c79443200d27dab1b92ef5883bcf7e3b3b4",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/api-cpp-sim/26.1.3/api-cpp-sim-26.1.3-windowsx86-64.zip",
+              "sha256": "202764f3cada81337973db7b49bc427f42b6575cd6b685a4571a2439467aecb8",
               "build_file": "@@//private/cpp/api-cpp-sim:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_api-cpp-sim_linuxx86-64": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/api-cpp-sim/26.1.2/api-cpp-sim-26.1.2-linuxx86-64.zip",
-              "sha256": "f4ff12a34f2965f93e0dffe6c6b39cd32084c802405687736f8b254fd8ab0864",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/api-cpp-sim/26.1.3/api-cpp-sim-26.1.3-linuxx86-64.zip",
+              "sha256": "c9faaa150557cf77fbb52b8411e0207eb25bc185e1b42d1aed86bfa5c331ca2d",
               "build_file": "@@//private/cpp/api-cpp-sim:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_api-cpp-sim_linuxarm64": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/api-cpp-sim/26.1.2/api-cpp-sim-26.1.2-linuxarm64.zip",
-              "sha256": "17f7d4686baaa362183a1eaacbad12e33e0ae6e922e138d97569c8b5953bb832",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/api-cpp-sim/26.1.3/api-cpp-sim-26.1.3-linuxarm64.zip",
+              "sha256": "483ea1e2e39f701e2b468969145baf3ff45ee09eb7864606ec752a30e6ff204c",
               "build_file": "@@//private/cpp/api-cpp-sim:shared.BUILD.bazel"
             }
           },
           "bazelrio_com_ctre_phoenix6_sim_api-cpp-sim_osxuniversal": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
             "attributes": {
-              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/api-cpp-sim/26.1.2/api-cpp-sim-26.1.2-osxuniversal.zip",
-              "sha256": "6e4a4b25b9984f7e162a81be18b628e70591d0b3d291ed1cb8327826b6c62ccb",
+              "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/sim/api-cpp-sim/26.1.3/api-cpp-sim-26.1.3-osxuniversal.zip",
+              "sha256": "dba39a6c83569969d9f87e0cdcca9359c82bea73e5e2b70eadac89e43a58c7a9",
               "build_file": "@@//private/cpp/api-cpp-sim:shared.BUILD.bazel"
             }
           }
@@ -857,8 +857,8 @@
     },
     "//:maven_java_deps.bzl%setup_bzlmodrio_phoenix6_java_dependencies": {
       "general": {
-        "bzlTransitiveDigest": "0KgUdPXkmT/yboSe4ZD1eOSqPTbMm4Z3Vv8DJmWDjLI=",
-        "usagesDigest": "zdGGdQ61kTKqieE6BwvAzgnDi1zkYEkuyECtUFZeAJc=",
+        "bzlTransitiveDigest": "sKXTJ+s2kHGDTokv+lQnlY3kiYpZLtrKwgc8oTbrKE8=",
+        "usagesDigest": "UpH73tWwNB1ldJTUslTeO7qQWC4rYDvq6v0pJr7r2rY=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},
@@ -868,15 +868,15 @@
             "attributes": {
               "generated_rule_name": "com_ctre_phoenix6_wpiapi_java",
               "artifact_urls": [
-                "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/wpiapi-java/26.1.2/wpiapi-java-26.1.2.jar"
+                "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/wpiapi-java/26.1.3/wpiapi-java-26.1.3.jar"
               ],
               "srcjar_urls": [],
-              "canonical_id": "com.ctre.phoenix6:wpiapi-java:26.1.2",
+              "canonical_id": "com.ctre.phoenix6:wpiapi-java:26.1.3",
               "rule_name": "java_import",
               "tags": [
-                "maven_coordinates=com.ctre.phoenix6:wpiapi-java:26.1.2"
+                "maven_coordinates=com.ctre.phoenix6:wpiapi-java:26.1.3"
               ],
-              "artifact_sha256": "240157140ba8a978c6d77d817b5e2db859a2e8253593c0eac75fd85ac1613f03"
+              "artifact_sha256": "af71e445ee71cef6449dba0d0054af369d9e8e57af57450a255154f00e25cc08"
             }
           }
         },
