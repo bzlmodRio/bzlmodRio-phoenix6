@@ -3,14 +3,15 @@
 #include <iostream>
 #include <thread>
 
+#include "ctre/phoenix6/CANBus.hpp"
 #include "ctre/phoenix6/Pigeon2.hpp"
 #include "ctre/phoenix6/TalonFX.hpp"
 
 int main() {
   std::cout << "Hello World" << std::endl;
 
-  ctre::phoenix6::hardware::Pigeon2 pigeon{4};
-  ctre::phoenix6::hardware::TalonFX talon{5};
+  ctre::phoenix6::hardware::Pigeon2 pigeon{4, ctre::phoenix6::CANBus{}};
+  ctre::phoenix6::hardware::TalonFX talon{5, ctre::phoenix6::CANBus{}};
 
   std::cout << "Running  some loops" << std::endl;
   for (int i = 0; i < 500; ++i) {

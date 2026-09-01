@@ -1,19 +1,19 @@
 #pragma once
 
-#include <frc2/command/Command.h>
-#include <frc2/command/CommandHelper.h>
+#include <wpi/commands2/Command.hpp>
+#include <wpi/commands2/CommandHelper.hpp>
 
 #include "robot-cpp/subsystems/shooter.hpp"
 
 class ShooterRpmCommand
-    : public frc2::CommandHelper<frc2::Command, ShooterRpmCommand> {
+    : public wpi::cmd::CommandHelper<wpi::cmd::Command, ShooterRpmCommand> {
  public:
-  ShooterRpmCommand(Shooter &shooter, units::revolutions_per_minute_t rpm);
+  ShooterRpmCommand(Shooter& shooter, wpi::units::revolutions_per_minute_t rpm);
   void Execute() override;
   bool IsFinished() override;
   void End(bool interrupted) override;
 
  private:
-  Shooter &m_shooter;
-  const units::revolutions_per_minute_t m_rpm;
+  Shooter& m_shooter;
+  const wpi::units::revolutions_per_minute_t m_rpm;
 };

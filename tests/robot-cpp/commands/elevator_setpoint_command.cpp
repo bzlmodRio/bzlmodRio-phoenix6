@@ -2,8 +2,8 @@
 
 #include <cmath>
 
-SetElevatorSetpoint::SetElevatorSetpoint(Elevator &elevator,
-                                         units::meter_t setpoint)
+SetElevatorSetpoint::SetElevatorSetpoint(Elevator& elevator,
+                                         wpi::units::meter_t setpoint)
     : m_elevator(elevator), m_height(setpoint) {
   AddRequirements(&m_elevator);
 

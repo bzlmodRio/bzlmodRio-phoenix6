@@ -6,7 +6,7 @@ cc_library(
     hdrs = glob(["*.hpp"]),
     visibility = ["//visibility:public"],
     deps = [
-        "@bzlmodrio-allwpilib//libraries/cpp/wpilibNewCommands",
+        "@bzlmodrio-allwpilib//libraries/cpp/commandsv2",
         "@bzlmodrio-allwpilib//libraries/cpp/wpilibc",
         "@bzlmodrio-phoenix6//libraries/cpp/phoenix6-cpp",
     ],

@@ -1,17 +1,19 @@
 package frc.robot.subsystems;
 
+import com.ctre.phoenix6.CANBus;
 import com.ctre.phoenix6.StatusSignal;
+import com.ctre.phoenix6.controls.DutyCycleOut;
 import com.ctre.phoenix6.controls.PositionVoltage;
 import com.ctre.phoenix6.hardware.TalonFX;
 import com.ctre.phoenix6.sim.TalonFXSimState;
-import edu.wpi.first.math.system.plant.DCMotor;
-import edu.wpi.first.math.util.Units;
-import edu.wpi.first.units.measure.Angle;
-import edu.wpi.first.wpilibj.RobotBase;
-import edu.wpi.first.wpilibj.RobotController;
-import edu.wpi.first.wpilibj.simulation.ElevatorSim;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import org.wpilib.command2.SubsystemBase;
+import org.wpilib.framework.RobotBase;
+import org.wpilib.math.system.DCMotor;
+import org.wpilib.math.util.Units;
+import org.wpilib.simulation.ElevatorSim;
+import org.wpilib.smartdashboard.SmartDashboard;
+import org.wpilib.system.RobotController;
+import org.wpilib.units.measure.Angle;
 
 public class Elevator extends SubsystemBase {
   private static final double kP = 4;
@@ -30,6 +32,7 @@ public class Elevator extends SubsystemBase {
 
   // Control
   private final PositionVoltage m_positionControl;
+  private final DutyCycleOut m_dutyCycleControl;
 
   // Signals
   private final StatusSignal<Angle> m_position;
@@ -41,10 +44,11 @@ public class Elevator extends SubsystemBase {
   /** Create a new elevator subsystem. */
   @SuppressWarnings("this-escape")
   public Elevator() {
-    m_motor = new TalonFX(PortMap.kElevatorMotorPort);
+    m_motor = new TalonFX(PortMap.kElevatorMotorPort, new CANBus());
     m_position = m_motor.getPosition();
 
     m_positionControl = new PositionVoltage(0);
+    m_dutyCycleControl = new DutyCycleOut(0);
 
     if (RobotBase.isSimulation()) {
       m_motorSim = m_motor.getSimState();
@@ -66,7 +70,7 @@ public class Elevator extends SubsystemBase {
   }
 
   public void setVoltage(double output) {
-    m_motor.set(output);
+    m_motor.setControl(m_dutyCycleControl.withOutput(output));
   }
 
   public void goToHeight(double height) {
@@ -86,12 +90,13 @@ public class Elevator extends SubsystemBase {
 
   @Override
   public void simulationPeriodic() {
-    m_elevatorSim.setInput(m_motor.get() * RobotController.getInputVoltage());
+    m_elevatorSim.setInput(
+        m_motor.getDutyCycle().getValueAsDouble() * RobotController.getInputVoltage());
     m_elevatorSim.update(0.02);
     m_motorSim.setRawRotorPosition(m_elevatorSim.getPosition());
   }
 
   public void stop() {
-    m_motor.set(0);
+    m_motor.setControl(m_dutyCycleControl.withOutput(0));
   }
 }

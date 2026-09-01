@@ -9,14 +9,12 @@ alias(
 cc_library(
     name = "shared_interface",
     srcs = select({
-        "@rules_bzlmodrio_toolchains//conditions:windows": ["@bazelrio_com_ctre_phoenix6_tools_windowsx86-64//:shared_interface"],
+        "@rules_bzlmodrio_toolchains//conditions:windows_x86_64": ["@bazelrio_com_ctre_phoenix6_tools_windowsx86-64//:shared_interface"],
     }),
     linkstatic = True,
     tags = ["manual"],
     target_compatible_with = select({
         "@bazel_tools//src/conditions:darwin": ["@platforms//:incompatible"],
-        "@rules_bzlmodrio_toolchains//constraints/is_raspibookworm32:raspibookworm32": ["@platforms//:incompatible"],
-        "@rules_bzlmodrio_toolchains//constraints/is_roborio:roborio": ["@platforms//:incompatible"],
         "//conditions:default": [],
     }),
     visibility = ["@bzlmodrio-phoenix6//:__subpackages__"],
@@ -27,7 +25,7 @@ filegroup(
     name = "shared_raw",
     srcs = select({
         "@rules_bzlmodrio_toolchains//conditions:linux_x86_64": ["@bazelrio_com_ctre_phoenix6_tools_linuxx86-64//:shared"],
-        "@rules_bzlmodrio_toolchains//conditions:windows": ["@bazelrio_com_ctre_phoenix6_tools_windowsx86-64//:shared"],
+        "@rules_bzlmodrio_toolchains//conditions:windows_x86_64": ["@bazelrio_com_ctre_phoenix6_tools_windowsx86-64//:shared"],
         "@rules_bzlmodrio_toolchains//constraints/is_bookworm64:bookworm64": ["@bazelrio_com_ctre_phoenix6_tools_linuxarm64//:shared"],
         "@rules_bzlmodrio_toolchains//constraints/is_systemcore:systemcore": ["@bazelrio_com_ctre_phoenix6_tools_linuxsystemcore//:shared"],
         "//conditions:default": [],
@@ -40,13 +38,12 @@ cc_library(
     srcs = [":shared_raw"],
     target_compatible_with = select({
         "@bazel_tools//src/conditions:darwin": ["@platforms//:incompatible"],
-        "@rules_bzlmodrio_toolchains//constraints/is_raspibookworm32:raspibookworm32": ["@platforms//:incompatible"],
-        "@rules_bzlmodrio_toolchains//constraints/is_roborio:roborio": ["@platforms//:incompatible"],
         "//conditions:default": [],
     }),
     visibility = ["@bzlmodrio-phoenix6//:__subpackages__"],
     deps = [] + select({
-        "@rules_bzlmodrio_toolchains//conditions:windows": [":shared_interface"],
+        "@rules_bzlmodrio_toolchains//conditions:windows_arm64": [":shared_interface"],
+        "@rules_bzlmodrio_toolchains//conditions:windows_x86_64": [":shared_interface"],
         "//conditions:default": [],
     }) + ["@bazelrio_com_ctre_phoenix6_tools_headers//:headers"],
     alwayslink = 1,
