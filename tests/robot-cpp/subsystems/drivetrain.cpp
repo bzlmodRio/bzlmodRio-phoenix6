@@ -1,42 +1,43 @@
 #include "robot-cpp/subsystems/drivetrain.hpp"
 
-#include <frc/Joystick.h>
-#include <frc/RobotController.h>
-#include <frc/smartdashboard/SmartDashboard.h>
-#include <units/length.h>
+#include <wpi/driverstation/Joystick.hpp>
+#include <wpi/system/RobotController.hpp>
+#include <wpi/smartdashboard/SmartDashboard.hpp>
+#include <wpi/units/length.hpp>
 
 #include <numbers>
 
-#include "frc/simulation/SimDeviceSim.h"
+#include "wpi/simulation/SimDeviceSim.hpp"
 #include "robot-cpp/subsystems/ports.hpp"
 
 namespace {
-constexpr units::inch_t kWheelRadiusInches = 3_in;
+constexpr wpi::units::inch_t kWheelRadiusInches = 3_in;
 constexpr auto kWheelCircumference = kWheelRadiusInches * 2 * 3.14159 / 1_tr;
 
-units::meter_t TurnsToMeters(units::turn_t rotations) {
+wpi::units::meter_t TurnsToMeters(wpi::units::turn_t rotations) {
   return rotations * kWheelCircumference;
 }
-units::meters_per_second_t TPSToMPS(units::turns_per_second_t rotations) {
+wpi::units::meters_per_second_t TPSToMPS(wpi::units::turns_per_second_t rotations) {
   return rotations * kWheelCircumference;
 }
-units::turn_t MetersToTurns(units::meter_t meters) {
+wpi::units::turn_t MetersToTurns(wpi::units::meter_t meters) {
   return meters / kWheelCircumference;
 }
-units::turns_per_second_t MPSToTPS(units::meters_per_second_t meters) {
+wpi::units::turns_per_second_t MPSToTPS(wpi::units::meters_per_second_t meters) {
   return meters / kWheelCircumference;
 }
 }  // namespace
 
 DriveTrain::DriveTrain()
-    : m_leftMotorA{kDrivetrainMotorLeftAPort},
-      m_leftMotorB{kDrivetrainMotorLeftBPort},
-      m_rightMotorA{kDrivetrainMotorRightAPort},
-      m_rightMotorB{kDrivetrainMotorRightBPort},
-      m_gyro{kPigeonPort},
-      m_robotDrive{[this](double output) { m_leftMotorA.Set(output); },
-                   [this](double output) { m_leftMotorB.Set(output); }},
-      m_odometry{frc::Rotation2d(), 0_m, 0_m},
+    : m_leftMotorA{kDrivetrainMotorLeftAPort, ctre::phoenix6::CANBus{}},
+      m_leftMotorB{kDrivetrainMotorLeftBPort, ctre::phoenix6::CANBus{}},
+      m_rightMotorA{kDrivetrainMotorRightAPort, ctre::phoenix6::CANBus{}},
+      m_rightMotorB{kDrivetrainMotorRightBPort, ctre::phoenix6::CANBus{}},
+      m_gyro{kPigeonPort, ctre::phoenix6::CANBus{}},
+      m_robotDrive{
+          [this](double output) { m_leftMotorA.SetControl(m_leftOut.WithOutput(output)); },
+          [this](double output) { m_rightMotorA.SetControl(m_rightOut.WithOutput(output)); }},
+      m_odometry{wpi::math::Rotation2d(), 0_m, 0_m},
 
       m_leftPosition(m_leftMotorA.GetPosition()),
       m_leftVelocity(m_leftMotorA.GetVelocity()),
@@ -46,29 +47,29 @@ DriveTrain::DriveTrain()
       m_rightMotorSim(m_rightMotorA.GetSimState()),
       m_imuSim(m_gyro.GetSimState()),
       m_drivetrainSimulator(
-          frc::sim::DifferentialDrivetrainSim::CreateKitbotSim(
-              frc::sim::DifferentialDrivetrainSim::KitbotMotor::DualCIMPerSide,
+          wpi::sim::DifferentialDrivetrainSim::CreateKitbotSim(
+              wpi::sim::DifferentialDrivetrainSim::KitbotMotor::DUAL_CIM_PER_SIDE,
               12.0, 6_in)) {
-  frc::SmartDashboard::PutData("Field", &m_field);
+  wpi::SmartDashboard::PutData("Field", &m_field);
 
-  m_leftMotorB.SetControl(
-      ctre::phoenix6::controls::Follower{m_leftMotorA.GetDeviceID(), false});
-  m_rightMotorB.SetControl(
-      ctre::phoenix6::controls::Follower{m_rightMotorA.GetDeviceID(), false});
+  m_leftMotorB.SetControl(ctre::phoenix6::controls::Follower{
+      m_leftMotorA.GetDeviceID(), ctre::phoenix6::signals::MotorAlignmentValue::Aligned});
+  m_rightMotorB.SetControl(ctre::phoenix6::controls::Follower{
+      m_rightMotorA.GetDeviceID(), ctre::phoenix6::signals::MotorAlignmentValue::Aligned});
 
   SetName("DriveTrain");
 }
 
 void DriveTrain::Log() {
-  frc::SmartDashboard::PutNumber("Left Distance",
+  wpi::SmartDashboard::PutNumber("Left Distance",
                                  GetLeftEncoderDistance().to<double>());
-  frc::SmartDashboard::PutNumber("Right Distance",
+  wpi::SmartDashboard::PutNumber("Right Distance",
                                  GetRightEncoderDistance().to<double>());
-  frc::SmartDashboard::PutNumber("Left Speed",
+  wpi::SmartDashboard::PutNumber("Left Speed",
                                  GetLeftEncoderVelocity().to<double>());
-  frc::SmartDashboard::PutNumber("Right Speed",
+  wpi::SmartDashboard::PutNumber("Right Speed",
                                  GetRightEncoderVelocity().to<double>());
-  frc::SmartDashboard::PutNumber("Gyro", GetHeadingDegrees());
+  wpi::SmartDashboard::PutNumber("Gyro", GetHeadingDegrees());
 }
 
 void DriveTrain::ArcadeDrive(double throttle, double rotation) {
@@ -79,7 +80,7 @@ double DriveTrain::GetHeadingDegrees() {
   return GetRotation().Degrees().to<double>();
 }
 
-frc::Rotation2d DriveTrain::GetRotation() { return m_gyro.GetRotation2d(); }
+wpi::math::Rotation2d DriveTrain::GetRotation() { return m_gyro.GetRotation2d(); }
 
 void DriveTrain::Reset() { m_gyro.Reset(); }
 
@@ -104,10 +105,11 @@ void DriveTrain::SimulationPeriodic() {
   // simulation, and write the simulated positions and velocities to our
   // simulated encoder and gyro. We negate the right side so that positive
   // voltages make the right side move forward.
-  m_drivetrainSimulator.SetInputs(units::volt_t{m_leftMotorA.Get()} *
-                                      frc::RobotController::GetInputVoltage(),
-                                  units::volt_t{-m_rightMotorA.Get()} *
-                                      frc::RobotController::GetInputVoltage());
+  m_drivetrainSimulator.SetInputs(
+      wpi::units::volt_t{m_leftMotorA.GetDutyCycle().GetValue().to<double>()} *
+          wpi::RobotController::GetInputVoltage(),
+      wpi::units::volt_t{-m_rightMotorA.GetDutyCycle().GetValue().to<double>()} *
+          wpi::RobotController::GetInputVoltage());
   m_drivetrainSimulator.Update(20_ms);
 
   m_leftMotorSim.SetRawRotorPosition(
@@ -121,18 +123,18 @@ void DriveTrain::SimulationPeriodic() {
   m_imuSim.SetRawYaw(m_drivetrainSimulator.GetHeading().Degrees());
 }
 
-units::meter_t DriveTrain::GetLeftEncoderDistance() {
+wpi::units::meter_t DriveTrain::GetLeftEncoderDistance() {
   return TurnsToMeters(m_leftPosition.GetValue());
 }
 
-units::meter_t DriveTrain::GetRightEncoderDistance() {
+wpi::units::meter_t DriveTrain::GetRightEncoderDistance() {
   return TurnsToMeters(m_rightPosition.GetValue());
 }
 
-units::meters_per_second_t DriveTrain::GetLeftEncoderVelocity() {
+wpi::units::meters_per_second_t DriveTrain::GetLeftEncoderVelocity() {
   return TPSToMPS(m_leftVelocity.GetValue());
 }
 
-units::meters_per_second_t DriveTrain::GetRightEncoderVelocity() {
+wpi::units::meters_per_second_t DriveTrain::GetRightEncoderVelocity() {
   return TPSToMPS(m_rightVelocity.GetValue());
 }

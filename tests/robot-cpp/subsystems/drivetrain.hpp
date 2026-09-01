@@ -1,24 +1,26 @@
 #pragma once
 
-#include <frc/drive/DifferentialDrive.h>
-#include <frc/kinematics/DifferentialDriveOdometry.h>
-#include <frc/simulation/DifferentialDrivetrainSim.h>
-#include <frc/smartdashboard/Field2d.h>
-#include <frc2/command/SubsystemBase.h>
-#include <units/length.h>
-#include <units/velocity.h>
+#include <wpi/drive/DifferentialDrive.hpp>
+#include <wpi/math/kinematics/DifferentialDriveOdometry.hpp>
+#include <wpi/simulation/DifferentialDrivetrainSim.hpp>
+#include <wpi/smartdashboard/Field2d.hpp>
+#include <wpi/commands2/SubsystemBase.hpp>
+#include <wpi/units/length.hpp>
+#include <wpi/units/velocity.hpp>
 
+#include <ctre/phoenix6/CANBus.hpp>
 #include <ctre/phoenix6/Pigeon2.hpp>
 #include <ctre/phoenix6/TalonFX.hpp>
+#include <ctre/phoenix6/controls/DutyCycleOut.hpp>
 
-class DriveTrain : public frc2::SubsystemBase {
+class DriveTrain : public wpi::cmd::SubsystemBase {
  public:
   DriveTrain();
 
   void ArcadeDrive(double throttle, double rotation);
 
   double GetHeadingDegrees();
-  frc::Rotation2d GetRotation();
+  wpi::math::Rotation2d GetRotation();
 
   void Reset();
 
@@ -30,11 +32,11 @@ class DriveTrain : public frc2::SubsystemBase {
 
   void SimulationPeriodic() override;
 
-  units::meter_t GetLeftEncoderDistance();
-  units::meter_t GetRightEncoderDistance();
+  wpi::units::meter_t GetLeftEncoderDistance();
+  wpi::units::meter_t GetRightEncoderDistance();
 
-  units::meters_per_second_t GetLeftEncoderVelocity();
-  units::meters_per_second_t GetRightEncoderVelocity();
+  wpi::units::meters_per_second_t GetLeftEncoderVelocity();
+  wpi::units::meters_per_second_t GetRightEncoderVelocity();
 
  private:
   void Log();
@@ -47,22 +49,24 @@ class DriveTrain : public frc2::SubsystemBase {
 
   ctre::phoenix6::hardware::Pigeon2 m_gyro;
 
-  frc::DifferentialDrive m_robotDrive;
+  ctre::phoenix6::controls::DutyCycleOut m_leftOut{0};
+  ctre::phoenix6::controls::DutyCycleOut m_rightOut{0};
+  wpi::DifferentialDrive m_robotDrive;
 
-  frc::DifferentialDriveOdometry m_odometry;
-  frc::Field2d m_field;
+  wpi::math::DifferentialDriveOdometry m_odometry;
+  wpi::Field2d m_field;
 
   // Signals
-  ctre::phoenix6::StatusSignal<units::angle::turn_t> &m_leftPosition;
-  ctre::phoenix6::StatusSignal<units::angular_velocity::turns_per_second_t>
+  ctre::phoenix6::StatusSignal<wpi::units::angle::turn_t> &m_leftPosition;
+  ctre::phoenix6::StatusSignal<wpi::units::angular_velocity::turns_per_second_t>
       &m_leftVelocity;
-  ctre::phoenix6::StatusSignal<units::angle::turn_t> &m_rightPosition;
-  ctre::phoenix6::StatusSignal<units::angular_velocity::turns_per_second_t>
+  ctre::phoenix6::StatusSignal<wpi::units::angle::turn_t> &m_rightPosition;
+  ctre::phoenix6::StatusSignal<wpi::units::angular_velocity::turns_per_second_t>
       &m_rightVelocity;
 
   // Simulation
   ctre::phoenix6::sim::TalonFXSimState &m_leftMotorSim;
   ctre::phoenix6::sim::TalonFXSimState &m_rightMotorSim;
   ctre::phoenix6::sim::Pigeon2SimState &m_imuSim;
-  frc::sim::DifferentialDrivetrainSim m_drivetrainSimulator;
+  wpi::sim::DifferentialDrivetrainSim m_drivetrainSimulator;
 };
