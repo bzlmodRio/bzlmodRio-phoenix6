@@ -14,7 +14,7 @@ def get_phoenix6_dependencies(
     ni_version_override="2025.2.0.bcr1",
 ):
     sim_install_name_classes = [
-        "simCANCoder",
+        # "simCANCoder",
         "simPigeonIMU",
         "simProPigeon2",
         "simProCANcoder",
@@ -46,7 +46,7 @@ def get_phoenix6_dependencies(
         fail_on_hash_miss=False,
         has_static_libraries=False,
         install_name_lookup={
-            "simCANCoder": dict(deps=[], artifact_install_name="CTRE_SimCANCoder"),
+            # "simCANCoder": dict(deps=[], artifact_install_name="CTRE_SimCANCoder"),
             "simPigeonIMU": dict(deps=[], artifact_install_name="CTRE_SimPigeonIMU"),
             "simProPigeon2": dict(deps=[], artifact_install_name="CTRE_SimProPigeon2"),
             "simProCANcoder": dict(
@@ -90,7 +90,7 @@ def get_phoenix6_dependencies(
                 "tools",
             ],
             "//conditions:default": [
-                "simCANCoder",
+                # "simCANCoder",
                 "simPigeonIMU",
                 "simProCANcoder",
                 "simProCANdi",
@@ -110,7 +110,7 @@ def get_phoenix6_dependencies(
             ],
             "//conditions:default": [
                 "api-cpp-sim",
-                "simCANCoder",
+                # "simCANCoder",
                 "simPigeonIMU",
                 "simProCANcoder",
                 "simProCANdi",

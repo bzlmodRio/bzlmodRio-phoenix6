@@ -17,7 +17,6 @@ cc_library(
                 "//private/cpp/tools:shared",
             ],
             "//conditions:default": [
-                "//private/cpp/simCANCoder:shared",
                 "//private/cpp/simPigeonIMU:shared",
                 "//private/cpp/simProCANcoder:shared",
                 "//private/cpp/simProCANdi:shared",
@@ -42,7 +41,6 @@ cc_library(
         ],
         "//conditions:default": [
             "//private/cpp/api-cpp-sim:shared",
-            "//private/cpp/simCANCoder:shared",
             "//private/cpp/simPigeonIMU:shared",
             "//private/cpp/simProCANcoder:shared",
             "//private/cpp/simProCANdi:shared",
