@@ -17,12 +17,7 @@ single_version_override(
     patches = ["//:toolchains.patch"],
 )
 
-bazel_dep(name = "bzlmodrio-allwpilib", version = "2027.0.0-alpha-1")
-local_path_override(
-    module_name = "bzlmodrio-allwpilib",
-    path = "/home/pjreiniger/git/bzlmodrio/monorepo/libraries/bzlmodRio-allwpilib",
-)
-
+bazel_dep(name = "bzlmodrio-allwpilib", version = "2027.0.0-alpha-6")
 bazel_dep(name = "bzlmodrio-opencv", version = "2027.4.13.0-3")
 archive_override(
     module_name = "bzlmodrio-opencv",

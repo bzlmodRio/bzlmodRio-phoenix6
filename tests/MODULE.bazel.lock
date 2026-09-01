@@ -51,8 +51,8 @@
     "https://raw.githubusercontent.com/pjreiniger/bazel-central-registry/bzlmodrio/modules/buildifier_prebuilt/8.5.1.2/source.json": "33e11b3bf11e39cb762480a7e6ea1d24d044636135cdd8b8e74b07ebcd3b8d8b",
     "https://raw.githubusercontent.com/pjreiniger/bazel-central-registry/bzlmodrio/modules/buildozer/7.1.2/MODULE.bazel": "2e8dd40ede9c454042645fd8d8d0cd1527966aa5c919de86661e62953cd73d84",
     "https://raw.githubusercontent.com/pjreiniger/bazel-central-registry/bzlmodrio/modules/buildozer/7.1.2/source.json": "c9028a501d2db85793a6996205c8de120944f50a0d570438fcae0457a5f9d1f8",
-    "https://raw.githubusercontent.com/pjreiniger/bazel-central-registry/bzlmodrio/modules/bzlmodrio-ni/2025.2.0.bcr1/MODULE.bazel": "525cd4d04b63b8eaa4e9fb37d290d7a635e81b0cb99c096682dc309d384f89a5",
-    "https://raw.githubusercontent.com/pjreiniger/bazel-central-registry/bzlmodrio/modules/bzlmodrio-ni/2025.2.0.bcr1/source.json": "af248c5739b6ac9809fceba756ec22bd58e0c6af4be4e7d99042c6af2138bf74",
+    "https://raw.githubusercontent.com/pjreiniger/bazel-central-registry/bzlmodrio/modules/bzlmodrio-allwpilib/2027.0.0-alpha-6/MODULE.bazel": "aeecefe2cf390aa639c5270104cff5663a87a4d543b847e1676d515a4e1a45f6",
+    "https://raw.githubusercontent.com/pjreiniger/bazel-central-registry/bzlmodrio/modules/bzlmodrio-allwpilib/2027.0.0-alpha-6/source.json": "9c6c839287be17de8532db48a552cb1a7e7cde832f9bb63329b0a679121ed010",
     "https://raw.githubusercontent.com/pjreiniger/bazel-central-registry/bzlmodrio/modules/google_benchmark/1.8.2/MODULE.bazel": "a70cf1bba851000ba93b58ae2f6d76490a9feb74192e57ab8e8ff13c34ec50cb",
     "https://raw.githubusercontent.com/pjreiniger/bazel-central-registry/bzlmodrio/modules/googletest/1.11.0/MODULE.bazel": "3a83f095183f66345ca86aa13c58b59f9f94a2f81999c093d4eeaa2d262d12f4",
     "https://raw.githubusercontent.com/pjreiniger/bazel-central-registry/bzlmodrio/modules/googletest/1.14.0.bcr.1/MODULE.bazel": "22c31a561553727960057361aa33bf20fb2e98584bc4fec007906e27053f80c6",
@@ -219,7 +219,7 @@
     "@@bzlmodrio-allwpilib+//:maven_cpp_deps.bzl%deps": {
       "general": {
         "bzlTransitiveDigest": "JeDkeFgNlTvENxxHgCnSSrTUwUVnrEdD4Z+bDZHQXVE=",
-        "usagesDigest": "MQlBv+8oJ478p88NGHVIZFqQRBGrFPe+c7ifwHN3hVc=",
+        "usagesDigest": "LNXFz4ugFUdxd/91VjNnZi2Gw9q9ruMijZ6gzyHEn9Q=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},
@@ -4309,7 +4309,7 @@
     "@@bzlmodrio-allwpilib+//:maven_java_deps.bzl%setup_bzlmodrio_allwpilib_java_dependencies": {
       "general": {
         "bzlTransitiveDigest": "QzGtVp5exG0Y/QoVkIOoWXDW09biMTpjEZtGT5Ggx6c=",
-        "usagesDigest": "Xbx9f4vNdRTizBGNoJKEoXZKwJsUoxxXlL6uBRGKYm4=",
+        "usagesDigest": "tDutV6vGSWwlfEpPx7Xqd41ISMOls5CjShOhIfYhoOY=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},
@@ -4872,7 +4872,7 @@
     },
     "@@bzlmodrio-phoenix6+//:maven_cpp_deps.bzl%deps": {
       "general": {
-        "bzlTransitiveDigest": "ZatXYH+ocUtAF064MDGGNofGK5mFQxM/WjpsvppJQ2Q=",
+        "bzlTransitiveDigest": "ntkrvc4QTKfTj5o9uzrc792s2Q16ipxdJigZoKjy78I=",
         "usagesDigest": "fUFkMApCUXVz7XQ37gM4Y/1xO0gpokjceMinCh/4C98=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
@@ -5488,6 +5488,7 @@
                 "install_name_tool -change libCTRE_SimProTalonFX.dylib @rpath/libCTRE_SimProTalonFX.dylib osx/universal/shared/libCTRE_Phoenix6_WPISim.dylib",
                 "install_name_tool -change libCTRE_SimTalonSRX.dylib @rpath/libCTRE_SimTalonSRX.dylib osx/universal/shared/libCTRE_Phoenix6_WPISim.dylib",
                 "install_name_tool -change libCTRE_SimVictorSPX.dylib @rpath/libCTRE_SimVictorSPX.dylib osx/universal/shared/libCTRE_Phoenix6_WPISim.dylib",
+                "install_name_tool -change libdatalog.dylib @rpath/libdatalog.dylib osx/universal/shared/libCTRE_Phoenix6_WPISim.dylib",
                 "install_name_tool -change libntcore.dylib @rpath/libntcore.dylib osx/universal/shared/libCTRE_Phoenix6_WPISim.dylib",
                 "install_name_tool -change libwpiHal.dylib @rpath/libwpiHal.dylib osx/universal/shared/libCTRE_Phoenix6_WPISim.dylib",
                 "install_name_tool -change libwpilibc.dylib @rpath/libwpilibc.dylib osx/universal/shared/libCTRE_Phoenix6_WPISim.dylib",

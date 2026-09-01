@@ -9,9 +9,8 @@ def get_phoenix6_dependencies(
     use_local_allwpilib=False,
     use_local_opencv=False,
     use_local_ni=True,
-    allwpilib_version_override="2027.0.0-alpha-1",
+    allwpilib_version_override="2027.0.0-alpha-6",
     opencv_version_override="2025.4.10.0-3.bcr2",
-    ni_version_override="2025.2.0.bcr1",
 ):
     sim_install_name_classes = [
         # "simCANCoder",
@@ -32,7 +31,6 @@ def get_phoenix6_dependencies(
             use_local_opencv=use_local_opencv,
             use_local_ni=use_local_ni,
             opencv_version_override=opencv_version_override,
-            ni_version_override=ni_version_override,
         ),
         use_local_version=use_local_allwpilib,
         local_rel_folder="../../libraries/bzlmodRio-allwpilib",
