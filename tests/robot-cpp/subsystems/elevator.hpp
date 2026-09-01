@@ -1,11 +1,10 @@
 #pragma once
 
-#include <wpi/simulation/ElevatorSim.hpp>
-#include <wpi/commands2/Subsystem.hpp>
-#include <wpi/units/length.hpp>
-
 #include <ctre/phoenix6/CANBus.hpp>
 #include <ctre/phoenix6/TalonFX.hpp>
+#include <wpi/commands2/Subsystem.hpp>
+#include <wpi/simulation/ElevatorSim.hpp>
+#include <wpi/units/length.hpp>
 
 class Elevator : public wpi::cmd::Subsystem {
  public:
@@ -35,9 +34,9 @@ class Elevator : public wpi::cmd::Subsystem {
   ctre::phoenix6::controls::PositionVoltage m_positionControl;
 
   // Signals
-  ctre::phoenix6::StatusSignal<wpi::units::angle::turn_t> &m_position;
+  ctre::phoenix6::StatusSignal<wpi::units::angle::turn_t>& m_position;
 
   // Sim
-  ctre::phoenix6::sim::TalonFXSimState &m_motorSim;
+  ctre::phoenix6::sim::TalonFXSimState& m_motorSim;
   wpi::sim::ElevatorSim m_elevatorSim;
 };

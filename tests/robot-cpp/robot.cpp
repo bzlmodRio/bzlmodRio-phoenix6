@@ -3,10 +3,10 @@
 #include <wpi/commands2/CommandScheduler.hpp>
 #include <wpi/commands2/button/JoystickButton.hpp>
 
-#include "wpi/cameraserver/CameraServer.hpp"
 #include "robot-cpp/commands/elevator_setpoint_command.hpp"
 #include "robot-cpp/commands/joystick_drive_command.hpp"
 #include "robot-cpp/commands/shooter_rpm_command.hpp"
+#include "wpi/cameraserver/CameraServer.hpp"
 
 Robot::Robot() {
   wpi::CameraServer::StartAutomaticCapture();

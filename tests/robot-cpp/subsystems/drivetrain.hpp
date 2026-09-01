@@ -1,17 +1,16 @@
 #pragma once
 
-#include <wpi/drive/DifferentialDrive.hpp>
-#include <wpi/math/kinematics/DifferentialDriveOdometry.hpp>
-#include <wpi/simulation/DifferentialDrivetrainSim.hpp>
-#include <wpi/smartdashboard/Field2d.hpp>
-#include <wpi/commands2/SubsystemBase.hpp>
-#include <wpi/units/length.hpp>
-#include <wpi/units/velocity.hpp>
-
 #include <ctre/phoenix6/CANBus.hpp>
 #include <ctre/phoenix6/Pigeon2.hpp>
 #include <ctre/phoenix6/TalonFX.hpp>
 #include <ctre/phoenix6/controls/DutyCycleOut.hpp>
+#include <wpi/commands2/SubsystemBase.hpp>
+#include <wpi/drive/DifferentialDrive.hpp>
+#include <wpi/math/kinematics/DifferentialDriveOdometry.hpp>
+#include <wpi/simulation/DifferentialDrivetrainSim.hpp>
+#include <wpi/smartdashboard/Field2d.hpp>
+#include <wpi/units/length.hpp>
+#include <wpi/units/velocity.hpp>
 
 class DriveTrain : public wpi::cmd::SubsystemBase {
  public:
@@ -57,16 +56,16 @@ class DriveTrain : public wpi::cmd::SubsystemBase {
   wpi::Field2d m_field;
 
   // Signals
-  ctre::phoenix6::StatusSignal<wpi::units::angle::turn_t> &m_leftPosition;
-  ctre::phoenix6::StatusSignal<wpi::units::angular_velocity::turns_per_second_t>
-      &m_leftVelocity;
-  ctre::phoenix6::StatusSignal<wpi::units::angle::turn_t> &m_rightPosition;
-  ctre::phoenix6::StatusSignal<wpi::units::angular_velocity::turns_per_second_t>
-      &m_rightVelocity;
+  ctre::phoenix6::StatusSignal<wpi::units::angle::turn_t>& m_leftPosition;
+  ctre::phoenix6::StatusSignal<
+      wpi::units::angular_velocity::turns_per_second_t>& m_leftVelocity;
+  ctre::phoenix6::StatusSignal<wpi::units::angle::turn_t>& m_rightPosition;
+  ctre::phoenix6::StatusSignal<
+      wpi::units::angular_velocity::turns_per_second_t>& m_rightVelocity;
 
   // Simulation
-  ctre::phoenix6::sim::TalonFXSimState &m_leftMotorSim;
-  ctre::phoenix6::sim::TalonFXSimState &m_rightMotorSim;
-  ctre::phoenix6::sim::Pigeon2SimState &m_imuSim;
+  ctre::phoenix6::sim::TalonFXSimState& m_leftMotorSim;
+  ctre::phoenix6::sim::TalonFXSimState& m_rightMotorSim;
+  ctre::phoenix6::sim::Pigeon2SimState& m_imuSim;
   wpi::sim::DifferentialDrivetrainSim m_drivetrainSimulator;
 };

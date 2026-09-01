@@ -2,8 +2,8 @@
 
 #include <utility>
 
-JoystickDriveCommand::JoystickDriveCommand(wpi::Joystick &joystick,
-                                           DriveTrain &drivetrain)
+JoystickDriveCommand::JoystickDriveCommand(wpi::Joystick& joystick,
+                                           DriveTrain& drivetrain)
     : m_joystick(joystick), m_drivetrain(drivetrain) {
   SetName("JoystickDriveCommand");
   AddRequirements(&m_drivetrain);

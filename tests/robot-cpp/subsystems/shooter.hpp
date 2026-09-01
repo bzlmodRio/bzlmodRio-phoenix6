@@ -1,12 +1,11 @@
 #pragma once
 
-#include <wpi/math/controller/PIDController.hpp>
-#include <wpi/simulation/FlywheelSim.hpp>
-#include <wpi/commands2/Subsystem.hpp>
-
 #include <ctre/phoenix6/CANBus.hpp>
 #include <ctre/phoenix6/TalonFX.hpp>
 #include <ctre/phoenix6/controls/DutyCycleOut.hpp>
+#include <wpi/commands2/Subsystem.hpp>
+#include <wpi/math/controller/PIDController.hpp>
+#include <wpi/simulation/FlywheelSim.hpp>
 
 class Shooter : public wpi::cmd::Subsystem {
  public:
@@ -31,10 +30,10 @@ class Shooter : public wpi::cmd::Subsystem {
   ctre::phoenix6::controls::DutyCycleOut m_dutyCycleControl{0};
 
   // Signals
-  ctre::phoenix6::StatusSignal<wpi::units::angular_velocity::turns_per_second_t>
-      &m_velocity;
+  ctre::phoenix6::StatusSignal<
+      wpi::units::angular_velocity::turns_per_second_t>& m_velocity;
 
   // Sim
-  ctre::phoenix6::sim::TalonFXSimState &m_motorSim;
+  ctre::phoenix6::sim::TalonFXSimState& m_motorSim;
   wpi::sim::FlywheelSim m_flywheelSim;
 };

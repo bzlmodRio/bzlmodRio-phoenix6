@@ -1,8 +1,8 @@
 #include "robot-cpp/subsystems/elevator.hpp"
 
-#include <wpi/system/RobotController.hpp>
 #include <wpi/math/controller/PIDController.hpp>
 #include <wpi/smartdashboard/SmartDashboard.hpp>
+#include <wpi/system/RobotController.hpp>
 
 #include "robot-cpp/subsystems/ports.hpp"
 
@@ -71,8 +71,8 @@ bool Elevator::IsAtHeight() {
 void Elevator::Periodic() { Log(); }
 
 void Elevator::SimulationPeriodic() {
-  m_elevatorSim.SetInput(
-      Eigen::Vector<double, 1>(m_motor.GetMotorVoltage().GetValue().to<double>()));
+  m_elevatorSim.SetInput(Eigen::Vector<double, 1>(
+      m_motor.GetMotorVoltage().GetValue().to<double>()));
   m_elevatorSim.Update(20_ms);
   m_motorSim.SetRawRotorPosition(MetersToTurns(m_elevatorSim.GetPosition()));
 }
