@@ -2,8 +2,8 @@
 
 #include <numbers>
 #include <wpi/driverstation/Joystick.hpp>
-#include <wpi/telemetry/Telemetry.hpp>
 #include <wpi/system/RobotController.hpp>
+#include <wpi/telemetry/Telemetry.hpp>
 #include <wpi/units/length.hpp>
 
 #include "robot-cpp/subsystems/ports.hpp"
@@ -66,14 +66,10 @@ DriveTrain::DriveTrain()
 }
 
 void DriveTrain::Log() {
-  wpi::telemetry::Log("Left Distance",
-                                 GetLeftEncoderDistance().to<double>());
-  wpi::telemetry::Log("Right Distance",
-                                 GetRightEncoderDistance().to<double>());
-  wpi::telemetry::Log("Left Speed",
-                                 GetLeftEncoderVelocity().to<double>());
-  wpi::telemetry::Log("Right Speed",
-                                 GetRightEncoderVelocity().to<double>());
+  wpi::telemetry::Log("Left Distance", GetLeftEncoderDistance().to<double>());
+  wpi::telemetry::Log("Right Distance", GetRightEncoderDistance().to<double>());
+  wpi::telemetry::Log("Left Speed", GetLeftEncoderVelocity().to<double>());
+  wpi::telemetry::Log("Right Speed", GetRightEncoderVelocity().to<double>());
   wpi::telemetry::Log("Gyro", GetHeadingDegrees());
   wpi::telemetry::Log("Field", m_field);
 }

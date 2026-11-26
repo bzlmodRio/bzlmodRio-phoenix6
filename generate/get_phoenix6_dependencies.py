@@ -87,6 +87,7 @@ def get_phoenix6_dependencies(
         deps=[],
         platform_deps={
             "@wpilib_toolchains//constraints/is_systemcore:systemcore": [
+                "mrclib-cpp",
                 "tools",
             ],
             "//conditions:default": [

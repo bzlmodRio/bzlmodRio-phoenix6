@@ -5870,7 +5870,7 @@
     },
     "@@bzlmodrio-phoenix6+//:maven_cpp_deps.bzl%deps": {
       "general": {
-        "bzlTransitiveDigest": "7NzDNUMSg6C0lWuV01ideq4iQGz/EryzHc1VBb/lEBQ=",
+        "bzlTransitiveDigest": "3684ddEWH1K51OtttEhf2Fz2+aR3pFReBzDJ2rDnej4=",
         "usagesDigest": "iG/O/yKJBhMMR7ayj4y6nLG2UPTIlMNV95A1QJ7xA9s=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
@@ -6327,6 +6327,14 @@
             "attributes": {
               "url": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/tools/26.70.0-alpha-2/tools-26.70.0-alpha-2-linuxx86-64.zip",
               "sha256": "24924e6346f3bc6b9a0dd124047d65d40bdd54f85afb31f1a26351dae76b0438",
+              "build_file": "@@bzlmodrio-phoenix6+//private/cpp/tools:shared.BUILD.bazel"
+            }
+          },
+          "bazelrio_org_wpilib_mrclib_mrclib-cpp_linuxsystemcore": {
+            "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
+            "attributes": {
+              "url": "https://frcmaven.wpi.edu/artifactory/release/org/wpilib/mrclib/mrclib-cpp/2027.1.0-alpha-1-116-g5288562/mrclib-cpp-2027.1.0-alpha-1-116-g5288562-linuxsystemcore.zip",
+              "sha256": "505b960fed9f66661fc1f52baa10b85ebcf257bdb9f65dac08b9321169b65dc3",
               "build_file": "@@bzlmodrio-phoenix6+//private/cpp/tools:shared.BUILD.bazel"
             }
           },

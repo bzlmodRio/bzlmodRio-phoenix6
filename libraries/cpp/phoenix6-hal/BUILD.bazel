@@ -15,6 +15,7 @@ cc_library(
         select({
             "@wpilib_toolchains//constraints/is_systemcore:systemcore": [
                 "//private/cpp/tools:shared",
+                "@bzlmodrio-allwpilib//libraries/cpp/mrclib:shared",
             ],
             "//conditions:default": [
                 "//private/cpp/simPigeonIMU:shared",
