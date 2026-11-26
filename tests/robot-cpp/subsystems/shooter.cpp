@@ -1,8 +1,8 @@
 #include "robot-cpp/subsystems/shooter.hpp"
 
 #include <wpi/math/system/Models.hpp>
-#include <wpi/smartdashboard/SmartDashboard.hpp>
 #include <wpi/system/RobotController.hpp>
+#include <wpi/telemetry/Telemetry.hpp>
 
 #include "robot-cpp/subsystems/ports.hpp"
 
@@ -54,7 +54,7 @@ void Shooter::SimulationPeriodic() {
 }
 
 void Shooter::Log() {
-  wpi::SmartDashboard::PutNumber(
-      "Shooter Speed", m_motor.GetDutyCycle().GetValue().to<double>());
-  wpi::SmartDashboard::PutNumber("Shooter RPM", GetRpm().to<double>());
+  wpi::telemetry::Log("Shooter Speed",
+                      m_motor.GetDutyCycle().GetValue().to<double>());
+  wpi::telemetry::Log("Shooter RPM", GetRpm().to<double>());
 }

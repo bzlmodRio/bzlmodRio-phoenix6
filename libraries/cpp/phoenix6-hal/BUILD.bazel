@@ -13,8 +13,9 @@ cc_library(
     deps =
         # Binaries
         select({
-            "@rules_bzlmodrio_toolchains//constraints/is_roborio:roborio": [
+            "@wpilib_toolchains//constraints/is_systemcore:systemcore": [
                 "//private/cpp/tools:shared",
+                "@bzlmodrio-allwpilib//libraries/cpp/mrclib:shared",
             ],
             "//conditions:default": [
                 "//private/cpp/simPigeonIMU:shared",
@@ -36,7 +37,7 @@ cc_library(
     name = "jni",
     visibility = ["//visibility:public"],
     deps = select({
-        "@rules_bzlmodrio_toolchains//constraints/is_roborio:roborio": [
+        "@wpilib_toolchains//constraints/is_systemcore:systemcore": [
             "//private/cpp/tools:shared",
         ],
         "//conditions:default": [

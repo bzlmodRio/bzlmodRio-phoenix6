@@ -8,6 +8,7 @@ from bazelrio_gentool.generate_module_project_files import (
     create_default_mandatory_settings,
     generate_module_project_files,
 )
+from bazelrio_gentool.manual_cleanup_helper import manual_cleanup_helper
 from get_phoenix6_dependencies import get_phoenix6_dependencies
 
 
@@ -31,7 +32,11 @@ def main():
 
     mandatory_dependencies = create_default_mandatory_settings(GenericCliArgs(args))
 
-    clean_existing_version(REPO_DIR, force_tests=args.force_tests)
+    clean_existing_version(
+        REPO_DIR,
+        file_blacklist=["tests/BUILD.bazel", "tests/opencv.patch"],
+        force_tests=args.force_tests,
+    )
     generate_module_project_files(
         REPO_DIR,
         group,
@@ -39,6 +44,12 @@ def main():
         include_windows_arm_compiler=False,
     )
     generate_meta_deps(output_dir, group, force_tests=args.force_tests)
+
+    manual_cleanup(REPO_DIR, group)
+
+
+def manual_cleanup(REPO_DIR, group):
+    pass
 
 
 if __name__ == "__main__":

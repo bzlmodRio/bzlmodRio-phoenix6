@@ -19,8 +19,8 @@ import org.wpilib.framework.RobotBase;
 import org.wpilib.math.kinematics.DifferentialDriveOdometry;
 import org.wpilib.simulation.DifferentialDrivetrainSim;
 import org.wpilib.smartdashboard.Field2d;
-import org.wpilib.smartdashboard.SmartDashboard;
 import org.wpilib.system.RobotController;
+import org.wpilib.telemetry.Telemetry;
 import org.wpilib.units.measure.Angle;
 import org.wpilib.units.measure.AngularVelocity;
 
@@ -79,8 +79,6 @@ public class DriveTrain extends SubsystemBase {
     m_odometry = new DifferentialDriveOdometry(m_gyro.getRotation2d(), 0, 0);
     m_field = new Field2d();
 
-    SmartDashboard.putData("Field", m_field);
-
     if (RobotBase.isSimulation()) {
       m_leftSim = m_leftLeader.getSimState();
       m_rightSim = m_rightLeader.getSimState();
@@ -96,11 +94,12 @@ public class DriveTrain extends SubsystemBase {
   }
 
   public void log() {
-    SmartDashboard.putNumber("Left Distance", m_leftPosition.getValueAsDouble());
-    SmartDashboard.putNumber("Right Distance", m_rightPosition.getValueAsDouble());
-    SmartDashboard.putNumber("Left Speed", m_leftVelocity.getValueAsDouble());
-    SmartDashboard.putNumber("Right Speed", m_rightVelocity.getValueAsDouble());
-    SmartDashboard.putNumber("Gyro", m_gyro.getRotation2d().getDegrees());
+    Telemetry.log("Left Distance", m_leftPosition.getValueAsDouble());
+    Telemetry.log("Right Distance", m_rightPosition.getValueAsDouble());
+    Telemetry.log("Left Speed", m_leftVelocity.getValueAsDouble());
+    Telemetry.log("Right Speed", m_rightVelocity.getValueAsDouble());
+    Telemetry.log("Gyro", m_gyro.getRotation2d().getDegrees());
+    Telemetry.log("Field", m_field);
   }
 
   public void arcadeDrive(double throttle, double rotation) {

@@ -17,8 +17,8 @@ import org.wpilib.math.system.DCMotor;
 import org.wpilib.math.system.LinearSystem;
 import org.wpilib.math.system.Models;
 import org.wpilib.simulation.FlywheelSim;
-import org.wpilib.smartdashboard.SmartDashboard;
 import org.wpilib.system.RobotController;
+import org.wpilib.telemetry.Telemetry;
 import org.wpilib.units.measure.AngularVelocity;
 
 /**
@@ -59,8 +59,8 @@ public class Shooter extends SubsystemBase {
   }
 
   public void log() {
-    SmartDashboard.putNumber("Shooter Speed", m_motor.getDutyCycle().getValueAsDouble());
-    SmartDashboard.putNumber("Shooter RPM", getRpm());
+    Telemetry.log("Shooter Speed", m_motor.getDutyCycle().getValueAsDouble());
+    Telemetry.log("Shooter RPM", getRpm());
   }
 
   public void stop() {

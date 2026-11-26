@@ -11,12 +11,15 @@ cc_library(
     linkstatic = 1,
     visibility = ["//visibility:public"],
     deps = [
+        "@bzlmodrio-allwpilib//libraries/cpp/drivers:shared",
+        "@bzlmodrio-allwpilib//libraries/cpp/fields:shared",
+        "@bzlmodrio-allwpilib//libraries/cpp/mrclib:shared",
         "@bzlmodrio-allwpilib//libraries/cpp/wpilibc:shared",
         "@bzlmodrio-phoenix6//libraries/cpp/phoenix6-hal:shared",
     ] +
     # Binaries
     select({
-        "@rules_bzlmodrio_toolchains//constraints/is_roborio:roborio": [
+        "@wpilib_toolchains//constraints/is_systemcore:systemcore": [
             "//private/cpp/wpiapi-cpp:shared",
         ],
         "//conditions:default": [

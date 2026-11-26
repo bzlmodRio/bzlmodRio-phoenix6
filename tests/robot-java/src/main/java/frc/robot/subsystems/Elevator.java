@@ -11,8 +11,8 @@ import org.wpilib.framework.RobotBase;
 import org.wpilib.math.system.DCMotor;
 import org.wpilib.math.util.Units;
 import org.wpilib.simulation.ElevatorSim;
-import org.wpilib.smartdashboard.SmartDashboard;
 import org.wpilib.system.RobotController;
+import org.wpilib.telemetry.Telemetry;
 import org.wpilib.units.measure.Angle;
 
 public class Elevator extends SubsystemBase {
@@ -66,7 +66,7 @@ public class Elevator extends SubsystemBase {
   }
 
   public void log() {
-    SmartDashboard.putNumber("Elevator Height", m_position.getValueAsDouble());
+    Telemetry.log("Elevator Height", m_position.getValueAsDouble());
   }
 
   public void setVoltage(double output) {
