@@ -9,7 +9,7 @@ def get_phoenix6_dependencies(
     use_local_allwpilib=False,
     use_local_opencv=False,
     use_local_ni=True,
-    allwpilib_version_override="2027.0.0-alpha-6",
+    allwpilib_version_override="2027.0.0-alpha-8",
     opencv_version_override="2025.4.10.0-3.bcr2",
 ):
     sim_install_name_classes = [
@@ -84,7 +84,7 @@ def get_phoenix6_dependencies(
         "phoenix6-hal",
         deps=[],
         platform_deps={
-            "@rules_bzlmodrio_toolchains//constraints/is_roborio:roborio": [
+            "@wpilib_toolchains//constraints/is_systemcore:systemcore": [
                 "tools",
             ],
             "//conditions:default": [
@@ -103,7 +103,7 @@ def get_phoenix6_dependencies(
             ],
         },
         jni_deps={
-            "@rules_bzlmodrio_toolchains//constraints/is_roborio:roborio": [
+            "@wpilib_toolchains//constraints/is_systemcore:systemcore": [
                 "tools",
             ],
             "//conditions:default": [
@@ -131,7 +131,7 @@ def get_phoenix6_dependencies(
             "wpilibc-cpp",
         ],
         platform_deps={
-            "@rules_bzlmodrio_toolchains//constraints/is_roborio:roborio": [
+            "@wpilib_toolchains//constraints/is_systemcore:systemcore": [
                 "wpiapi-cpp",
             ],
             "//conditions:default": [

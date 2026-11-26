@@ -1,7 +1,7 @@
 #include "robot-cpp/subsystems/elevator.hpp"
 
 #include <wpi/math/controller/PIDController.hpp>
-#include <wpi/smartdashboard/SmartDashboard.hpp>
+#include <wpi/telemetry/Telemetry.hpp>
 #include <wpi/system/RobotController.hpp>
 
 #include "robot-cpp/subsystems/ports.hpp"
@@ -45,7 +45,7 @@ Elevator::Elevator()
 }
 
 void Elevator::Log() {
-  wpi::SmartDashboard::PutNumber("Elevator Height (m)",
+  wpi::telemetry::Log("Elevator Height (m)",
                                  GetElevatorHeight().to<double>());
 }
 

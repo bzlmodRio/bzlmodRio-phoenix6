@@ -2,7 +2,7 @@
 
 #include <numbers>
 #include <wpi/driverstation/Joystick.hpp>
-#include <wpi/smartdashboard/SmartDashboard.hpp>
+#include <wpi/telemetry/Telemetry.hpp>
 #include <wpi/system/RobotController.hpp>
 #include <wpi/units/length.hpp>
 
@@ -55,8 +55,6 @@ DriveTrain::DriveTrain()
               wpi::sim::DifferentialDrivetrainSim::KitbotMotor::
                   DUAL_CIM_PER_SIDE,
               12.0, 6_in)) {
-  wpi::SmartDashboard::PutData("Field", &m_field);
-
   m_leftMotorB.SetControl(ctre::phoenix6::controls::Follower{
       m_leftMotorA.GetDeviceID(),
       ctre::phoenix6::signals::MotorAlignmentValue::Aligned});
@@ -68,15 +66,16 @@ DriveTrain::DriveTrain()
 }
 
 void DriveTrain::Log() {
-  wpi::SmartDashboard::PutNumber("Left Distance",
+  wpi::telemetry::Log("Left Distance",
                                  GetLeftEncoderDistance().to<double>());
-  wpi::SmartDashboard::PutNumber("Right Distance",
+  wpi::telemetry::Log("Right Distance",
                                  GetRightEncoderDistance().to<double>());
-  wpi::SmartDashboard::PutNumber("Left Speed",
+  wpi::telemetry::Log("Left Speed",
                                  GetLeftEncoderVelocity().to<double>());
-  wpi::SmartDashboard::PutNumber("Right Speed",
+  wpi::telemetry::Log("Right Speed",
                                  GetRightEncoderVelocity().to<double>());
-  wpi::SmartDashboard::PutNumber("Gyro", GetHeadingDegrees());
+  wpi::telemetry::Log("Gyro", GetHeadingDegrees());
+  wpi::telemetry::Log("Field", m_field);
 }
 
 void DriveTrain::ArcadeDrive(double throttle, double rotation) {
