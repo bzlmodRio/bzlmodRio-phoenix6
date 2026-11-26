@@ -11,6 +11,9 @@ cc_library(
     linkstatic = 1,
     visibility = ["//visibility:public"],
     deps = [
+        "@bzlmodrio-allwpilib//libraries/cpp/drivers:shared",
+        "@bzlmodrio-allwpilib//libraries/cpp/fields:shared",
+        "@bzlmodrio-allwpilib//libraries/cpp/mrclib:shared",
         "@bzlmodrio-allwpilib//libraries/cpp/wpilibc:shared",
         "@bzlmodrio-phoenix6//libraries/cpp/phoenix6-hal:shared",
     ] +

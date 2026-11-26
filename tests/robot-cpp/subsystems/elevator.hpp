@@ -28,7 +28,6 @@ class Elevator : public wpi::cmd::Subsystem {
   void Log();
 
   ctre::phoenix6::hardware::TalonFX m_motor;
-  double m_setpoint{0};
 
   // Controls
   ctre::phoenix6::controls::PositionVoltage m_positionControl;

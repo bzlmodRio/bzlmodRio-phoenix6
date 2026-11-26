@@ -5870,7 +5870,7 @@
     },
     "@@bzlmodrio-phoenix6+//:maven_cpp_deps.bzl%deps": {
       "general": {
-        "bzlTransitiveDigest": "QKyAzimiuM1rsyymAHRNNnssfXayg1LPGcerWYChMaw=",
+        "bzlTransitiveDigest": "7NzDNUMSg6C0lWuV01ideq4iQGz/EryzHc1VBb/lEBQ=",
         "usagesDigest": "iG/O/yKJBhMMR7ayj4y6nLG2UPTIlMNV95A1QJ7xA9s=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
@@ -6487,6 +6487,8 @@
                 "install_name_tool -change libCTRE_SimTalonSRX.dylib @rpath/libCTRE_SimTalonSRX.dylib osx/universal/shared/libCTRE_Phoenix6_WPISim.dylib",
                 "install_name_tool -change libCTRE_SimVictorSPX.dylib @rpath/libCTRE_SimVictorSPX.dylib osx/universal/shared/libCTRE_Phoenix6_WPISim.dylib",
                 "install_name_tool -change libdatalog.dylib @rpath/libdatalog.dylib osx/universal/shared/libCTRE_Phoenix6_WPISim.dylib",
+                "install_name_tool -change libdrivers.dylib @rpath/libdrivers.dylib osx/universal/shared/libCTRE_Phoenix6_WPISim.dylib",
+                "install_name_tool -change libfields.dylib @rpath/libfields.dylib osx/universal/shared/libCTRE_Phoenix6_WPISim.dylib",
                 "install_name_tool -change libntcore.dylib @rpath/libntcore.dylib osx/universal/shared/libCTRE_Phoenix6_WPISim.dylib",
                 "install_name_tool -change libtelemetry.dylib @rpath/libtelemetry.dylib osx/universal/shared/libCTRE_Phoenix6_WPISim.dylib",
                 "install_name_tool -change libtunables.dylib @rpath/libtunables.dylib osx/universal/shared/libCTRE_Phoenix6_WPISim.dylib",

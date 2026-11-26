@@ -565,6 +565,8 @@ def __setup_bzlmodrio_phoenix6_cpp_dependencies(mctx):
             "install_name_tool -change libCTRE_SimTalonSRX.dylib @rpath/libCTRE_SimTalonSRX.dylib osx/universal/shared/libCTRE_Phoenix6_WPISim.dylib",
             "install_name_tool -change libCTRE_SimVictorSPX.dylib @rpath/libCTRE_SimVictorSPX.dylib osx/universal/shared/libCTRE_Phoenix6_WPISim.dylib",
             "install_name_tool -change libdatalog.dylib @rpath/libdatalog.dylib osx/universal/shared/libCTRE_Phoenix6_WPISim.dylib",
+            "install_name_tool -change libdrivers.dylib @rpath/libdrivers.dylib osx/universal/shared/libCTRE_Phoenix6_WPISim.dylib",
+            "install_name_tool -change libfields.dylib @rpath/libfields.dylib osx/universal/shared/libCTRE_Phoenix6_WPISim.dylib",
             "install_name_tool -change libntcore.dylib @rpath/libntcore.dylib osx/universal/shared/libCTRE_Phoenix6_WPISim.dylib",
             "install_name_tool -change libtelemetry.dylib @rpath/libtelemetry.dylib osx/universal/shared/libCTRE_Phoenix6_WPISim.dylib",
             "install_name_tool -change libtunables.dylib @rpath/libtunables.dylib osx/universal/shared/libCTRE_Phoenix6_WPISim.dylib",
